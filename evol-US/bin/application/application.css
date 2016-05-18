@@ -1,1 +1,22 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.button-green {
+-fx-background-color:  #4CAF50;
+-fx-border-radius: 7px;
+-fx-effect:  dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+.input-grey {
+-fx-background-color: #E0E0E0;
+-fx-background-radius: 7px;
+}
+
+.button-grey {
+-fx-background-color: #BDBDBD;
+-fx-border-radius: 7px;
+-fx-effect:  dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+.bg-green {
+-fx-background-color:  #4CAF50;
+}
