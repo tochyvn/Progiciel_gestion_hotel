@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="407.0" prefWidth="619.0" styleClass="bg-green" stylesheets="@../../application/application.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65">
+   <children>
+      <TextField layoutX="152.0" layoutY="100.0" styleClass="input-grey" />
+      <Label layoutX="45.0" layoutY="104.0" text="NOM :" textFill="#fffdfd" />
+      <Label layoutX="310.0" layoutY="104.0" text="PRÉNOM :" textFill="WHITE" />
+      <Label layoutX="45.0" layoutY="142.0" text="DATE :" textFill="WHITE" />
+      <TextField layoutX="417.0" layoutY="100.0" styleClass="input-grey" />
+      <Label layoutX="167.0" layoutY="43.0" prefHeight="17.0" prefWidth="268.0" text="RESERVATION" textFill="WHITE">
+         <font>
+            <Font name="Corbel" size="22.0" />
+         </font>
+      </Label>
+      <Button layoutX="404.0" layoutY="330.0" mnemonicParsing="false" styleClass="button-green" text="VALIDER" textFill="#fffdfd" />
+      <DatePicker layoutX="151.0" layoutY="138.0" prefHeight="25.0" prefWidth="149.0" styleClass="input-grey" />
+      <Label layoutX="310.0" layoutY="142.0" text="HEURE :" textFill="WHITE" />
+      <TextField layoutX="417.0" layoutY="138.0" styleClass="input-grey" />
+      <Label layoutX="167.0" layoutY="204.0" prefHeight="17.0" prefWidth="268.0" text="RESERVATION SPA" textFill="WHITE">
+         <font>
+            <Font name="Corbel" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="244.0" text="DATE :" textFill="WHITE" />
+      <DatePicker layoutX="151.0" layoutY="240.0" prefHeight="25.0" prefWidth="149.0" styleClass="input-grey" />
+      <Label layoutX="310.0" layoutY="244.0" text="HEURE :" textFill="WHITE" />
+      <TextField layoutX="417.0" layoutY="240.0" styleClass="input-grey" />
+      <CheckBox layoutX="152.0" layoutY="180.0" mnemonicParsing="false" text="Truc 1" />
+      <CheckBox layoutX="232.0" layoutY="180.0" mnemonicParsing="false" text="Truc 2" />
+      <CheckBox layoutX="312.0" layoutY="180.0" mnemonicParsing="false" text="Truc 3" />
+   </children>
+</AnchorPane>
