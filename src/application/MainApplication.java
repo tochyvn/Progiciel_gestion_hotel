@@ -82,5 +82,8 @@ public class MainApplication extends Application {
 		this.primaryStage = primaryStage;
 	}
 	
+	public void addClient() {
+		
+	}
 	
 }
