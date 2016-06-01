@@ -18,7 +18,7 @@ public class Connexion {
 	/*
 	 * Connexion à distante 
 	 */
-	public final static String URL1 = "jdbc:mysql://mysql-tochyvn.alwaysdata.net:3306/tochyvn_evol-US-V1";
+	public final static String URL1 = "jdbc:mysql://mysql-tochyvn.alwaysdata.net:3306/tochyvn_evol-us-v1";
 	public final static String USER1 = "tochyvn";
 	public final static String PASSWD1 = "TOCHlion1991";
 	
