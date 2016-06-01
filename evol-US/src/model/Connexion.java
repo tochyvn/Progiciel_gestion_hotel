@@ -33,7 +33,6 @@ public class Connexion {
 			
 		} catch (ClassNotFoundException e) {
 			System.out.println("Pilote introuvable : Pas installé");
-			
 		}
 	}
 	/**
