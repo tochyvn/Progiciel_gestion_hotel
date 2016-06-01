@@ -18,7 +18,7 @@ public class Connexion {
 	/*
 	 * Connexion à distante 
 	 */
-	public final static String URL1 = "jdbc:mysql://mysql-tochyvn.alwaysdata.net:3306/tochyvn_java_scolarite";
+	public final static String URL1 = "jdbc:mysql://mysql-tochyvn.alwaysdata.net:3306/tochyvn_evol-US-V1";
 	public final static String USER1 = "tochyvn";
 	public final static String PASSWD1 = "TOCHlion1991";
 	
@@ -26,7 +26,7 @@ public class Connexion {
 		connexion = null;
 		try {
 			Class.forName(DRIVER);
-			connexion = DriverManager.getConnection(URL, USER, PASSWD);
+			connexion = DriverManager.getConnection(URL1, USER1, PASSWD1);
 			System.out.println("Connexion etablie  ==========> "+connexion);
 		} catch (SQLException e) { 
 			System.out.println("Un problème est survenue lors de l'établissement de la connexion\r\n"+e.getMessage());
