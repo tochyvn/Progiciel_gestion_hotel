@@ -1,7 +1,17 @@
 package view.composants;
 
+import java.io.IOException;
+
+import application.MainApplication;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import view.ViewInterface;
 
 public class Popup extends Stage {
 	
@@ -13,7 +23,7 @@ public class Popup extends Stage {
 	public Popup(Scene scene) {
 		super();
 		this.setScene(scene);
-		this.show();
+		this.initModality(Modality.APPLICATION_MODAL);
 	}
 
 	public Scene getSceneLoaded() {
@@ -24,9 +34,41 @@ public class Popup extends Stage {
 		this.sceneLoaded = sceneLoaded;
 	}
 	
-	public static Scene loadScene(String path) {
+	/**
+	 * Charger une ressource physique sous forme de scene
+	 * @param path le chemin du fichier .fxml correspondant à la scene
+	 * @param typeLayout un entier reprentant le type de layout de la scene
+	 * 0 pour le BorderPane
+	 * 1 Pour le AnchorPane
+	 * 2 Pour du GridPane
+	 * @return retourne la scene qui a été chargée
+	 */
+	public static Scene loadScene(String path, int typeLayout) {
+		Scene scene = null;
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(MainApplication.class.getResource(ViewInterface.ROOT_VIEW));
+		Parent rootLayout;
+		try {
+			rootLayout = (Parent)loader.load();
+			switch (typeLayout) {
+			case 0:
+				rootLayout = (BorderPane)loader.load();
+				break;
+				
+			case 1:
+				rootLayout = (AnchorPane)loader.load();
+				break;
+				
+			case 2:
+				rootLayout = (GridPane)loader.load();
+				break;
+			}
+			scene = new Scene(rootLayout);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
-		return null;
+		return scene;
 	}
 	
 	
