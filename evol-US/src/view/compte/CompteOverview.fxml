@@ -22,7 +22,7 @@
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button layoutX="100.0" layoutY="290.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="111.0" styleClass="button-grey" stylesheets="@../../application/application.css" text="EFFACER" textFill="#1f1f1fc1">
+            <Button layoutX="100.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#raz" prefHeight="27.0" prefWidth="111.0" styleClass="button-grey" stylesheets="@../../application/application.css" text="EFFACER" textFill="#1f1f1fc1">
                <font>
                   <Font name="Corbel" size="12.0" />
                </font>

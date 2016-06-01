@@ -122,14 +122,16 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
 		String sql = "SELECT * FROM user "
 				+ "WHERE login = ? AND password = ?";
 		try {
-			PreparedStatement requete = this.connexion.prepareStatement(sql);
-			requete.setString(1, user.getLogin());
-			requete.setString(2, Cryptographie.encodePassword(user.getPassword()));
-			ResultSet resultat = requete.executeQuery();
-			if (resultat.next()) {
-				status = 1;
+			if (this.connexion != null) {
+				PreparedStatement requete = this.connexion.prepareStatement(sql);
+				requete.setString(1, user.getLogin());
+				requete.setString(2, Cryptographie.encodePassword(user.getPassword()));
+				ResultSet resultat = requete.executeQuery();
+				if (resultat.next()) {
+					status = 1;
+				}
+				requete.close();
 			}
-			requete.close();
 		} catch (SQLException e) {
 			System.out.println("Problème de connexion ou requête mal formée");
 		}
