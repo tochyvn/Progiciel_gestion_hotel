@@ -1,11 +1,17 @@
 package controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
+import application.MainApplication;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
 import model.Connexion;
 import model.beans.Utilisateur;
 import model.dao.UtilisateurDAO;
+import view.ViewInterface;
 
 public class UtilisateurManager {
 	
@@ -59,19 +65,32 @@ public class UtilisateurManager {
 	public int getConnexion(Utilisateur user) {
 		int connected = 0;
 		connected = utilisateurDAO.getConnexion(user);
-		/*
+		
 		if (connected == 0) {
 			//Boite de dialogue password ou identifiant incorrect
 			System.out.println("Boite de dialogue password ou identifiant incorrect");
 		}else if (connected == 1) {
-			UtilisateurManager.isConnected = true;
-			typeCompte = user.getPoste().getLibelle();
+			//isConnected = true;
+			//typeCompte = user.getPoste().getLibelle();
 			System.out.println("connected "+UtilisateurManager.isConnected+"  Droit : "+UtilisateurManager.typeCompte);
+			
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource(ViewInterface.ROOT_VIEW));
+			BorderPane rootLayout;
+			try {
+				rootLayout = (BorderPane)loader.load();
+				Scene scene = new Scene(rootLayout);
+				MainApplication.primaryStage.setScene(scene);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		}else {
 			//Boite de dialogue problème de connexion
 			System.out.println("Boite de dialogue problème de connexion");
 		}
-		*/
+		
 		return connected;
 	}
 	
