@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import controller.UtilisateurManager;
 import javafx.collections.ObservableList;
 import library.Cryptographie;
 import model.Connexion;
@@ -113,29 +114,33 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
 	}
 	
 	/**
-	 * Permettant à un utilisateur de se connecter
+	 * Methode permettant à un utilisateur de se connecter
 	 * @param user représente un utilisateur demandant une connexion
 	 * @return 1 s'il existe bien sinon 0
 	 */
 	public int getConnexion(Utilisateur user) {
 		int status = 0;
-		String sql = "SELECT * FROM user "
-				+ "WHERE login = ? AND password = ?";
-		try {
-			if (this.connexion != null) {
+		String sql = "SELECT * FROM user, user_poste_direction "
+				+ "WHERE user.id_poste = user_poste_direction.id_poste AND "
+				+ "login = ? AND password = ?";
+		
+		if ( !(this.connexion == null)) {
+			try {
 				PreparedStatement requete = this.connexion.prepareStatement(sql);
 				requete.setString(1, user.getLogin());
 				requete.setString(2, Cryptographie.encodePassword(user.getPassword()));
+				
 				ResultSet resultat = requete.executeQuery();
 				if (resultat.next()) {
 					status = 1;
+					System.out.println(resultat.getString("libelle"));
+					UtilisateurManager.typeCompte = resultat.getString("libelle");
 				}
 				requete.close();
+			} catch (SQLException e) {
+				System.out.println("Problème de connexion ou requête mal formée : "+e.getMessage());
 			}
-		} catch (SQLException e) {
-			System.out.println("Problème de connexion ou requête mal formée");
 		}
-		
 		return status;
 	}
 	

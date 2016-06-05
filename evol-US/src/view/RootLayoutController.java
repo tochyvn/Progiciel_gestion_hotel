@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import controller.UtilisateurManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,13 +34,18 @@ public class RootLayoutController implements Initializable {
 	@FXML
 	private BorderPane root;
 	
+	@FXML
+	private AnchorPane borderPaneLeft;
+	
 	
 	/* (non-Javadoc)
 	 * @see javafx.fxml.Initializable#initialize(java.net.URL, java.util.ResourceBundle)
 	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
+		if (!UtilisateurManager.isConnected) {
+			borderPaneLeft.setVisible(false);
+		}
 	}
 	
 	@FXML

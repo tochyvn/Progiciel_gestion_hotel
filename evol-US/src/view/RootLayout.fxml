@@ -7,7 +7,7 @@
 
 <BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.RootLayoutController">
    <left>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="borderPaneLeft" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Hyperlink layoutX="12.0" layoutY="50.0" prefHeight="23.0" prefWidth="128.0" text="Statistiques" />
             <Hyperlink layoutX="12.0" layoutY="73.0" prefHeight="23.0" prefWidth="128.0" text="Restaurant" />

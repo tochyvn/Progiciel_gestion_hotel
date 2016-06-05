@@ -1,17 +1,31 @@
 package controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
+import application.MainApplication;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
 import model.Connexion;
 import model.beans.Utilisateur;
 import model.dao.UtilisateurDAO;
+import view.ViewInterface;
 
 public class UtilisateurManager {
 	
 	private static UtilisateurManager manager = null;
 	private UtilisateurDAO utilisateurDAO;
+	/**
+	 * Permet de connaître l'état de la connexion à tout moment
+	 * false s'il n'est pas connecté
+	 * true s'il est connecté
+	 */
 	public static boolean isConnected = false;
+	/**
+	 * Permet de connaître le type d'utilisateur connecté
+	 */
 	public static String typeCompte = "AUCUN(PAR DEFAUT)";
 
 	private UtilisateurManager() {
@@ -51,19 +65,32 @@ public class UtilisateurManager {
 	public int getConnexion(Utilisateur user) {
 		int connected = 0;
 		connected = utilisateurDAO.getConnexion(user);
-		/*
+		
 		if (connected == 0) {
 			//Boite de dialogue password ou identifiant incorrect
 			System.out.println("Boite de dialogue password ou identifiant incorrect");
 		}else if (connected == 1) {
-			UtilisateurManager.isConnected = true;
-			typeCompte = user.getPoste().getLibelle();
+			//isConnected = true;
+			//typeCompte = user.getPoste().getLibelle();
 			System.out.println("connected "+UtilisateurManager.isConnected+"  Droit : "+UtilisateurManager.typeCompte);
+			
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource(ViewInterface.ROOT_VIEW));
+			BorderPane rootLayout;
+			try {
+				rootLayout = (BorderPane)loader.load();
+				Scene scene = new Scene(rootLayout);
+				MainApplication.primaryStage.setScene(scene);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		}else {
 			//Boite de dialogue problème de connexion
 			System.out.println("Boite de dialogue problème de connexion");
 		}
-		*/
+		
 		return connected;
 	}
 	
@@ -71,14 +98,7 @@ public class UtilisateurManager {
 	 * Deconnexion d'un utilisateur
 	 */
 	public void deconnected() {
-		/*
-		try {
-			Connexion.getConnexion().close();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		*/
+		
 		try {
 			System.out.println(Connexion.getConnexion().isClosed());
 			Connexion.getConnexion().close();
