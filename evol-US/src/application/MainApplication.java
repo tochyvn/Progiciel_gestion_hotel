@@ -1,27 +1,26 @@
 package application;
 	
-import java.io.IOException;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import library.LoaderOfScene;
 import view.ViewInterface;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
 
 public class MainApplication extends Application {
 	
-	private BorderPane rootLayout;
+	private Parent rootLayout;
 	public static Stage primaryStage;
 	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			
-			this.primaryStage = primaryStage;
-			this.primaryStage.setTitle("GESTION HOTELIERE");
+			MainApplication.primaryStage = primaryStage;
+			MainApplication.primaryStage.setTitle("GESTION HOTELIERE");
 			primaryStage.setX(0);
 			primaryStage.setY(0);
 			primaryStage.setWidth(1500);
@@ -39,49 +38,22 @@ public class MainApplication extends Application {
 	
 	public void initRoot() {
 		//Chargement du template principale faisant de scène du stage
-		try {
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource(ViewInterface.ROOT_VIEW));
-			this.rootLayout = (BorderPane)loader.load();
-			Scene scene = new Scene(rootLayout);
-			this.primaryStage.setScene(scene);
-			this.primaryStage.show();
-			
-		} catch (IOException e) {
-			System.out.println("erreur de chargement du fichier .fxml");
-			//e.printStackTrace();
-		}
+		this.rootLayout = LoaderOfScene.loadParent(ViewInterface.ROOT_VIEW, 0);
+		Scene scene = new Scene(rootLayout);
+		primaryStage.setScene(scene);
+		primaryStage.show();
 	}
 	
 	public void loadCustomerOverview() {
 		//Integration centré dans la scène
-		try {
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource(ViewInterface.CONNEXION_VIEW));
-			AnchorPane customerOverview = (AnchorPane)loader.load();
-			this.rootLayout.setCenter(customerOverview);
-		} catch (IOException e) {
-			System.out.println("erreur de chargement du fichier .fxml");
-			e.printStackTrace();
-		}
-	}
-
-	public BorderPane getRootLayout() {
-		return rootLayout;
-	}
-
-	public void setRootLayout(BorderPane rootLayout) {
-		this.rootLayout = rootLayout;
+		Parent customerOverview = LoaderOfScene.loadParent(ViewInterface.CONNEXION_VIEW, 1);
+		((BorderPane) this.rootLayout).setCenter(customerOverview);
 	}
 
 	public Stage getPrimaryStage() {
 		return primaryStage;
 	}
 
-	public void setPrimaryStage(Stage primaryStage) {
-		this.primaryStage = primaryStage;
-	}
-	
 	public void addClient() {
 		
 	}
