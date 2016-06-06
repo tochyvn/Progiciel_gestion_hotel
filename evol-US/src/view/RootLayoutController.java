@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -37,6 +38,9 @@ public class RootLayoutController implements Initializable {
 	@FXML
 	private AnchorPane borderPaneLeft;
 	
+	@FXML
+	private Hyperlink hyperStatistique;
+	
 	
 	/* (non-Javadoc)
 	 * @see javafx.fxml.Initializable#initialize(java.net.URL, java.util.ResourceBundle)
@@ -46,6 +50,7 @@ public class RootLayoutController implements Initializable {
 		if (!UtilisateurManager.isConnected) {
 			borderPaneLeft.setVisible(false);
 		}
+		this.chechAuthentificationType();
 	}
 	
 	@FXML
@@ -91,6 +96,29 @@ public class RootLayoutController implements Initializable {
 			e1.printStackTrace();
 		}
 	}
+	
+	/**
+	 * Gestion de l'affichage du menu enfonction du niveau d'accès de l'utilisateur connecté
+	 */
+	private void chechAuthentificationType() {
+		String droit = UtilisateurManager.typeCompte;
+		if (droit != "DIRECTEUR") {
+			hyperStatistique.setVisible(false);
+		}
+		if (droit != "DIRECTEUR" && droit != "MAINTENANCE") {
+			//hyperStatistique.setVisible(false);
+		}
+		if (droit != "DIRECTEUR" && droit != "SPA") {
+			//hyperStatistique.setVisible(false);
+		}
+		if (droit != "DIRECTEUR" && droit != "RECEPTION") {
+			//hyperStatistique.setVisible(false);
+		}
+		if (droit != "DIRECTEUR" && droit != "HEBERGEMENT") {
+			//hyperStatistique.setVisible(false);
+		}
+	}
+	
 /*
 	@FXML
 	private void handleMenuItemAction(ActionEvent e) {

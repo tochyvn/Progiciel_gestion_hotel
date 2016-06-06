@@ -12,7 +12,7 @@ import javafx.scene.layout.BorderPane;
 
 public class MainApplication extends Application {
 	
-	public BorderPane rootLayout;
+	private BorderPane rootLayout;
 	public static Stage primaryStage;
 	
 	@Override

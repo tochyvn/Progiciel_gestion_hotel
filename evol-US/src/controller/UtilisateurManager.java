@@ -75,10 +75,9 @@ public class UtilisateurManager {
 			//Sauvegarde de la connexion de l'utilisateur
 			isConnected = true;
 			//Rechargement de la scene principale après connexion
-			AnchorPane center = (AnchorPane) LoaderOfScene.loadParent(ViewInterface.USER_VIEW, 1);
-			
 			Scene scenePrincipale = LoaderOfScene.loadScene(ViewInterface.ROOT_VIEW, 0);
 			MainApplication.primaryStage.setScene(scenePrincipale);
+			AnchorPane center = (AnchorPane) LoaderOfScene.loadParent(ViewInterface.USER_VIEW, 1);
 			//On recupere le root de la scene principale
 			((BorderPane) MainApplication.primaryStage.getScene().getRoot()).setCenter(center);
 			DoubleProperty opacity = center.opacityProperty();
