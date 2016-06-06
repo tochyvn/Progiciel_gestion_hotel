@@ -3,8 +3,12 @@ package controller;
 import java.sql.SQLException;
 
 import application.MainApplication;
+import javafx.beans.property.DoubleProperty;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import library.Animation;
 import library.LoaderOfScene;
 import model.Connexion;
 import model.beans.Utilisateur;
@@ -68,13 +72,17 @@ public class UtilisateurManager {
 			//Boite de dialogue password ou identifiant incorrect
 			System.out.println("Boite de dialogue password ou identifiant incorrect");
 		}else if (connected == 1) {
+			//Sauvegarde de la connexion de l'utilisateur
 			isConnected = true;
-			
 			//Rechargement de la scene principale après connexion
+			AnchorPane center = (AnchorPane) LoaderOfScene.loadParent(ViewInterface.USER_VIEW, 1);
+			
 			Scene scenePrincipale = LoaderOfScene.loadScene(ViewInterface.ROOT_VIEW, 0);
 			MainApplication.primaryStage.setScene(scenePrincipale);
-			
-			
+			//On recupere le root de la scene principale
+			((BorderPane) MainApplication.primaryStage.getScene().getRoot()).setCenter(center);
+			DoubleProperty opacity = center.opacityProperty();
+			Animation.doAnimationProperty(opacity, 0, 1);
 		}else {
 			//Boite de dialogue problème de connexion
 			System.out.println("Boite de dialogue problème de connexion");

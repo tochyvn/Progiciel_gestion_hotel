@@ -12,7 +12,7 @@ import javafx.scene.layout.BorderPane;
 
 public class MainApplication extends Application {
 	
-	private Parent rootLayout;
+	public BorderPane rootLayout;
 	public static Stage primaryStage;
 	
 	@Override
@@ -38,7 +38,7 @@ public class MainApplication extends Application {
 	
 	public void initRoot() {
 		//Chargement du template principale faisant de scène du stage
-		this.rootLayout = LoaderOfScene.loadParent(ViewInterface.ROOT_VIEW, 0);
+		rootLayout = (BorderPane) LoaderOfScene.loadParent(ViewInterface.ROOT_VIEW, 0);
 		Scene scene = new Scene(rootLayout);
 		primaryStage.setScene(scene);
 		primaryStage.show();
@@ -47,7 +47,7 @@ public class MainApplication extends Application {
 	public void loadCustomerOverview() {
 		//Integration centré dans la scène
 		Parent customerOverview = LoaderOfScene.loadParent(ViewInterface.CONNEXION_VIEW, 1);
-		((BorderPane) this.rootLayout).setCenter(customerOverview);
+		rootLayout.setCenter(customerOverview);
 	}
 
 	public Stage getPrimaryStage() {
