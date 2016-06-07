@@ -9,7 +9,7 @@
    <left>
       <AnchorPane fx:id="borderPaneLeft" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Hyperlink fx:id="hyperStatistique" layoutX="12.0" layoutY="50.0" prefHeight="23.0" prefWidth="128.0" text="Statistiques" />
+            <Hyperlink layoutX="12.0" layoutY="50.0" prefHeight="23.0" prefWidth="128.0" text="Statistiques" />
             <Hyperlink layoutX="12.0" layoutY="73.0" prefHeight="23.0" prefWidth="128.0" text="Restaurant" />
             <Hyperlink layoutX="37.0" layoutY="96.0" prefHeight="23.0" prefWidth="105.0" text="Réservations" />
             <Hyperlink layoutX="37.0" layoutY="119.0" prefHeight="23.0" prefWidth="105.0" text="Stock" />
