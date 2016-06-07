@@ -18,11 +18,11 @@
 
 <AnchorPane prefHeight="450.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.user.UserController">
    <children>
-      <SplitPane dividerPositions="0.4810126582278481" layoutX="185.0" layoutY="87.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.4879759519038076" layoutX="185.0" layoutY="87.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <BorderPane layoutX="3.0" layoutY="31.0" prefHeight="398.0" prefWidth="205.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <BorderPane layoutX="3.0" layoutY="31.0" prefHeight="448.0" prefWidth="508.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <top>
                         <Label text="Users Informations" BorderPane.alignment="CENTER">
                            <font>
@@ -38,7 +38,8 @@
                               <TableColumn fx:id="tblColumnPrenom" prefWidth="65.0" text="Prenom" />
                               <TableColumn fx:id="tblColumnAdresse" prefWidth="121.0" text="Adresse" />
                               <TableColumn fx:id="tblColumnCodeP" prefWidth="75.0" text="CP" />
-                              <TableColumn fx:id="tblColumnPoste" prefWidth="75.0" text="Poste" />
+                              <TableColumn fx:id="tblColumnPoste" text="Poste" />
+                              <TableColumn fx:id="tblColumnPoste1" text="Action" />
                           </columns>
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

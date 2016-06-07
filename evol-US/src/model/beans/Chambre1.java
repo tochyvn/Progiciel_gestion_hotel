@@ -1,5 +1,8 @@
 package model.beans;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
@@ -14,33 +17,19 @@ import javafx.beans.property.StringProperty;
 public class Chambre1 {
 
 	private IntegerProperty idChambre;
-
 	private StringProperty surface;
-
 	private StringProperty telephone;
-
 	private StringProperty etage;
-
 	private StringProperty nbrePlace;
-
 	private BooleanProperty douche;
-
 	private BooleanProperty baignoire;
-
 	private BooleanProperty fumeur;
-
 	private DoubleProperty prix;
-	
-	private Etat etat;
-
+	private EtatChambre etat;
 	private CategorieChambre1 categorie;
 	
-	//private Collection<DemandeReservation> demandeReservation;
-
-	//private Collection<Date> tarif;
-
-	//private Collection<Reparation> reparation;
-	
+	public static HashMap<Integer , ArrayList<DemandeReservation>> demandes;
+	public static HashMap<Integer, ArrayList<ConfirmationReservation>> reservations;
 
 	/**
 	 * 
@@ -62,7 +51,7 @@ public class Chambre1 {
 	 * @param categorie
 	 */
 	public Chambre1(String surface, String telephone, String etage, String nbrePlace, Boolean douche, Boolean baignoire,
-			Boolean fumeur, Double prix, Etat etat, CategorieChambre1 categorie) {
+			Boolean fumeur, Double prix, CategorieChambre1 categorie) {
 		super();
 		this.surface = new SimpleStringProperty(surface);
 		this.telephone = new SimpleStringProperty(telephone);
@@ -72,7 +61,7 @@ public class Chambre1 {
 		this.baignoire = new SimpleBooleanProperty(baignoire);
 		this.fumeur = new SimpleBooleanProperty(fumeur);
 		this.prix = new SimpleDoubleProperty(prix);
-		this.etat = etat;
+		this.etat = EtatChambre.LIBRE;
 		this.categorie = categorie;
 		this.idChambre = new SimpleIntegerProperty(new Integer(10)); 
 	}
@@ -211,11 +200,11 @@ public class Chambre1 {
 		this.prix = new SimpleDoubleProperty(prix);
 	}
 
-	public Etat getEtat() {
+	public EtatChambre getEtat() {
 		return etat;
 	}
 
-	public void setEtat(Etat etat) {
+	public void setEtat(EtatChambre etat) {
 		this.etat = etat;
 	}
 
