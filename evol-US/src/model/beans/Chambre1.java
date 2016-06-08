@@ -51,7 +51,7 @@ public class Chambre1 {
 	 * @param categorie
 	 */
 	public Chambre1(String surface, String telephone, String etage, String nbrePlace, Boolean douche, Boolean baignoire,
-			Boolean fumeur, Double prix, CategorieChambre1 categorie) {
+			Boolean fumeur, Double prix) {
 		super();
 		this.surface = new SimpleStringProperty(surface);
 		this.telephone = new SimpleStringProperty(telephone);
@@ -62,7 +62,6 @@ public class Chambre1 {
 		this.fumeur = new SimpleBooleanProperty(fumeur);
 		this.prix = new SimpleDoubleProperty(prix);
 		this.etat = EtatChambre.LIBRE;
-		this.categorie = categorie;
 		this.idChambre = new SimpleIntegerProperty(new Integer(10)); 
 	}
 

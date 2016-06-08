@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import application.MainApplication;
 import javafx.beans.property.DoubleProperty;
 import javafx.collections.ObservableList;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -77,10 +78,14 @@ public class UtilisateurManager {
 			//Rechargement de la scene principale après connexion
 			Scene scenePrincipale = LoaderOfScene.loadScene(ViewInterface.ROOT_VIEW, 0);
 			MainApplication.primaryStage.setScene(scenePrincipale);
-			AnchorPane center = (AnchorPane) LoaderOfScene.loadParent(ViewInterface.USER_VIEW, 1);
+			/**
+			 * Mes test de vues
+			 */
+			Parent center = (AnchorPane) LoaderOfScene.loadParent(ViewInterface.USER_VIEW, 1);
+			Parent center1 = (AnchorPane) LoaderOfScene.loadParent(ViewInterface.RESERVATION_VIEW, 1);
 			//On recupere le root de la scene principale
-			((BorderPane) MainApplication.primaryStage.getScene().getRoot()).setCenter(center);
-			DoubleProperty opacity = center.opacityProperty();
+			((BorderPane) MainApplication.primaryStage.getScene().getRoot()).setCenter(center1);
+			DoubleProperty opacity = center1.opacityProperty();
 			Animation.doAnimationProperty(opacity, 0, 1);
 		}else {
 			//Boite de dialogue problème de connexion

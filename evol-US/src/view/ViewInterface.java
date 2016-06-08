@@ -7,5 +7,6 @@ public interface ViewInterface {
 	public final static String CONNEXION_VIEW = VIEW_PACKAGE+"compte/CompteOverview.fxml";
 	public final static String CLIENT_VIEW = VIEW_PACKAGE+"client/ClientOverview.fxml";
 	public final static String ROOT_VIEW = VIEW_PACKAGE+"RootLayout.fxml";
+	public final static String RESERVATION_VIEW = VIEW_PACKAGE+"reservation/ReservationOverview.fxml";
 
 }

@@ -6,16 +6,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.FlowPane;
-import model.beans.Chambre;
+import model.beans.Chambre1;
 
 public class ListRoom extends FlowPane {
 	
 	private ObservableList<BoxRoom> rooms;
-	private ScrollPane parentScrollPane;
 	//La chambre selectionnée dans la liste de chambre
-	public static Chambre roomSelected;
+	public static Chambre1 roomSelected;
 
 	
 	public ListRoom() {
@@ -26,15 +24,9 @@ public class ListRoom extends FlowPane {
 		super(orientation);
 	}
 
-	public ListRoom(ArrayList<Chambre> chambres) {
-		this(Orientation.HORIZONTAL);
+	public ListRoom(ArrayList<Chambre1> chambres) {
 		this.rooms = FXCollections.observableArrayList();
 		this.putRoom(chambres);
-		//Ajouter une barre de defilement
-		parentScrollPane = new ScrollPane(this);
-		//Pour faire son enfant matcher la taille de son parent
-		parentScrollPane.setFitToHeight(true);
-		parentScrollPane.setFitToWidth(true);
 	}
 	
 	/**
@@ -58,8 +50,8 @@ public class ListRoom extends FlowPane {
 	 * Methode qui prend en paramÃ¨tre une arraylist de room et remplis la liste de Room
 	 * @param chambres
 	 */
-	private void putRoom(ArrayList<Chambre> chambres) {
-		for (Chambre chambre : chambres) {
+	private void putRoom(ArrayList<Chambre1> chambres) {
+		for (Chambre1 chambre : chambres) {
 			BoxRoom boxRoom = new BoxRoom(chambre);
 			this.getChildren().add(boxRoom);
 			//Ici on met une marge entre les différentes BoxRoom <====> Chambre
@@ -67,8 +59,5 @@ public class ListRoom extends FlowPane {
 		}
 	}
 	
-	public ScrollPane getParentScrollPane() {
-		return parentScrollPane;
-	}
 
 }

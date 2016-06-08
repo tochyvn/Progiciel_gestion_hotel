@@ -62,11 +62,9 @@ public class LoaderOfScene {
 			case 0:
 				rootLayout = (BorderPane)loader.load();
 				break;
-				
 			case 1:
 				rootLayout = (AnchorPane)loader.load();
 				break;
-				
 			case 2:
 				rootLayout = (GridPane)loader.load();
 				break;
