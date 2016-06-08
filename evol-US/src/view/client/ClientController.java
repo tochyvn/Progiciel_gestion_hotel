@@ -20,9 +20,9 @@ import model.Connexion;
 import model.beans.Client;
 import model.dao.ClientDAO;
 import model.exception.CreateObjectException;
-import view.composants.AlertConfirmation;
-import view.composants.AlertError;
-import view.composants.AlertInfo;
+import view.composants.alerte.AlertConfirmation;
+import view.composants.alerte.AlertError;
+import view.composants.alerte.AlertInfo;
 
 public class ClientController implements Initializable {
 	

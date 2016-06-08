@@ -1,4 +1,4 @@
-package view.composants;
+package view.composants.alerte;
 
 import javafx.scene.control.Alert;
 

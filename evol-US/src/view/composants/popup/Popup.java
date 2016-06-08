@@ -1,4 +1,4 @@
-package view.composants.alerte;
+package view.composants.popup;
 
 import java.io.IOException;
 
@@ -11,7 +11,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import view.ViewInterface;
 
 public class Popup extends Stage {
 	
@@ -23,6 +22,10 @@ public class Popup extends Stage {
 	public Popup(Scene scene) {
 		super();
 		this.setScene(scene);
+		this.setResizable(false);
+		this.setWidth(550);
+		this.setHeight(400);
+		//Pour faire rester la popup au premier plan
 		this.initModality(Modality.APPLICATION_MODAL);
 	}
 
@@ -46,10 +49,10 @@ public class Popup extends Stage {
 	public static Scene loadScene(String path, int typeLayout) {
 		Scene scene = null;
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(MainApplication.class.getResource(ViewInterface.ROOT_VIEW));
+		loader.setLocation(MainApplication.class.getResource(path));
 		Parent rootLayout;
 		try {
-			rootLayout = (Parent)loader.load();
+			rootLayout = null;
 			switch (typeLayout) {
 			case 0:
 				rootLayout = (BorderPane)loader.load();
@@ -72,5 +75,5 @@ public class Popup extends Stage {
 	}
 	
 	
-
 }
+
