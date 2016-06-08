@@ -28,8 +28,10 @@ public class ReservationController implements Initializable {
 		scrollable.setHbarPolicy(ScrollBarPolicy.NEVER);
 		scrollable.setVbarPolicy(ScrollBarPolicy.ALWAYS);
 		
-		scrollable.setPrefHeight(root.getPrefHeight());
+		scrollable.setPrefHeight(root.getPrefHeight()+200);
 		scrollable.setPrefWidth(root.getPrefWidth()+200);
+		scrollable.setMinHeight(100.0);
+		scrollable.setMinWidth(100.0);
 		System.out.println(root.getPrefHeight());
 		System.out.println(root.getPrefWidth());
 		root.getChildren().add(scrollable);

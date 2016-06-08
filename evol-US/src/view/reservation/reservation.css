@@ -1,5 +1,5 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
-.box-room-shadow {
+.box-room-shadow, .scroll-pane {
 -fx-border-radius: 7px;
 -fx-effect:  dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
 -fx-padding: 10, 5, 10, 5;
@@ -15,4 +15,9 @@
 	-fx-text-alignment: center;
 	-fx-font-weight: bold;
 	-fx-font-size: 20;
+}
+
+.scroll-pane {
+	-fx-pannable: true; 
+	-fx-background-color: #D5F0D5;
 }
