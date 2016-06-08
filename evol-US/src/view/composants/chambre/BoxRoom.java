@@ -41,7 +41,7 @@ public class BoxRoom extends VBox {
 		
 		Image img = new Image(url);
 		ImageView imageView = new ImageView(img);
-		Label roomLabel = new Label("Chambre N° : "+chambre.getIdChambre());
+		Label roomLabel = new Label("Chambre Nï¿½ : "+chambre.getIdChambre());
 		Label fumeur = new Label("Fumeur : NON");
 		Label baignoire = new Label("Baignoire : OUI");
 		
@@ -53,28 +53,29 @@ public class BoxRoom extends VBox {
 	public void addEvent() {
 		this.setOnMouseClicked((event) -> {
 			
-			//On recupère la BoxRoom sur laquelle l'on a cliqué
+			//On recupï¿½re la BoxRoom sur laquelle l'on a cliquï¿½
 			BoxRoom room = (BoxRoom) event.getSource();
-			//On affecte cette chambre à la variable statique afin de pouvoir la récupérer dans la Popup
+			//On affecte cette chambre ï¿½ la variable statique afin de pouvoir la rï¿½cupï¿½rer dans la Popup
 			ListRoom.roomSelected = room.chambre;
 			System.out.println(room);
 			
-			Scene scene = Popup.loadScene(ViewInterfaceConstante.POPUP_ROOT_VIEW, 1);
-			//System.out.println(event.getSource());
-			
-			Popup popup = new Popup(scene);
-			popup.setTitle("My modal window");
-			popup.initOwner((((Node) event.getSource()).getScene()).getWindow());
-			
-			//Definir une action à la fermeture de la popup
-			popup.setOnCloseRequest(new EventHandler<WindowEvent>() {
-				@Override
-				public void handle(WindowEvent event) {
-					System.out.println("Mettre la variable statique de chambre Ã  NULL");
-					ListRoom.roomSelected = null;
-				}
-			});
-			popup.showAndWait();
+			if (ListRoom.roomSelected.getEtat() == EtatChambre.LIBRE) {
+				Scene scene = Popup.loadScene(ViewInterfaceConstante.POPUP_ROOT_VIEW, 1);
+				//System.out.println(event.getSource());
+				Popup popup = new Popup(scene);
+				popup.setTitle("My modal window");
+				popup.initOwner((((Node) event.getSource()).getScene()).getWindow());
+				
+				//Definir une action ï¿½ la fermeture de la popup
+				popup.setOnCloseRequest(new EventHandler<WindowEvent>() {
+					@Override
+					public void handle(WindowEvent event) {
+						System.out.println("Mettre la variable statique de chambre Ã  NULL");
+						ListRoom.roomSelected = null;
+					}
+				});
+				popup.showAndWait();
+			}
 			
 		});
 		

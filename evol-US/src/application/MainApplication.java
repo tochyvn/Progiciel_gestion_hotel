@@ -18,7 +18,6 @@ public class MainApplication extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			
 			MainApplication.primaryStage = primaryStage;
 			MainApplication.primaryStage.setTitle("GESTION HOTELIERE");
 			primaryStage.setX(0);
