@@ -1,6 +1,6 @@
 package view;
 
-public interface ViewInterface {
+public interface ViewInterfaceConstante {
 	
 	public final static String VIEW_PACKAGE = "/view/";
 	public final static String USER_VIEW = VIEW_PACKAGE+"user/userOverview.fxml";

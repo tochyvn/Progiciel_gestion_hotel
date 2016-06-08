@@ -13,6 +13,8 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
+import library.Animation;
 
 /**
  * @author silnti
@@ -41,12 +43,19 @@ public class RootLayoutController implements Initializable {
 	@FXML
 	private Hyperlink hyperStatistique;
 	
+	@FXML
+	private FlowPane topLayout;
+	
 	
 	/* (non-Javadoc)
 	 * @see javafx.fxml.Initializable#initialize(java.net.URL, java.util.ResourceBundle)
 	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		if (UtilisateurManager.isConnected) {
+			topLayout.setVisible(true);
+			Animation.doAnimationProperty(topLayout.opacityProperty(), 0, 2000);
+		}
 		if (!UtilisateurManager.isConnected) {
 			borderPaneLeft.setVisible(false);
 		}
@@ -57,7 +66,7 @@ public class RootLayoutController implements Initializable {
 	private void loadViewClient(ActionEvent event) {
 		System.out.println("Vous avez cliquez sur le menuItemCustomer");
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource(ViewInterface.CLIENT_VIEW));
+		loader.setLocation(getClass().getResource(ViewInterfaceConstante.CLIENT_VIEW));
 		AnchorPane customerOverview = null;
 		try {
 			customerOverview = (AnchorPane)loader.load();
@@ -71,7 +80,7 @@ public class RootLayoutController implements Initializable {
 	private void loadViewConnexion(ActionEvent event) {
 		System.out.println("Vous avez cliquez sur le menuItemConnexion");
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource(ViewInterface.CONNEXION_VIEW));
+		loader.setLocation(getClass().getResource(ViewInterfaceConstante.CONNEXION_VIEW));
 		AnchorPane compteOverview = null;
 		try {
 			compteOverview = (AnchorPane)loader.load();
@@ -86,7 +95,7 @@ public class RootLayoutController implements Initializable {
 		System.out.println(getClass().getName());
 		System.out.println("Vous avez cliquez sur le menuItemUser");
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource(ViewInterface.USER_VIEW));
+		loader.setLocation(getClass().getResource(ViewInterfaceConstante.USER_VIEW));
 		AnchorPane userOverview = null;
 		try {
 			userOverview = (AnchorPane)loader.load();

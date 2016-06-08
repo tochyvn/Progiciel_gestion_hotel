@@ -13,7 +13,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.WindowEvent;
 import model.beans.Chambre1;
 import model.beans.EtatChambre;
-import view.ViewInterface;
+import view.ViewInterfaceConstante;
 import view.composants.popup.Popup;
 
 public class BoxRoom extends VBox {
@@ -59,7 +59,7 @@ public class BoxRoom extends VBox {
 			ListRoom.roomSelected = room.chambre;
 			System.out.println(room);
 			
-			Scene scene = Popup.loadScene(ViewInterface.POPUP_ROOT_VIEW, 1);
+			Scene scene = Popup.loadScene(ViewInterfaceConstante.POPUP_ROOT_VIEW, 1);
 			//System.out.println(event.getSource());
 			
 			Popup popup = new Popup(scene);

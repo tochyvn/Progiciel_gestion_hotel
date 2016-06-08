@@ -11,7 +11,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import view.ViewInterface;
+import view.ViewInterfaceConstante;
 
 public class Popup extends Stage {
 	
@@ -46,7 +46,7 @@ public class Popup extends Stage {
 	public static Scene loadScene(String path, int typeLayout) {
 		Scene scene = null;
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(MainApplication.class.getResource(ViewInterface.ROOT_VIEW));
+		loader.setLocation(MainApplication.class.getResource(ViewInterfaceConstante.ROOT_VIEW));
 		Parent rootLayout;
 		try {
 			rootLayout = (Parent)loader.load();

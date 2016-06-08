@@ -14,7 +14,7 @@ import library.LoaderOfScene;
 import model.Connexion;
 import model.beans.Utilisateur;
 import model.dao.UtilisateurDAO;
-import view.ViewInterface;
+import view.ViewInterfaceConstante;
 
 public class UtilisateurManager {
 	
@@ -76,13 +76,13 @@ public class UtilisateurManager {
 			//Sauvegarde de la connexion de l'utilisateur
 			isConnected = true;
 			//Rechargement de la scene principale après connexion
-			Scene scenePrincipale = LoaderOfScene.loadScene(ViewInterface.ROOT_VIEW, 0);
+			Scene scenePrincipale = LoaderOfScene.loadScene(ViewInterfaceConstante.ROOT_VIEW, 0);
 			MainApplication.primaryStage.setScene(scenePrincipale);
 			/**
 			 * Mes test de vues
 			 */
-			Parent center = (AnchorPane) LoaderOfScene.loadParent(ViewInterface.USER_VIEW, 1);
-			Parent center1 = (AnchorPane) LoaderOfScene.loadParent(ViewInterface.RESERVATION_VIEW, 1);
+			Parent center = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.USER_VIEW, 1);
+			Parent center1 = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.RESERVATION_VIEW, 1);
 			//On recupere le root de la scene principale
 			((BorderPane) MainApplication.primaryStage.getScene().getRoot()).setCenter(center1);
 			DoubleProperty opacity = center1.opacityProperty();
