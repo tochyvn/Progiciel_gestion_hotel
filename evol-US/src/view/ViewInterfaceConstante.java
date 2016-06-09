@@ -9,4 +9,5 @@ public interface ViewInterfaceConstante {
 	public final static String ROOT_VIEW = VIEW_PACKAGE+"RootLayout.fxml";
 	public final static String RESERVATION_VIEW = VIEW_PACKAGE+"reservation/ReservationOverview.fxml";
 	public final static String POPUP_ROOT_VIEW = VIEW_PACKAGE+"composants/popup/PopupOverview.fxml";
+	
 }

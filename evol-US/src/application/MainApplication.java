@@ -13,6 +13,7 @@ import javafx.scene.layout.BorderPane;
 public class MainApplication extends Application {
 	
 	private BorderPane rootLayout;
+
 	public static Stage primaryStage;
 	
 	@Override
@@ -23,7 +24,7 @@ public class MainApplication extends Application {
 			primaryStage.setX(0);
 			primaryStage.setY(0);
 			primaryStage.setWidth(1500);
-			primaryStage.setHeight(600);	
+			primaryStage.setHeight(900);
 			this.initRoot();
 			this.loadCustomerOverview();
 		} catch(Exception e) {
@@ -49,12 +50,5 @@ public class MainApplication extends Application {
 		rootLayout.setCenter(customerOverview);
 	}
 
-	public Stage getPrimaryStage() {
-		return primaryStage;
-	}
-
-	public void addClient() {
-		
-	}
 	
 }

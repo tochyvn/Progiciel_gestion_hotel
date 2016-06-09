@@ -10,7 +10,7 @@
 
 <BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" stylesheets="@darkTheme.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.RootLayoutController">
    <left>
-      <AnchorPane fx:id="borderPaneLeft" prefHeight="530.0" prefWidth="141.0" style="-fx-background-color: #D5F0D5;" visible="false" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="borderPaneLeft" prefHeight="570.0" prefWidth="200.0" style="-fx-background-color: #D5F0D5;" BorderPane.alignment="CENTER">
          <children>
             <Hyperlink fx:id="hyperStatistique" layoutX="12.0" layoutY="50.0" prefHeight="23.0" prefWidth="128.0" text="Statistiques" />
             <Hyperlink layoutX="12.0" layoutY="73.0" prefHeight="23.0" prefWidth="128.0" text="Restaurant" />
@@ -37,7 +37,7 @@
                   
          </children>
          <BorderPane.margin>
-            <Insets bottom="20.0" left="10.0" right="20.0" top="20.0" />
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </BorderPane.margin>
          <effect>
             <DropShadow />
@@ -45,7 +45,7 @@
       </AnchorPane>
    </left>
    <top>
-      <FlowPane fx:id="topLayout" alignment="CENTER" prefHeight="84.0" prefWidth="700.0" style="-fx-background-color: #D5F0D5;" visible="false" BorderPane.alignment="CENTER">
+      <FlowPane fx:id="topLayout" alignment="CENTER" prefHeight="84.0" prefWidth="700.0" style="-fx-background-color: #D5F0D5;" BorderPane.alignment="CENTER">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -58,7 +58,7 @@
       </FlowPane>
    </top>
    <bottom>
-      <AnchorPane fx:id="bottomLayout" prefHeight="38.0" prefWidth="700.0" style="-fx-background-color: #D5F0D5;" visible="false" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="38.0" prefWidth="700.0" style="-fx-background-color: #D5F0D5;" BorderPane.alignment="CENTER">
          <effect>
             <DropShadow />
          </effect>
@@ -72,13 +72,10 @@
          <right>
             <AnchorPane prefHeight="538.0" prefWidth="67.0" BorderPane.alignment="CENTER" />
          </right>
-         <effect>
-            <DropShadow />
-         </effect>
       </BorderPane>
    </center>
    <right>
-      <AnchorPane fx:id="rightLayout" prefHeight="538.0" prefWidth="96.0" style="-fx-background-color: #D5F0D5;" visible="false" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="538.0" prefWidth="108.0" style="-fx-background-color: #D5F0D5;" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets left="10.0" right="10.0" />
          </BorderPane.margin>

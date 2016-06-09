@@ -46,6 +46,12 @@ public class RootLayoutController implements Initializable {
 	@FXML
 	private FlowPane topLayout;
 	
+	@FXML
+	private AnchorPane bottomLayout;
+	
+	@FXML 
+	private AnchorPane rightLayout;
+	
 	
 	/* (non-Javadoc)
 	 * @see javafx.fxml.Initializable#initialize(java.net.URL, java.util.ResourceBundle)
@@ -53,7 +59,10 @@ public class RootLayoutController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		if (UtilisateurManager.isConnected) {
+			borderPaneLeft.setVisible(true);
 			topLayout.setVisible(true);
+			rightLayout.setVisible(true);
+			bottomLayout.setVisible(true);
 			Animation.doAnimationProperty(topLayout.opacityProperty(), 0, 2000);
 		}
 		if (!UtilisateurManager.isConnected) {
@@ -107,7 +116,7 @@ public class RootLayoutController implements Initializable {
 	}
 	
 	/**
-	 * Gestion de l'affichage du menu enfonction du niveau d'accès de l'utilisateur connecté
+	 * Gestion de l'affichage du menu enfonction du niveau d'accï¿½s de l'utilisateur connectï¿½
 	 */
 	private void chechAuthentificationType() {
 		String droit = UtilisateurManager.typeCompte;

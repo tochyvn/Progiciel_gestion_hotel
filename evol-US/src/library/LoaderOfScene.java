@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 
 public class LoaderOfScene {
@@ -67,6 +68,9 @@ public class LoaderOfScene {
 				break;
 			case 2:
 				rootLayout = (GridPane)loader.load();
+				break;
+			case 3:
+				rootLayout = (FlowPane)loader.load();
 				break;
 			}
 		} catch (IOException e) {

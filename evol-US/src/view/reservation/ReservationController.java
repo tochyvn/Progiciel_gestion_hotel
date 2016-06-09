@@ -22,19 +22,41 @@ public class ReservationController implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
 		ListRoom listeChambres = new ListRoom(this.getChambres());
-		listeChambres.setPrefWidth(root.getPrefWidth()+200);
+		listeChambres.setPrefSize(1000, 450);
 		ScrollPane scrollable = new ScrollPane();
+		/*
+		scrollable.setMaxSize(1000, 450);
+		scrollable.setMinSize(600, 450);
+		scrollable.setPrefSize(1000, 450);
+		*/
+		//scrollable.setMaxSize(600, 600);
+		scrollable.autosize();
+		scrollable.setHbarPolicy(ScrollBarPolicy.AS_NEEDED);
+		scrollable.setVbarPolicy(ScrollBarPolicy.AS_NEEDED);
 		scrollable.setContent(listeChambres);
+		/*
 		scrollable.setHbarPolicy(ScrollBarPolicy.NEVER);
 		scrollable.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		*/
 		
-		scrollable.setPrefHeight(root.getPrefHeight()+200);
-		scrollable.setPrefWidth(root.getPrefWidth()+200);
-		scrollable.setMinHeight(100.0);
-		scrollable.setMinWidth(100.0);
+		//test
+		//scrollable.fitToWidthProperty();
+		//scrollable.fitToHeightProperty();
+		//scrollable.setPrefViewportHeight(450); 
+		//scrollable.setPrefViewportWidth(1000);
+		//test
+		
+		
+		scrollable.setPrefHeight(450);
+		scrollable.setPrefWidth(1000);
+		
+		
 		System.out.println(root.getPrefHeight());
 		System.out.println(root.getPrefWidth());
+		scrollable.setPannable(true);
 		root.getChildren().add(scrollable);
+		//scrollable.setFitToHeight(true);
+		//scrollable.setFitToWidth(true);
 		
 		//root.setCenter(listeChambres.getParentScrollPane());
 	}

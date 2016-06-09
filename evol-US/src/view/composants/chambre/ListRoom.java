@@ -12,7 +12,7 @@ import model.beans.Chambre1;
 public class ListRoom extends FlowPane {
 	
 	private ObservableList<BoxRoom> rooms;
-	//La chambre selectionnée dans la liste de chambre
+	//La chambre selectionnï¿½e dans la liste de chambre
 	public static Chambre1 roomSelected;
 
 	
@@ -55,7 +55,7 @@ public class ListRoom extends FlowPane {
 		for (Chambre1 chambre : chambres) {
 			BoxRoom boxRoom = new BoxRoom(chambre);
 			this.getChildren().add(boxRoom);
-			//Ici on met une marge entre les différentes BoxRoom <====> Chambre
+			//Ici on met une marge entre les diffï¿½rentes BoxRoom <====> Chambre
 			setMargin(boxRoom, new Insets(20, 10, 10, 20));
 		}
 	}
