@@ -1,4 +1,4 @@
-package view.reservation;
+package view.listeChambre;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import model.beans.Chambre1;
 import model.beans.EtatChambre;
 import view.composants.chambre.ListRoom;
 
-public class ReservationController implements Initializable {
+public class ListeChambreController implements Initializable {
 	
 	@FXML
 	private AnchorPane root;
