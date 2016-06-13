@@ -14,7 +14,7 @@
          <children>
             <Hyperlink fx:id="hyperStatistique" layoutX="12.0" layoutY="50.0" prefHeight="23.0" prefWidth="128.0" text="Statistiques" />
             <Hyperlink layoutX="12.0" layoutY="73.0" prefHeight="23.0" prefWidth="128.0" text="Restaurant" />
-            <Hyperlink layoutX="37.0" layoutY="96.0" prefHeight="23.0" prefWidth="105.0" text="Réservations" />
+            <Hyperlink fx:id="hyperReservation" layoutX="37.0" layoutY="96.0" onMouseClicked="#loadViewReservation" prefHeight="23.0" prefWidth="105.0" text="Réservations" />
             <Hyperlink layoutX="37.0" layoutY="119.0" prefHeight="23.0" prefWidth="105.0" text="Stock" />
             <Hyperlink layoutX="12.0" layoutY="142.0" prefHeight="23.0" prefWidth="128.0" text="Hebergement" />
             <Hyperlink layoutX="37.0" layoutY="165.0" prefHeight="23.0" prefWidth="105.0" text="Réservations" />
@@ -30,7 +30,7 @@
             <Hyperlink layoutX="37.0" layoutY="395.0" prefHeight="23.0" prefWidth="105.0" text="Nettoyage" />
             <Hyperlink layoutX="12.0" layoutY="418.0" prefHeight="23.0" prefWidth="128.0" text="Maintenance" />
             <Hyperlink layoutX="37.0" layoutY="441.0" prefHeight="23.0" prefWidth="105.0" text="Réparation" />
-            <Hyperlink layoutX="12.0" layoutY="464.0" prefHeight="23.0" prefWidth="128.0" text="Employés" />
+            <Hyperlink fx:id="hyperEmployee" layoutX="12.0" layoutY="464.0" onMouseClicked="#loadViewEmployee" prefHeight="23.0" prefWidth="128.0" text="Employés" />
             <Label layoutX="14.0" layoutY="14.0" text="Evol-Us" />
             <Label layoutX="12.0" layoutY="487.0" text="Aurora © 2016" />
             <Hyperlink layoutX="8.0" layoutY="507.0" text="Mentions légales" />

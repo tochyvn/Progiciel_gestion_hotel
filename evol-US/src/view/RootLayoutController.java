@@ -5,16 +5,19 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import controller.UtilisateurManager;
+import javafx.beans.property.DoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import library.Animation;
+import library.LoaderOfScene;
 
 /**
  * @author silnti
@@ -51,6 +54,12 @@ public class RootLayoutController implements Initializable {
 	
 	@FXML 
 	private AnchorPane rightLayout;
+	
+	@FXML
+	private Hyperlink hyperReservation;
+	
+	@FXML
+	private Hyperlink hyperEmployee;
 	
 	
 	/* (non-Javadoc)
@@ -135,6 +144,22 @@ public class RootLayoutController implements Initializable {
 		if (droit != "DIRECTEUR" && droit != "HEBERGEMENT") {
 			//hyperStatistique.setVisible(false);
 		}
+	}
+	
+	@FXML
+	private void loadViewReservation() {
+		Parent reservatonOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.RESERVATION_VIEW, 1);
+		root.setCenter(reservatonOverview);
+		DoubleProperty opacity = reservatonOverview.opacityProperty();
+		Animation.doAnimationProperty(opacity, 0, 1);
+	}
+	
+	@FXML
+	private void loadViewEmployee() {
+		Parent reservatonOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.USER_VIEW, 1);
+		root.setCenter(reservatonOverview);
+		DoubleProperty opacity = reservatonOverview.opacityProperty();
+		Animation.doAnimationProperty(opacity, 0, 1);
 	}
 	
 /*
