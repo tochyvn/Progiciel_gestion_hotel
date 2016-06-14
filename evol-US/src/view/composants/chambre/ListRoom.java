@@ -25,7 +25,7 @@ public class ListRoom extends FlowPane {
 	}
 
 	public ListRoom(ArrayList<Chambre1> chambres) {
-		this.rooms = FXCollections.observableArrayList();
+		this();
 		this.setStyle("-fx-background-color: #D5F0D5;");
 		this.putRoom(chambres);
 	}

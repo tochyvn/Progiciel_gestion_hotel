@@ -62,10 +62,10 @@ public class BoxReservation extends VBox {
 			System.out.println(reservation);
 			
 			//if (ListeReservation.reservationSelected.getStatut() == EtatReservation.EN_COURS) {
-				Scene scene = Popup.loadScene(ViewInterfaceConstante.POPUP_ROOT_VIEW, 1);
+				Scene scene = Popup.loadScene(ViewInterfaceConstante.UPDATE_RESERVATION_VIEW, 1);
 				//System.out.println(event.getSource());
 				Popup popup = new Popup(scene);
-				popup.setTitle("My modal window");
+				popup.setTitle("Modifier ma reservation");
 				popup.initOwner((((Node) event.getSource()).getScene()).getWindow());
 				
 				//Definir une action � la fermeture de la popup

@@ -11,4 +11,8 @@ public interface ViewInterfaceConstante {
 	public final static String POPUP_ROOT_VIEW = VIEW_PACKAGE+"composants/popup/PopupOverview.fxml";
 	public final static String RESERVATION_VIEW = VIEW_PACKAGE+"listeReservation/ListeReservationOverview.fxml";
 	
+	public final static String ADD_RESERVATION_VIEW = VIEW_PACKAGE+"ajoutReservation/AjoutReservationOverview.fxml";
+	public final static String UPDATE_RESERVATION_VIEW = VIEW_PACKAGE+"updateReservation/UpdateReservationOverview.fxml";
+	
+	
 }

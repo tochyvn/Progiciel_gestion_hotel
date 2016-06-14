@@ -33,6 +33,7 @@ public class BoxRoom extends VBox {
 		this(5.0);
 		this.chambre = chambre;
 		this.getStyleClass().add("box-room-shadow");
+		//Couleur du composant en fonction de l'état de la chambre
 		if (chambre.getEtat() == EtatChambre.LIBRE) {
 			this.setStyle("-fx-background-color: #4CAF50;");
 		}else {
@@ -50,20 +51,24 @@ public class BoxRoom extends VBox {
 		this.addEvent();
 	}
 	
+	/**
+	 * Permet l'ouverture de la popup d'ajout d'une nouvelle reservation au clic
+	 * sur une chambre vide
+	 */
 	public void addEvent() {
 		this.setOnMouseClicked((event) -> {
 			
-			//On recup�re la BoxRoom sur laquelle l'on a cliqu�
+			//On recupère la BoxRoom sur laquelle l'on a cliqué
 			BoxRoom room = (BoxRoom) event.getSource();
-			//On affecte cette chambre � la variable statique afin de pouvoir la r�cup�rer dans la Popup
+			//On affecte cette chambre à la variable statique afin de pouvoir la récupérer dans la Popup
 			ListRoom.roomSelected = room.chambre;
 			System.out.println(room);
 			
 			if (ListRoom.roomSelected.getEtat() == EtatChambre.LIBRE) {
-				Scene scene = Popup.loadScene(ViewInterfaceConstante.POPUP_ROOT_VIEW, 1);
+				Scene scene = Popup.loadScene(ViewInterfaceConstante.ADD_RESERVATION_VIEW, 1);
 				//System.out.println(event.getSource());
 				Popup popup = new Popup(scene);
-				popup.setTitle("My modal window");
+				popup.setTitle("Nouvelle reservation");
 				popup.initOwner((((Node) event.getSource()).getScene()).getWindow());
 				
 				//Definir une action � la fermeture de la popup
