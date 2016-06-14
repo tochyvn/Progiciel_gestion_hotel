@@ -61,6 +61,9 @@ public class RootLayoutController implements Initializable {
 	@FXML
 	private Hyperlink hyperEmployee;
 	
+	@FXML
+	private Hyperlink hyperChambre;
+	
 	
 	/* (non-Javadoc)
 	 * @see javafx.fxml.Initializable#initialize(java.net.URL, java.util.ResourceBundle)
@@ -162,5 +165,12 @@ public class RootLayoutController implements Initializable {
 		Animation.doAnimationProperty(opacity, 0, 1);
 	}
 	
+	@FXML
+	private void loadViewChambre() {
+		Parent chambreOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.CHAMBRE_VIEW, 1);
+		root.setCenter(chambreOverview);
+		DoubleProperty translateY = chambreOverview.translateYProperty();
+		Animation.doAnimationProperty(translateY, -70, 10);
+	}
 
 }

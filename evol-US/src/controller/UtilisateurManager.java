@@ -29,7 +29,7 @@ public class UtilisateurManager {
 	/**
 	 * Permet de connaître le type d'utilisateur connecté
 	 */
-	public static String typeCompte = "AUCUN(PAR DEFAUT)";
+	public static String typeCompte = "AUCUN";
 
 	private UtilisateurManager() {
 		utilisateurDAO = new UtilisateurDAO(Connexion.getConnexion());

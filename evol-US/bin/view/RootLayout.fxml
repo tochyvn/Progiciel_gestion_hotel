@@ -16,7 +16,7 @@
             <Hyperlink layoutX="12.0" layoutY="73.0" prefHeight="23.0" prefWidth="128.0" text="Restaurant" />
             <Hyperlink fx:id="hyperReservation" layoutX="37.0" layoutY="96.0" onMouseClicked="#loadViewReservation" prefHeight="23.0" prefWidth="105.0" text="Réservations" />
             <Hyperlink layoutX="37.0" layoutY="119.0" prefHeight="23.0" prefWidth="105.0" text="Stock" />
-            <Hyperlink layoutX="12.0" layoutY="142.0" prefHeight="23.0" prefWidth="128.0" text="Hebergement" />
+            <Hyperlink fx:id="hyperChambre" layoutX="12.0" layoutY="142.0" onMouseClicked="#loadViewChambre" prefHeight="23.0" prefWidth="128.0" text="Hebergement" />
             <Hyperlink layoutX="37.0" layoutY="165.0" prefHeight="23.0" prefWidth="105.0" text="Réservations" />
             <Hyperlink layoutX="37.0" layoutY="188.0" prefHeight="23.0" prefWidth="126.0" text="Agence de voyages" />
             <Hyperlink layoutX="37.0" layoutY="211.0" prefHeight="23.0" prefWidth="105.0" text="Livre d'or" />
