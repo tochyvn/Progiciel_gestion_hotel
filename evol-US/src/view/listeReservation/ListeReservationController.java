@@ -30,7 +30,7 @@ public class ListeReservationController implements Initializable {
 		ListeReservation listes = new ListeReservation(getReservations());
 		//listes.setPrefSize(1100, 450);
 		//listes.setOrientation(Orientation.VERTICAL);
-		listes.setPrefSize(1190, FlowPane.BASELINE_OFFSET_SAME_AS_HEIGHT);
+		listes.setPrefSize(1150, FlowPane.BASELINE_OFFSET_SAME_AS_HEIGHT);
 		
 		//listes.setLayoutX(224.0);
 		//listes.setLayoutX(100.0);
