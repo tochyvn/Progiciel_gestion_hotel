@@ -8,7 +8,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.FlowPane;
 import model.beans.Chambre1;
 import model.beans.Client;
 import model.beans.Reservation;
@@ -22,39 +21,19 @@ public class ListeReservationController implements Initializable {
 	@FXML
 	private ScrollPane rootSecond;
 	
-	@FXML
-	private FlowPane rootThird;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		ListeReservation listes = new ListeReservation(getReservations());
-		//listes.setPrefSize(1100, 450);
-		//listes.setOrientation(Orientation.VERTICAL);
-		listes.setPrefSize(1150, FlowPane.BASELINE_OFFSET_SAME_AS_HEIGHT);
-		
-		//listes.setLayoutX(224.0);
-		//listes.setLayoutX(100.0);
-		/*
-		ScrollPane scrollable = new ScrollPane();
-	
-		scrollable.autosize();
-		scrollable.setHbarPolicy(ScrollBarPolicy.NEVER);
-		scrollable.setVbarPolicy(ScrollBarPolicy.AS_NEEDED);
-		scrollable.setContent(listes);
-
-		scrollable.setPrefHeight(450);
-		scrollable.setPrefWidth(1000);
-		
-		
-		System.out.println(root.getPrefHeight());
-		System.out.println(root.getPrefWidth());
-		scrollable.setPannable(true);
-		*/
-		//root.getChildren().add(scrollable);
-		//((ScrollPane)root.getChildren().get(0)).setContent(listes);
 		rootSecond.setContent(listes);
+		rootSecond.setFitToHeight(true);
+		rootSecond.setFitToWidth(true);
 	}
 	
+	/**
+	 * Liste de reservation à récupérer dans la base de donnée
+	 * @return
+	 */
 	private ArrayList<Reservation> getReservations() {
 		Chambre1 chambre = new Chambre1("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
 		Chambre1 chambre1 = new Chambre1("300 m2", "0755032386", "2", "2", false, false, false, 250.0);

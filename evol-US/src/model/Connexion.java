@@ -26,7 +26,7 @@ public class Connexion {
 		connexion = null;
 		try {
 			Class.forName(DRIVER);
-			connexion = DriverManager.getConnection(URL, USER, PASSWD);
+			connexion = DriverManager.getConnection(URL1, USER1, PASSWD1);
 			System.out.println("Connexion etablie  ==========> "+connexion);
 		} catch (SQLException e) { 
 			System.out.println("Un problème est survenue lors de l'établissement de la connexion\r\n"+e.getMessage());

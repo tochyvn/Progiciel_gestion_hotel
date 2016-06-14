@@ -7,7 +7,6 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.layout.AnchorPane;
 import model.beans.Chambre1;
 import model.beans.EtatChambre;
@@ -17,48 +16,17 @@ public class ListeChambreController implements Initializable {
 	
 	@FXML
 	private AnchorPane root;
+	
+	@FXML
+	private ScrollPane rootSecond;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
 		ListRoom listeChambres = new ListRoom(this.getChambres());
-		listeChambres.setPrefSize(1000, 450);
-		ScrollPane scrollable = new ScrollPane();
-		/*
-		scrollable.setMaxSize(1000, 450);
-		scrollable.setMinSize(600, 450);
-		scrollable.setPrefSize(1000, 450);
-		*/
-		//scrollable.setMaxSize(600, 600);
-		scrollable.autosize();
-		scrollable.setHbarPolicy(ScrollBarPolicy.AS_NEEDED);
-		scrollable.setVbarPolicy(ScrollBarPolicy.AS_NEEDED);
-		scrollable.setContent(listeChambres);
-		/*
-		scrollable.setHbarPolicy(ScrollBarPolicy.NEVER);
-		scrollable.setVbarPolicy(ScrollBarPolicy.ALWAYS);
-		*/
-		
-		//test
-		//scrollable.fitToWidthProperty();
-		//scrollable.fitToHeightProperty();
-		//scrollable.setPrefViewportHeight(450); 
-		//scrollable.setPrefViewportWidth(1000);
-		//test
-		
-		
-		scrollable.setPrefHeight(450);
-		scrollable.setPrefWidth(1000);
-		
-		
-		System.out.println(root.getPrefHeight());
-		System.out.println(root.getPrefWidth());
-		scrollable.setPannable(true);
-		root.getChildren().add(scrollable);
-		//scrollable.setFitToHeight(true);
-		//scrollable.setFitToWidth(true);
-		
-		//root.setCenter(listeChambres.getParentScrollPane());
+		rootSecond.setContent(listeChambres);
+		rootSecond.setFitToHeight(true);
+		rootSecond.setFitToWidth(true);
 	}
 	
 	private ArrayList<Chambre1> getChambres() {
