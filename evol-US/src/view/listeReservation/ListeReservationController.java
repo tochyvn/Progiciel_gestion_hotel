@@ -7,8 +7,8 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import model.beans.Chambre1;
 import model.beans.Client;
 import model.beans.Reservation;
@@ -18,15 +18,27 @@ public class ListeReservationController implements Initializable {
 	
 	@FXML
 	private AnchorPane root;
+	
+	@FXML
+	private ScrollPane rootSecond;
+	
+	@FXML
+	private FlowPane rootThird;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		ListeReservation listes = new ListeReservation(getReservations());
-		listes.setPrefSize(1000, 450);
+		//listes.setPrefSize(1100, 450);
+		//listes.setOrientation(Orientation.VERTICAL);
+		listes.setPrefSize(1190, FlowPane.BASELINE_OFFSET_SAME_AS_HEIGHT);
+		
+		//listes.setLayoutX(224.0);
+		//listes.setLayoutX(100.0);
+		/*
 		ScrollPane scrollable = new ScrollPane();
 	
 		scrollable.autosize();
-		scrollable.setHbarPolicy(ScrollBarPolicy.AS_NEEDED);
+		scrollable.setHbarPolicy(ScrollBarPolicy.NEVER);
 		scrollable.setVbarPolicy(ScrollBarPolicy.AS_NEEDED);
 		scrollable.setContent(listes);
 
@@ -37,8 +49,10 @@ public class ListeReservationController implements Initializable {
 		System.out.println(root.getPrefHeight());
 		System.out.println(root.getPrefWidth());
 		scrollable.setPannable(true);
-		root.getChildren().add(scrollable);
-		
+		*/
+		//root.getChildren().add(scrollable);
+		//((ScrollPane)root.getChildren().get(0)).setContent(listes);
+		rootSecond.setContent(listes);
 	}
 	
 	private ArrayList<Reservation> getReservations() {
@@ -77,11 +91,86 @@ public class ListeReservationController implements Initializable {
 		reservation3.setClient(client);
 		reservation3.setId(3);
 		
+		
+		Reservation reservation5 = new Reservation();
+		reservation5.setChambre(chambre2);
+		reservation5.setClient(client);
+		reservation5.setId(2);
+		
+		Reservation reservation4 = new Reservation();
+		reservation4.setChambre(chambre1);
+		reservation4.setClient(client);
+		reservation4.setId(1);
+		
+		Reservation reservation6 = new Reservation();
+		reservation6.setChambre(chambre3);
+		reservation6.setClient(client);
+		reservation6.setId(3);
+		
+		Reservation reservation7 = new Reservation();
+		reservation7.setChambre(chambre3);
+		reservation7.setClient(client);
+		reservation7.setId(3);
+		
+		Reservation reservation8 = new Reservation();
+		reservation8.setChambre(chambre);
+		reservation8.setClient(client);
+		reservation8.setId(4);
+		
+		Reservation reservation9 = new Reservation();
+		reservation9.setChambre(chambre2);
+		reservation9.setClient(client);
+		reservation9.setId(2);
+		
+		Reservation reservation10 = new Reservation();
+		reservation10.setChambre(chambre1);
+		reservation10.setClient(client);
+		reservation10.setId(1);
+		
+		Reservation reservation11 = new Reservation();
+		reservation11.setChambre(chambre3);
+		reservation11.setClient(client);
+		reservation11.setId(3);
+		
+		
+		Reservation reservation12 = new Reservation();
+		reservation12.setChambre(chambre2);
+		reservation12.setClient(client);
+		reservation12.setId(2);
+		
+		Reservation reservation13 = new Reservation();
+		reservation13.setChambre(chambre1);
+		reservation13.setClient(client);
+		reservation13.setId(1);
+		
+		Reservation reservation15 = new Reservation();
+		reservation15.setChambre(chambre3);
+		reservation15.setClient(client);
+		reservation15.setId(3);
+		
+		Reservation reservation14 = new Reservation();
+		reservation14.setChambre(chambre3);
+		reservation14.setClient(client);
+		reservation14.setId(3);
+		
 		ArrayList<Reservation> reservations = new ArrayList<Reservation>();
 		reservations.add(reservation);
 		reservations.add(reservation1);
 		reservations.add(reservation2);
 		reservations.add(reservation3);
+		reservations.add(reservation4);
+		reservations.add(reservation5);
+		reservations.add(reservation6);
+		reservations.add(reservation7);
+		
+		reservations.add(reservation8);
+		reservations.add(reservation9);
+		reservations.add(reservation10);
+		reservations.add(reservation11);
+		reservations.add(reservation12);
+		reservations.add(reservation13);
+		reservations.add(reservation14);
+		reservations.add(reservation15);
 		
 		return reservations;
 	}

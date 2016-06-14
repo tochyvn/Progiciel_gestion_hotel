@@ -162,47 +162,5 @@ public class RootLayoutController implements Initializable {
 		Animation.doAnimationProperty(opacity, 0, 1);
 	}
 	
-/*
-	@FXML
-	private void handleMenuItemAction(ActionEvent e) {
-		System.out.println(getClass().getName());
-		if (e.getSource() == menuItemUser) {
-			System.out.println("Vous avez cliquez sur le menuItemUser");
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource(ViewInterface.USER_VIEW));
-			AnchorPane userOverview = null;
-			try {
-				userOverview = (AnchorPane)loader.load();
-				System.out.println(root.getScene());
-				root.setCenter(userOverview);
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-		}else if (e.getSource() == menuItemCustomer) {
-			System.out.println("Vous avez cliquez sur le menuItemCustomer");
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource(ViewInterface.CLIENT_VIEW));
-			AnchorPane customerOverview = null;
-			try {
-				customerOverview = (AnchorPane)loader.load();
-				root.setCenter(customerOverview);
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-		}else if (e.getSource() == menuItemConnexion) {
-			System.out.println("Vous avez cliquez sur le menuItemConnexion");
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource(ViewInterface.CONNEXION_VIEW));
-			AnchorPane compteOverview = null;
-			try {
-				compteOverview = (AnchorPane)loader.load();
-				root.setCenter(compteOverview);
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-
-		}
-	}
-*/
 
 }

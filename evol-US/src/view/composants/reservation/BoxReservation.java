@@ -10,7 +10,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.WindowEvent;
-import model.beans.EtatReservation;
 import model.beans.Reservation;
 import view.ViewInterfaceConstante;
 import view.composants.chambre.ListRoom;

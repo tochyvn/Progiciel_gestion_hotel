@@ -6,6 +6,7 @@ import application.MainApplication;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
@@ -45,6 +46,9 @@ public class LoaderOfScene {
 			case 2:
 				rootLayout = (GridPane)loader.load();
 				break;
+			case 3:
+				rootLayout = (ScrollPane)loader.load();
+				break;	
 			}
 			scene = new Scene(rootLayout);
 		} catch (IOException e) {
@@ -71,6 +75,9 @@ public class LoaderOfScene {
 				break;
 			case 3:
 				rootLayout = (FlowPane)loader.load();
+				break;
+			case 4:
+				rootLayout = (ScrollPane)loader.load();
 				break;
 			}
 		} catch (IOException e) {
