@@ -22,7 +22,6 @@ public class Animation {
         timeline.play();
 	}
 	
-	/*
 	public static void doAnimationTanslateX(DoubleProperty translateX, double start, double end) {
 		Timeline timeline = new Timeline();
         timeline.getKeyFrames().addAll(
@@ -35,5 +34,4 @@ public class Animation {
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
 	}
-	*/
 }

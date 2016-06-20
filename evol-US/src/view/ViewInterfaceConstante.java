@@ -3,6 +3,7 @@ package view;
 public interface ViewInterfaceConstante {
 	
 	public final static String VIEW_PACKAGE = "/view/";
+	public final static String APPLICATION_CSS = VIEW_PACKAGE+"application.css";
 	public final static String USER_VIEW = VIEW_PACKAGE+"user/userOverview.fxml";
 	public final static String CONNEXION_VIEW = VIEW_PACKAGE+"compte/CompteOverview.fxml";
 	public final static String CLIENT_VIEW = VIEW_PACKAGE+"client/ClientOverview.fxml";
@@ -13,6 +14,9 @@ public interface ViewInterfaceConstante {
 	
 	public final static String ADD_RESERVATION_VIEW = VIEW_PACKAGE+"ajoutReservation/AjoutReservationOverview.fxml";
 	public final static String UPDATE_RESERVATION_VIEW = VIEW_PACKAGE+"updateReservation/UpdateReservationOverview.fxml";
+	public final static String ADD_RESERVATION_HOTEL_MODAL = VIEW_PACKAGE+"composants/popup/PopupHotelOverview.fxml";
+	public final static String ADD_RESERVATION_RESTAURANT_MODAL = VIEW_PACKAGE+"composants/popup/PopupRestaurantOverview.fxml";
+	public final static String ADD_RESERVATION_SPA_MODAL = VIEW_PACKAGE+"composants/popup/PopupSpaOverview.fxml";
 	
 	
 }

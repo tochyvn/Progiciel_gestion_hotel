@@ -14,7 +14,7 @@ import javafx.scene.control.TextField;
 import model.beans.Utilisateur;
 
 /**
- * @author silnti
+ * @author Aurora
  *
  */
 public class CompteController implements Initializable {
@@ -41,9 +41,13 @@ public class CompteController implements Initializable {
 
 	}
 	
+	public void changeCloseColorToActivate() {
+		//connect.setStyle("-fx-background-color: #2196F3;");
+	}
+	
 	@FXML
 	private void getConnexion() {
-		System.out.println("cliquÃ©!!!!!!!!!!!!!!!");
+		System.out.println("Cliquez.");
 		
 		Utilisateur user = new Utilisateur();
 		user.setLogin(this.identifiant.getText());
@@ -54,9 +58,9 @@ public class CompteController implements Initializable {
 		int connected = UtilisateurManager.getInstance().getConnexion(user);
 		if (connected == 1) {
 			//Chargement de la vue d'accueil selon le type de user
-			System.out.println("Vous Ãªtes bien connectÃ©");
+			System.out.println("Vous êtes bien connecté.");
 		}else {
-			System.out.println("Erreur de connexion STATUS : "+connected);
+			System.out.println("Erreur de connexion STATUT : "+connected);
 		}
 		
 	}

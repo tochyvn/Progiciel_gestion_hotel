@@ -12,7 +12,7 @@ import model.beans.Chambre1;
 public class ListRoom extends FlowPane {
 	
 	private ObservableList<BoxRoom> rooms;
-	//La chambre selectionnï¿½e dans la liste de chambre
+	//La chambre selectionnée dans la liste de chambre
 	public static Chambre1 roomSelected;
 
 	

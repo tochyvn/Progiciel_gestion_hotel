@@ -71,7 +71,7 @@ public class UtilisateurManager {
 		
 		if (connected == 0) {
 			//Boite de dialogue password ou identifiant incorrect
-			System.out.println("Boite de dialogue password ou identifiant incorrect");
+			System.out.println("Boite de dialogue identifiant ou mot de passe incorrect");
 		}else if (connected == 1) {
 			//Sauvegarde de la connexion de l'utilisateur
 			isConnected = true;
@@ -108,7 +108,7 @@ public class UtilisateurManager {
 			e.printStackTrace();
 		}
 		UtilisateurManager.isConnected = false;
-		UtilisateurManager.typeCompte = "AUCUN(PAR DEFAUT)";
+		UtilisateurManager.typeCompte = "AUCUN (PAR DEFAUT)";
 	}
 
 }

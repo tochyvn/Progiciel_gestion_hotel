@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="407.0" prefWidth="619.0" styleClass="bg-green" stylesheets="@../../application.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="45.0" layoutY="104.0" text="CLIENT N° :" textFill="#fffdfd" />
+      <Label layoutX="45.0" layoutY="142.0" text="DATE :" textFill="WHITE" />
+      <Label layoutX="167.0" layoutY="47.0" prefHeight="17.0" prefWidth="268.0" text="RESERVATION" textFill="WHITE">
+         <font>
+            <Font name="Corbel" size="22.0" />
+         </font>
+      </Label>
+      <Button id="validation" layoutX="404.0" layoutY="330.0" mnemonicParsing="false" styleClass="button-green" text="VALIDER" textFill="#fffdfd" />
+      <DatePicker layoutX="151.0" layoutY="138.0" prefHeight="25.0" prefWidth="149.0" styleClass="input-grey" />
+      <Label layoutX="318.0" layoutY="142.0" text="HEURE :" textFill="WHITE" />
+      <TextField layoutX="417.0" layoutY="138.0" styleClass="input-grey" />
+      <CheckBox layoutX="152.0" layoutY="254.0" mnemonicParsing="false" text="Truc 1" />
+      <CheckBox layoutX="232.0" layoutY="254.0" mnemonicParsing="false" text="Truc 2" />
+      <CheckBox layoutX="312.0" layoutY="254.0" mnemonicParsing="false" text="Truc 3" />
+      <Label layoutX="45.0" layoutY="254.0" text="AUTRES :" textFill="WHITE" />
+      <ComboBox layoutX="151.0" layoutY="100.0" prefWidth="150.0" styleClass="input-grey" />
+   </children>
+</AnchorPane>

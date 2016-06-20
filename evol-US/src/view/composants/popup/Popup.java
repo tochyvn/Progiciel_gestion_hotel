@@ -23,8 +23,8 @@ public class Popup extends Stage {
 		super();
 		this.setScene(scene);
 		this.setResizable(false);
-		this.setWidth(550);
-		this.setHeight(400);
+		this.setWidth(619.0);
+		this.setHeight(407);
 		//Pour faire rester la popup au premier plan
 		this.initModality(Modality.APPLICATION_MODAL);
 	}
