@@ -3,10 +3,8 @@ package model.beans;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -22,10 +20,10 @@ public class Chambre {
 	private StringProperty surface;
 	private StringProperty telephone;
 	private StringProperty etage;
-	private StringProperty nbrePlace;
-	private BooleanProperty douche;
-	private BooleanProperty baignoire;
-	private BooleanProperty fumeur;
+	private IntegerProperty nbrePlace;
+	private IntegerProperty douche;
+	private IntegerProperty baignoire;
+	private IntegerProperty fumeur;
 	private DoubleProperty prix;
 	private DoubleProperty tva;
 	private EtatChambre etat;
@@ -53,20 +51,20 @@ public class Chambre {
 	 * @param etat
 	 * @param categorie
 	 */
-	public Chambre(String surface, String telephone, String etage, String nbrePlace, Boolean douche, Boolean baignoire,
-			Boolean fumeur, Double prix, Double tva) {
+	public Chambre(String surface, String telephone, String etage, Integer nbrePlace, Integer douche, Integer baignoire,
+			Integer fumeur, Double prix, Double tva) {
 		super();
 		this.surface = new SimpleStringProperty(surface);
 		this.telephone = new SimpleStringProperty(telephone);
 		this.etage = new SimpleStringProperty(etage);
-		this.nbrePlace = new SimpleStringProperty(nbrePlace);
-		this.douche = new SimpleBooleanProperty(douche);
-		this.baignoire = new SimpleBooleanProperty(baignoire);
-		this.fumeur = new SimpleBooleanProperty(fumeur);
+		this.nbrePlace = new SimpleIntegerProperty(nbrePlace);
+		this.douche = new SimpleIntegerProperty(douche);
+		this.baignoire = new SimpleIntegerProperty(baignoire);
+		this.fumeur = new SimpleIntegerProperty(fumeur);
 		this.prix = new SimpleDoubleProperty(prix);
 		this.tva = new SimpleDoubleProperty(tva);
 		this.etat = EtatChambre.LIBRE;
-		this.idChambre = new SimpleIntegerProperty(new Integer(10)); 
+		//this.idChambre = new SimpleIntegerProperty(new Integer(10)); 
 	}
 	
 	
@@ -131,63 +129,63 @@ public class Chambre {
 	}
 	
 
-	public StringProperty nbrePlaceProperty() {
+	public IntegerProperty nbrePlaceProperty() {
 		return this.nbrePlace;
 	}
 	
 
-	public String getNbrePlace() {
+	public Integer getNbrePlace() {
 		return this.nbrePlaceProperty().get();
 	}
 	
 
-	public void setNbrePlace(String nbrePlace) {
-		this.nbrePlace = new SimpleStringProperty(nbrePlace);
+	public void setNbrePlace(Integer nbrePlace) {
+		this.nbrePlace = new SimpleIntegerProperty(nbrePlace);
 	}
 	
 
-	public BooleanProperty doucheProperty() {
+	public IntegerProperty doucheProperty() {
 		return this.douche;
 	}
 	
 
-	public Boolean isDouche() {
+	public Integer isDouche() {
 		return this.doucheProperty().get();
 	}
 	
 
-	public void setDouche(Boolean douche) {
-		this.doucheProperty().set(douche);
+	public void setDouche(Integer douche) {
+		this.douche = new SimpleIntegerProperty(douche);
 	}
 	
 
-	public final BooleanProperty baignoireProperty() {
+	public final IntegerProperty baignoireProperty() {
 		return this.baignoire;
 	}
 	
 
-	public Boolean isBaignoire() {
+	public Integer isBaignoire() {
 		return this.baignoireProperty().get();
 	}
 	
 
-	public void setBaignoire(Boolean baignoire) {
-		this.baignoire = new SimpleBooleanProperty(baignoire);
+	public void setBaignoire(Integer baignoire) {
+		this.baignoire = new SimpleIntegerProperty(baignoire);
 	}
 	
 
-	public BooleanProperty fumeurProperty() {
+	public IntegerProperty fumeurProperty() {
 		return this.fumeur;
 	}
 	
 
-	public boolean isFumeur() {
+	public Integer isFumeur() {
 		return this.fumeurProperty().get();
 	}
 	
 
-	public void setFumeur(Boolean fumeur) {
-		this.fumeur = new SimpleBooleanProperty(fumeur);
+	public void setFumeur(Integer fumeur) {
+		this.fumeur = new SimpleIntegerProperty(fumeur);
 	}
 	
 
@@ -233,7 +231,54 @@ public class Chambre {
 		this.tva = new SimpleDoubleProperty(tva);
 	}
 	
+	public static EtatChambre getEtatChambreEnum(String etat) {
+		EtatChambre etatEnum = EtatChambre.LIBRE;
+		if(etat.equals("OCCUPEE")) {
+			etatEnum = EtatChambre.OCCUPEE;
+		}else if (etat.equals("MAINTENANCE")) {
+			etatEnum = EtatChambre.MAINTENANCE;
+		}
+		
+		return etatEnum;
+	}
+
+	@Override
+	public String toString() {
+		return "NUM : "+idChambre+" SURFACE : "+surface;
+	}
 	
+	public String getFumeurAffiche() {
+		String fumeur = null;
+		if (isFumeur() == 0) {
+			fumeur = "NON";
+		}else if(isFumeur() == 1) {
+			fumeur = "OUI";
+		}
+		
+		return fumeur;
+	}
+	
+	public String getBaignoireAffiche() {
+		String baignoire = null;
+		if (isBaignoire() == 0) {
+			baignoire = "NON";
+		}else if(isBaignoire() == 1) {
+			baignoire = "OUI";
+		}
+		
+		return baignoire;
+	}
+	
+	public String getDoucheAffiche() {
+		String baignoire = null;
+		if (isDouche() == 0) {
+			baignoire = "NON";
+		}else if(isDouche() == 1) {
+			baignoire = "OUI";
+		}
+		
+		return baignoire;
+	}
 	
 
 }

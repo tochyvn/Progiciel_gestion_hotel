@@ -1,6 +1,5 @@
 package view.composants.chambre;
 
-import java.util.ArrayList;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,7 +23,7 @@ public class ListRoom extends FlowPane {
 		super(orientation);
 	}
 
-	public ListRoom(ArrayList<Chambre> chambres) {
+	public ListRoom(ObservableList<Chambre> chambres) {
 		this();
 		this.setStyle("-fx-background-color: #D5F0D5;");
 		this.putRoom(chambres);
@@ -51,7 +50,7 @@ public class ListRoom extends FlowPane {
 	 * Methode qui prend en paramètre une arraylist de room et remplis la liste de Room
 	 * @param chambres
 	 */
-	private void putRoom(ArrayList<Chambre> chambres) {
+	private void putRoom(ObservableList<Chambre> chambres) {
 		for (Chambre chambre : chambres) {
 			BoxRoom boxRoom = new BoxRoom(chambre);
 			this.getChildren().add(boxRoom);
