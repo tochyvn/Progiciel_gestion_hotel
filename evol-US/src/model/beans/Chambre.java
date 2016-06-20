@@ -27,7 +27,8 @@ public class Chambre {
 	private DoubleProperty prix;
 	private DoubleProperty tva;
 	private EtatChambre etat;
-	private CategorieChambre categorie;
+	private StringProperty categorie;
+	public static double TVA = 0.75;
 	
 	public static HashMap<Integer , ArrayList<DemandeReservation>> demandes;
 	public static HashMap<Integer, ArrayList<ConfirmationReservation>> reservations;
@@ -52,7 +53,7 @@ public class Chambre {
 	 * @param categorie
 	 */
 	public Chambre(String surface, String telephone, String etage, Integer nbrePlace, Integer douche, Integer baignoire,
-			Integer fumeur, Double prix, Double tva) {
+			Integer fumeur, Double prix, String categorie) {
 		super();
 		this.surface = new SimpleStringProperty(surface);
 		this.telephone = new SimpleStringProperty(telephone);
@@ -62,9 +63,9 @@ public class Chambre {
 		this.baignoire = new SimpleIntegerProperty(baignoire);
 		this.fumeur = new SimpleIntegerProperty(fumeur);
 		this.prix = new SimpleDoubleProperty(prix);
-		this.tva = new SimpleDoubleProperty(tva);
+		this.categorie = new SimpleStringProperty(categorie);
+		this.tva = new SimpleDoubleProperty(TVA);
 		this.etat = EtatChambre.LIBRE;
-		//this.idChambre = new SimpleIntegerProperty(new Integer(10)); 
 	}
 	
 	
@@ -211,14 +212,6 @@ public class Chambre {
 		this.etat = etat;
 	}
 
-	public CategorieChambre getCategorie() {
-		return categorie;
-	}
-
-	public void setCategorie(CategorieChambre categorie) {
-		this.categorie = categorie;
-	}
-
 	public final DoubleProperty tvaProperty() {
 		return this.tva;
 	}
@@ -281,6 +274,23 @@ public class Chambre {
 		
 		return baignoire;
 	}
+
+	public final StringProperty categorieProperty() {
+		return this.categorie;
+	}
+	
+
+	public final java.lang.String getCategorie() {
+		return this.categorieProperty().get();
+	}
+	
+
+	public final void setCategorie(final java.lang.String categorie) {
+		this.categorie = new SimpleStringProperty(categorie);
+	}
+	
+	
+	
 	
 
 }

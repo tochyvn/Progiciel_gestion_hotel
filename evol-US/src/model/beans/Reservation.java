@@ -20,11 +20,11 @@ public class Reservation extends Produit {
 	}
 
 
-	public Reservation(ObjectProperty<LocalDate> dateDebut, ObjectProperty<LocalDate> dateFin, Chambre chambre,
+	public Reservation(LocalDate dateDebut, LocalDate dateFin, Chambre chambre,
 			Client client) {
-		super(chambre.getTva());
-		this.dateDebut = dateDebut;
-		this.dateFin = dateFin;
+		super(Chambre.TVA);
+		this.dateDebut = new SimpleObjectProperty<>(dateDebut);
+		this.dateFin = new SimpleObjectProperty<>(dateFin);
 		this.chambre = chambre;
 		this.client = client;
 		this.statut = EtatReservation.EN_COURS;
@@ -99,9 +99,32 @@ public class Reservation extends Produit {
 		
 		return status;
 	}
+	
+	public static EtatReservation getEtatReservationEnum(String etat) {
+		EtatReservation etatEnum = null;
+		if(etat.equals("EXPIREE")) {
+			etatEnum = EtatReservation.EXPIREE;
+		}else if (etat.equals("ANNULEE")) {
+			etatEnum = EtatReservation.ANNULEE;
+		}else if (etat.equals("LIBEREE")){
+			etatEnum = EtatReservation.LIBEREE;
+		}else if (etat.equals("ENCOURS")) {
+			etatEnum = EtatReservation.EN_COURS;
+		}
+		
+		return etatEnum;
+	}
 
 	public void setStatut(EtatReservation statut) {
 		this.statut = statut;
 	}
+
+
+	@Override
+	public String toString() {
+		return "NUM : "+getId()+" Client : "+getClient()+" Chambre : "+getChambre();
+	}
+	
+	
 
 }

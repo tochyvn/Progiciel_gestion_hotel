@@ -63,7 +63,7 @@ public class ChambreDAO extends DAO<Chambre> {
 						resultat.getInt("baignoire"),
 						resultat.getInt("fumeur"),
 						resultat.getDouble("tarif"),
-						resultat.getDouble("tva")
+						resultat.getString("categorie")
 						);
 				chambre.setEtat(Chambre.getEtatChambreEnum(resultat.getString("etat")));
 				chambre.setIdChambre(resultat.getInt("id_chambre"));
@@ -97,7 +97,7 @@ public class ChambreDAO extends DAO<Chambre> {
 						resultat.getInt("baignoire"),
 						resultat.getInt("fumeur"),
 						resultat.getDouble("tarif"),
-						resultat.getDouble("tva")
+						resultat.getString("categorie")
 						);
 				chambre.setEtat(Chambre.getEtatChambreEnum(resultat.getString("etat")));
 				chambre.setIdChambre(resultat.getInt("id_chambre"));
