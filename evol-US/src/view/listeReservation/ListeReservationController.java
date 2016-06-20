@@ -35,12 +35,12 @@ public class ListeReservationController implements Initializable {
 	 * @return
 	 */
 	private ArrayList<Reservation> getReservations() {
-		Chambre chambre = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
-		Chambre chambre1 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
-		Chambre chambre2 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
-		Chambre chambre3 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
+		Chambre chambre = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0, 1.5);
+		Chambre chambre1 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0, 1.5);
+		Chambre chambre2 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0, 1.5);
+		Chambre chambre3 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0, 1.5);
 		
-		chambre.setIdChambre(1);	
+		chambre.setIdChambre(1);
 		chambre1.setIdChambre(2);
 		chambre2.setIdChambre(3);	
 		chambre3.setIdChambre(4);  

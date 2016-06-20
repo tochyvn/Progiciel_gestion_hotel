@@ -30,21 +30,21 @@ public class ListeChambreController implements Initializable {
 	}
 	
 	private ArrayList<Chambre> getChambres() {
-		Chambre chambre1 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
-		Chambre chambre2 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
-		Chambre chambre3 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
-		Chambre chambre4 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
-		Chambre chambre5 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
-		Chambre chambre6 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
-		Chambre chambre7 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
-		Chambre chambre8 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
-		Chambre chambre9 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
-		Chambre chambre10 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
-		Chambre chambre11 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
-		Chambre chambre12 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
-		Chambre chambre13 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
-		Chambre chambre14 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
-		Chambre chambre = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
+		Chambre chambre1 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0, 1.5);
+		Chambre chambre2 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0, 1.5);
+		Chambre chambre3 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0, 1.5);
+		Chambre chambre4 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0, 1.5);
+		Chambre chambre5 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0, 1.5);
+		Chambre chambre6 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0, 1.5);
+		Chambre chambre7 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0, 1.5);
+		Chambre chambre8 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0, 1.5);
+		Chambre chambre9 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0, 1.5);
+		Chambre chambre10 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0, 1.5);
+		Chambre chambre11 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0, 1.5);
+		Chambre chambre12 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0, 1.5);
+		Chambre chambre13 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0, 1.5);
+		Chambre chambre14 = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0, 1.5);
+		Chambre chambre = new Chambre("300 m2", "0755032386", "2", "2", false, false, false, 250.0, 1.5);
 		chambre.setIdChambre(1);	chambre.setEtat(EtatChambre.OCCUPEE);
 		chambre1.setIdChambre(2);
 		chambre2.setIdChambre(3);	chambre2.setEtat(EtatChambre.OCCUPEE);
