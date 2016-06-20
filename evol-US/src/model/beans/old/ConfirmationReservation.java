@@ -6,7 +6,6 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import model.beans.Chambre;
 import model.beans.Client;
 
 public class ConfirmationReservation extends DemandeReservation {

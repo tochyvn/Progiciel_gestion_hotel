@@ -6,7 +6,7 @@ package model.dao;
 import java.sql.Connection;
 
 import javafx.collections.ObservableList;
-import model.beans.Chambre;
+import model.beans.old.Chambre;
 
 /**
  * @author silnti
