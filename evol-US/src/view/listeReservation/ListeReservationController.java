@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import controller.ReservationManager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
@@ -24,7 +25,7 @@ public class ListeReservationController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		ListeReservation listes = new ListeReservation(getReservations());
+		ListeReservation listes = new ListeReservation(ReservationManager.getInstance().findAll());
 		rootSecond.setContent(listes);
 		rootSecond.setFitToHeight(true);
 		rootSecond.setFitToWidth(true);

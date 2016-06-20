@@ -1,6 +1,5 @@
 package view.composants.reservation;
 
-import java.util.ArrayList;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,7 +23,7 @@ public class ListeReservation extends FlowPane{
 		super(orientation);
 	}
 
-	public ListeReservation(ArrayList<Reservation> chambres) {
+	public ListeReservation(ObservableList<Reservation> chambres) {
 		this.reservations = FXCollections.observableArrayList();
 		this.setStyle("-fx-background-color: #D5F0D5;");
 		this.putRoom(chambres);
@@ -51,7 +50,7 @@ public class ListeReservation extends FlowPane{
 	 * Methode qui prend en paramètre une arraylist de room et remplis la liste de Room
 	 * @param chambres
 	 */
-	private void putRoom(ArrayList<Reservation> reservations) {
+	private void putRoom(ObservableList<Reservation> reservations) {
 		for (Reservation reservation : reservations) {
 			BoxReservation boxReservation = new BoxReservation(reservation);
 			this.getChildren().add(boxReservation);

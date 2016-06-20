@@ -119,12 +119,10 @@ public class Reservation extends Produit {
 		this.statut = statut;
 	}
 
-
 	@Override
 	public String toString() {
 		return "NUM : "+getId()+" Client : "+getClient()+" Chambre : "+getChambre();
 	}
 	
 	
-
 }
