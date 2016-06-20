@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import library.Cryptographie;
 import model.beans.Chambre;
 import model.beans.Client;
 import model.beans.Reservation;
@@ -20,7 +21,26 @@ public class ReservationDAO extends DAO<Reservation> {
 
 	@Override
 	public int create(Reservation objet) {
-		// TODO Auto-generated method stub
+		/*
+		String sql = "INSERT INTO user VALUES(NULL, ?, ?, ?, ?, ?, ?, ?)";
+		int status = 0;
+		try {
+			PreparedStatement requete = this.connexion.prepareStatement(sql);
+			requete.setString(1, objet.getNom());
+			requete.setString(2, objet.getPrenom());
+			requete.setString(3, objet.getAdresse());
+			requete.setString(4, objet.getCodePostal());
+			requete.setString(5, objet.getLogin());
+			requete.setString(6, Cryptographie.encodePassword(objet.getPassword()));
+			requete.setInt(7, objet.getPoste().getIdPoste());
+			status = requete.executeUpdate();
+			
+			System.out.println("Insertion réussie waouhhh youpiiiii!!!!!!!!  "+status);
+		} catch (SQLException e) {
+			System.out.println("Erreur dans la requête SQL : "+e.getMessage());
+			//e.printStackTrace();
+		}
+		*/
 		return 0;
 	}
 
