@@ -2,14 +2,11 @@ package model.beans;
 
 import java.time.LocalDate;
 
-import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 
 public class Reservation extends Produit {
 	
-	private IntegerProperty id;
 	private ObjectProperty<LocalDate> dateDebut;
 	private ObjectProperty<LocalDate> dateFin;
 	private ObjectProperty<LocalDate> date;
@@ -25,7 +22,7 @@ public class Reservation extends Produit {
 
 	public Reservation(ObjectProperty<LocalDate> dateDebut, ObjectProperty<LocalDate> dateFin, Chambre chambre,
 			Client client) {
-		super();
+		super(chambre.getTva());
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
 		this.chambre = chambre;
@@ -103,23 +100,8 @@ public class Reservation extends Produit {
 		return status;
 	}
 
-
 	public void setStatut(EtatReservation statut) {
 		this.statut = statut;
 	}
-
-
-	public final IntegerProperty idProperty() {
-		return this.id;
-	}
-
-	public final int getId() {
-		return this.idProperty().get();
-	}
-
-	public final void setId(final int id) {
-		this.id = new SimpleIntegerProperty(id);
-	}
-	
 
 }

@@ -7,7 +7,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 
 public abstract class Produit {
 
-	private IntegerProperty idProduit;
+	private IntegerProperty id;
 	private DoubleProperty tva;
 	
 	
@@ -19,16 +19,16 @@ public abstract class Produit {
 		this.tva = new SimpleDoubleProperty(tva);
 	}
 
-	public IntegerProperty idProduitProperty() {
-		return this.idProduit;
+	public IntegerProperty idProperty() {
+		return this.id;
 	}
 
-	public int getIdProduit() {
-		return this.idProduitProperty().get();
+	public int getId() {
+		return this.idProperty().get();
 	}
 	
-	public void setIdProduit(int idProduit) {
-		this.idProduit = new SimpleIntegerProperty(idProduit);
+	public void setId(int idProduit) {
+		this.id = new SimpleIntegerProperty(idProduit);
 	}
 
 	public final DoubleProperty tvaProperty() {
@@ -44,9 +44,5 @@ public abstract class Produit {
 	public final void setTva(final double tva) {
 		this.tva = new SimpleDoubleProperty(tva);
 	}
-	
-	
-	
-	
 
 }

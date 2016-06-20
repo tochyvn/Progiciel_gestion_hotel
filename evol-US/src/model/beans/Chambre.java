@@ -27,6 +27,7 @@ public class Chambre {
 	private BooleanProperty baignoire;
 	private BooleanProperty fumeur;
 	private DoubleProperty prix;
+	private DoubleProperty tva;
 	private EtatChambre etat;
 	private CategorieChambre categorie;
 	
@@ -53,7 +54,7 @@ public class Chambre {
 	 * @param categorie
 	 */
 	public Chambre(String surface, String telephone, String etage, String nbrePlace, Boolean douche, Boolean baignoire,
-			Boolean fumeur, Double prix) {
+			Boolean fumeur, Double prix, Double tva) {
 		super();
 		this.surface = new SimpleStringProperty(surface);
 		this.telephone = new SimpleStringProperty(telephone);
@@ -63,9 +64,12 @@ public class Chambre {
 		this.baignoire = new SimpleBooleanProperty(baignoire);
 		this.fumeur = new SimpleBooleanProperty(fumeur);
 		this.prix = new SimpleDoubleProperty(prix);
+		this.tva = new SimpleDoubleProperty(tva);
 		this.etat = EtatChambre.LIBRE;
 		this.idChambre = new SimpleIntegerProperty(new Integer(10)); 
 	}
+	
+	
 
 	public final IntegerProperty idChambreProperty() {
 		return this.idChambre;
@@ -216,6 +220,19 @@ public class Chambre {
 	public void setCategorie(CategorieChambre categorie) {
 		this.categorie = categorie;
 	}
+
+	public final DoubleProperty tvaProperty() {
+		return this.tva;
+	}
+	
+	public final double getTva() {
+		return this.tvaProperty().get();
+	}
+	
+	public final void setTva(final double tva) {
+		this.tva = new SimpleDoubleProperty(tva);
+	}
+	
 	
 	
 
