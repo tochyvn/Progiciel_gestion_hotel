@@ -1,7 +1,10 @@
 /**
  * 
  */
-package model.beans;
+package model.beans.old;
+
+import model.beans.Chambre;
+import model.beans.Client;
 
 /**
  * @author silnti

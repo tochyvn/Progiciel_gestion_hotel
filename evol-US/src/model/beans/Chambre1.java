@@ -11,6 +11,8 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import model.beans.old.ConfirmationReservation;
+import model.beans.old.DemandeReservation;
 
 //import java.util.Collection;
 

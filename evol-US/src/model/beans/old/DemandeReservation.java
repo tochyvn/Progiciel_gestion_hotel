@@ -1,9 +1,12 @@
-package model.beans;
+package model.beans.old;
 
 import java.time.LocalDate;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import model.beans.Chambre;
+import model.beans.Client;
+import model.beans.Produit;
 
 public class DemandeReservation extends Produit {
 

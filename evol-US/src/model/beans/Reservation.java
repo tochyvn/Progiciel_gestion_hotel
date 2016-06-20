@@ -7,7 +7,7 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 
-public class Reservation {
+public class Reservation extends Produit {
 	
 	private IntegerProperty id;
 	private ObjectProperty<LocalDate> dateDebut;
@@ -34,8 +34,6 @@ public class Reservation {
 		this.date = new SimpleObjectProperty<>(LocalDate.now());
 	}
 
-	
-
 	public final ObjectProperty<LocalDate> dateDebutProperty() {
 		return this.dateDebut;
 	}
@@ -45,7 +43,7 @@ public class Reservation {
 	}
 
 	public final void setDateDebut(final LocalDate dateDebut) {
-		this.dateDebutProperty().set(dateDebut);
+		this.dateDebut = new SimpleObjectProperty<>(dateDebut);
 	}
 
 	public final ObjectProperty<LocalDate> dateFinProperty() {
@@ -57,7 +55,7 @@ public class Reservation {
 	}
 
 	public final void setDateFin(final LocalDate dateFin) {
-		this.dateFinProperty().set(dateFin);
+		this.dateFin = new SimpleObjectProperty<>(dateFin);
 	}
 
 	public final ObjectProperty<LocalDate> dateProperty() {
@@ -69,7 +67,7 @@ public class Reservation {
 	}
 
 	public final void setDate(final LocalDate date) {
-		this.dateProperty().set(date);
+		this.date = new SimpleObjectProperty<>(date);
 	}
 
 	public Chambre1 getChambre() {
@@ -100,8 +98,6 @@ public class Reservation {
 			status = "EXPIREE";
 		}else if (this.statut == EtatReservation.LIBEREE) {
 			status = "LIBEREE";
-		}else {
-			status = "EN_COURS";
 		}
 		
 		return status;

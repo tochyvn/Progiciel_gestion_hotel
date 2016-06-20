@@ -1,5 +1,5 @@
 package model.beans;
 
 public enum EtatChambre {
-	MAINTENANCE, OCCUPEE, LIBRE, RESERVEE
+	MAINTENANCE, OCCUPEE, LIBRE
 }
