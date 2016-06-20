@@ -16,7 +16,7 @@ import model.beans.old.DemandeReservation;
 
 //import java.util.Collection;
 
-public class Chambre1 {
+public class Chambre {
 
 	private IntegerProperty idChambre;
 	private StringProperty surface;
@@ -28,7 +28,7 @@ public class Chambre1 {
 	private BooleanProperty fumeur;
 	private DoubleProperty prix;
 	private EtatChambre etat;
-	private CategorieChambre1 categorie;
+	private CategorieChambre categorie;
 	
 	public static HashMap<Integer , ArrayList<DemandeReservation>> demandes;
 	public static HashMap<Integer, ArrayList<ConfirmationReservation>> reservations;
@@ -36,7 +36,7 @@ public class Chambre1 {
 	/**
 	 * 
 	 */
-	public Chambre1() {
+	public Chambre() {
 		super();
 	}
 
@@ -52,7 +52,7 @@ public class Chambre1 {
 	 * @param etat
 	 * @param categorie
 	 */
-	public Chambre1(String surface, String telephone, String etage, String nbrePlace, Boolean douche, Boolean baignoire,
+	public Chambre(String surface, String telephone, String etage, String nbrePlace, Boolean douche, Boolean baignoire,
 			Boolean fumeur, Double prix) {
 		super();
 		this.surface = new SimpleStringProperty(surface);
@@ -209,11 +209,11 @@ public class Chambre1 {
 		this.etat = etat;
 	}
 
-	public CategorieChambre1 getCategorie() {
+	public CategorieChambre getCategorie() {
 		return categorie;
 	}
 
-	public void setCategorie(CategorieChambre1 categorie) {
+	public void setCategorie(CategorieChambre categorie) {
 		this.categorie = categorie;
 	}
 	

@@ -1,4 +1,4 @@
-package model.beans;
+package model.beans.old;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
@@ -65,5 +65,4 @@ public abstract class TypeProduit {
 		this.prix = new SimpleDoubleProperty(prix);
 	}
 	
-
 }

@@ -1,4 +1,4 @@
-package model.beans;
+package model.beans.old;
 
 import java.time.LocalDate;
 
@@ -6,7 +6,6 @@ import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import model.beans.old.Chambre;
 
 public class Tarif {
 

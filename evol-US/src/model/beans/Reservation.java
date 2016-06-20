@@ -13,7 +13,7 @@ public class Reservation extends Produit {
 	private ObjectProperty<LocalDate> dateDebut;
 	private ObjectProperty<LocalDate> dateFin;
 	private ObjectProperty<LocalDate> date;
-	private Chambre1 chambre;
+	private Chambre chambre;
 	private Client client;
 	private EtatReservation statut;
 	
@@ -23,7 +23,7 @@ public class Reservation extends Produit {
 	}
 
 
-	public Reservation(ObjectProperty<LocalDate> dateDebut, ObjectProperty<LocalDate> dateFin, Chambre1 chambre,
+	public Reservation(ObjectProperty<LocalDate> dateDebut, ObjectProperty<LocalDate> dateFin, Chambre chambre,
 			Client client) {
 		super();
 		this.dateDebut = dateDebut;
@@ -70,11 +70,11 @@ public class Reservation extends Produit {
 		this.date = new SimpleObjectProperty<>(date);
 	}
 
-	public Chambre1 getChambre() {
+	public Chambre getChambre() {
 		return chambre;
 	}
 
-	public void setChambre(Chambre1 chambre) {
+	public void setChambre(Chambre chambre) {
 		this.chambre = chambre;
 	}
 
