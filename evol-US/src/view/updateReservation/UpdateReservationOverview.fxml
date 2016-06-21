@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -7,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="407.0" prefWidth="619.0" styleClass="bg-orange" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="407.0" prefWidth="619.0" styleClass="bg-orange" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TextField layoutX="274.0" layoutY="100.0" styleClass="input-grey" />
       <Label layoutX="167.0" layoutY="104.0" text="NOM :" textFill="#fffdfd" />
@@ -19,7 +24,10 @@
             <Font name="Corbel" size="22.0" />
          </font>
       </Label>
-      <Button layoutX="404.0" layoutY="330.0" mnemonicParsing="false" styleClass="button-green" text="MODIFIER" textFill="#fffdfd" />
+      <Button layoutX="404.0" layoutY="330.0" mnemonicParsing="false" style="-fx-background-color: #4caf50;" text="MODIFIER" textFill="#fffdfd">
+         <effect>
+            <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+         </effect></Button>
       <DatePicker layoutX="273.0" layoutY="172.0" prefHeight="25.0" prefWidth="149.0" styleClass="input-grey" />
       <Label layoutX="167.0" layoutY="210.0" text="HEURE :" textFill="WHITE" />
       <TextField layoutX="274.0" layoutY="206.0" styleClass="input-grey" />
