@@ -149,6 +149,7 @@ public class ClientController implements Initializable {
 			//e.printStackTrace();
 		}
 		
+		
 	}
 	
 	@FXML
