@@ -2,18 +2,15 @@ package model.beans;
 
 import java.time.LocalDate;
 
-import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 
-public class Reservation {
+public class Reservation extends Produit {
 	
-	private IntegerProperty id;
 	private ObjectProperty<LocalDate> dateDebut;
 	private ObjectProperty<LocalDate> dateFin;
 	private ObjectProperty<LocalDate> date;
-	private Chambre1 chambre;
+	private Chambre chambre;
 	private Client client;
 	private EtatReservation statut;
 	
@@ -23,18 +20,16 @@ public class Reservation {
 	}
 
 
-	public Reservation(ObjectProperty<LocalDate> dateDebut, ObjectProperty<LocalDate> dateFin, Chambre1 chambre,
+	public Reservation(LocalDate dateDebut, LocalDate dateFin, Chambre chambre,
 			Client client) {
-		super();
-		this.dateDebut = dateDebut;
-		this.dateFin = dateFin;
+		super(Chambre.TVA);
+		this.dateDebut = new SimpleObjectProperty<>(dateDebut);
+		this.dateFin = new SimpleObjectProperty<>(dateFin);
 		this.chambre = chambre;
 		this.client = client;
 		this.statut = EtatReservation.EN_COURS;
 		this.date = new SimpleObjectProperty<>(LocalDate.now());
 	}
-
-	
 
 	public final ObjectProperty<LocalDate> dateDebutProperty() {
 		return this.dateDebut;
@@ -45,7 +40,7 @@ public class Reservation {
 	}
 
 	public final void setDateDebut(final LocalDate dateDebut) {
-		this.dateDebutProperty().set(dateDebut);
+		this.dateDebut = new SimpleObjectProperty<>(dateDebut);
 	}
 
 	public final ObjectProperty<LocalDate> dateFinProperty() {
@@ -57,7 +52,7 @@ public class Reservation {
 	}
 
 	public final void setDateFin(final LocalDate dateFin) {
-		this.dateFinProperty().set(dateFin);
+		this.dateFin = new SimpleObjectProperty<>(dateFin);
 	}
 
 	public final ObjectProperty<LocalDate> dateProperty() {
@@ -69,14 +64,14 @@ public class Reservation {
 	}
 
 	public final void setDate(final LocalDate date) {
-		this.dateProperty().set(date);
+		this.date = new SimpleObjectProperty<>(date);
 	}
 
-	public Chambre1 getChambre() {
+	public Chambre getChambre() {
 		return chambre;
 	}
 
-	public void setChambre(Chambre1 chambre) {
+	public void setChambre(Chambre chambre) {
 		this.chambre = chambre;
 	}
 
@@ -100,30 +95,34 @@ public class Reservation {
 			status = "EXPIREE";
 		}else if (this.statut == EtatReservation.LIBEREE) {
 			status = "LIBEREE";
-		}else {
-			status = "EN_COURS";
 		}
 		
 		return status;
 	}
-
+	
+	public static EtatReservation getEtatReservationEnum(String etat) {
+		EtatReservation etatEnum = null;
+		if(etat.equals("EXPIREE")) {
+			etatEnum = EtatReservation.EXPIREE;
+		}else if (etat.equals("ANNULEE")) {
+			etatEnum = EtatReservation.ANNULEE;
+		}else if (etat.equals("LIBEREE")){
+			etatEnum = EtatReservation.LIBEREE;
+		}else if (etat.equals("ENCOURS")) {
+			etatEnum = EtatReservation.EN_COURS;
+		}
+		
+		return etatEnum;
+	}
 
 	public void setStatut(EtatReservation statut) {
 		this.statut = statut;
 	}
 
-
-	public final IntegerProperty idProperty() {
-		return this.id;
-	}
-
-	public final int getId() {
-		return this.idProperty().get();
-	}
-
-	public final void setId(final int id) {
-		this.id = new SimpleIntegerProperty(id);
+	@Override
+	public String toString() {
+		return "NUM : "+getId()+" Client : "+getClient()+" Chambre : "+getChambre();
 	}
 	
-
+	
 }

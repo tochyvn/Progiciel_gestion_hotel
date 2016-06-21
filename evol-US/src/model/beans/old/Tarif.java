@@ -1,4 +1,4 @@
-package model.beans;
+package model.beans.old;
 
 import java.time.LocalDate;
 

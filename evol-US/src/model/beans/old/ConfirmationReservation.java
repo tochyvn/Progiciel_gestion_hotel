@@ -1,4 +1,4 @@
-package model.beans;
+package model.beans.old;
 
 import java.time.LocalDate;
 
@@ -6,6 +6,7 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import model.beans.Client;
 
 public class ConfirmationReservation extends DemandeReservation {
 

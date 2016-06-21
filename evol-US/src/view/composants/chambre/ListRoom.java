@@ -1,19 +1,23 @@
 package view.composants.chambre;
 
-import java.util.ArrayList;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.scene.layout.FlowPane;
-import model.beans.Chambre1;
+import model.beans.Chambre;
 
 public class ListRoom extends FlowPane {
 	
 	private ObservableList<BoxRoom> rooms;
+<<<<<<< HEAD
 	//La chambre selectionnée dans la liste de chambre
 	public static Chambre1 roomSelected;
+=======
+	//La chambre selectionnï¿½e dans la liste de chambre
+	public static Chambre roomSelected;
+>>>>>>> branch 'develop' of https://github.com/tochyvn/Progiciel_gestion_hotel
 
 	
 	public ListRoom() {
@@ -24,7 +28,7 @@ public class ListRoom extends FlowPane {
 		super(orientation);
 	}
 
-	public ListRoom(ArrayList<Chambre1> chambres) {
+	public ListRoom(ObservableList<Chambre> chambres) {
 		this();
 		this.setStyle("-fx-background-color: #D5F0D5;");
 		this.putRoom(chambres);
@@ -51,8 +55,8 @@ public class ListRoom extends FlowPane {
 	 * Methode qui prend en paramÃ¨tre une arraylist de room et remplis la liste de Room
 	 * @param chambres
 	 */
-	private void putRoom(ArrayList<Chambre1> chambres) {
-		for (Chambre1 chambre : chambres) {
+	private void putRoom(ObservableList<Chambre> chambres) {
+		for (Chambre chambre : chambres) {
 			BoxRoom boxRoom = new BoxRoom(chambre);
 			this.getChildren().add(boxRoom);
 			//Ici on met une marge entre les diffï¿½rentes BoxRoom <====> Chambre
