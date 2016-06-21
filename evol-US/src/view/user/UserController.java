@@ -17,6 +17,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import model.beans.UserPosteDirection;
 import model.beans.Utilisateur;
 import model.exception.CreateObjectException;
+import view.composants.alerte.AlertConfirmation;
 
 public class UserController implements Initializable {
 
@@ -29,14 +30,9 @@ public class UserController implements Initializable {
 	@FXML
 	private TableView<Utilisateur> tblUser;
 
-	@FXML
-	private TableColumn<Utilisateur, Integer> tblColumnId;
 
 	@FXML
 	private TableColumn<Utilisateur, String> tblColumnNom;
-
-	@FXML
-	private TableColumn<Utilisateur, String> tblColumnPrenom;
 
 	@FXML
 	private TableColumn<Utilisateur, String> tblColumnAdresse;
@@ -46,13 +42,16 @@ public class UserController implements Initializable {
 
 	@FXML
 	private TableColumn<Utilisateur, UserPosteDirection> tblColumnPoste;
+	
+	@FXML
+	private TableColumn<Utilisateur, Double> tblColumnSalaire;
 
 	@FXML
 	private TextField txtId;
 
 	@FXML
 	private TextField txtNom;
-
+	
 	@FXML
 	private TextField txtPrenom;
 
@@ -70,6 +69,9 @@ public class UserController implements Initializable {
 
 	@FXML
 	private ComboBox<UserPosteDirection> cmbPoste;
+	
+	@FXML
+	private TextField txtSalaire;
 
 	public UserController() {
 
@@ -82,15 +84,14 @@ public class UserController implements Initializable {
 		UserPosteDirectionManager.getInstance().findAll(postes);
 		cmbPoste.setItems(postes);
 		//Pour selectionner AUCUN(PAR DEFAUT)
-		cmbPoste.getSelectionModel().selectNext();
+		//cmbPoste.getSelectionModel().selectNext();
 
 		//REMPLISSAGE DU TABLEAU D'UTILISATEUR
 		utilisateurs = FXCollections.observableArrayList();
 		UtilisateurManager.getInstance().findAll(utilisateurs);
 		tblUser.setItems(utilisateurs);
-		tblColumnId.setCellValueFactory(new PropertyValueFactory<Utilisateur, Integer>("id"));
 		tblColumnNom.setCellValueFactory(new PropertyValueFactory<Utilisateur, String>("nom"));
-		tblColumnPrenom.setCellValueFactory(new PropertyValueFactory<Utilisateur, String>("prenom"));
+		tblColumnSalaire.setCellValueFactory(new PropertyValueFactory<Utilisateur, Double>("salaire"));
 		tblColumnAdresse.setCellValueFactory(new PropertyValueFactory<Utilisateur, String>("adresse"));
 		tblColumnCodeP.setCellValueFactory(new PropertyValueFactory<Utilisateur, String>("codePostal"));
 		tblColumnPoste.setCellValueFactory(new PropertyValueFactory<Utilisateur, UserPosteDirection>("poste"));
@@ -100,6 +101,10 @@ public class UserController implements Initializable {
 	public void create() {
 		int status = 0;
 		try {
+			Double salaire = 0.0;
+			if (!txtSalaire.getText().equals("") && !Double.valueOf(txtSalaire.getText()).isNaN()) {
+				salaire = Double.valueOf(txtSalaire.getText());
+			}
 			Utilisateur user = new Utilisateur(
 					txtNom.getText(), 
 					txtPrenom.getText(), 
@@ -107,13 +112,15 @@ public class UserController implements Initializable {
 					txtCodePostal.getText(), 
 					txtLogin.getText(), 
 					txtPassword.getText(), 
-					cmbPoste.getSelectionModel().getSelectedItem()
+					cmbPoste.getSelectionModel().getSelectedItem(),
+					salaire
 					);
 			status = UtilisateurManager.getInstance().create(user);
 			utilisateurs.add(user);
 			if (status == 1) {
-				//Show success message
-
+				AlertConfirmation  alert = new AlertConfirmation("Confirmation d'inscription", "inscription réussie");
+				alert.showAndWait();
+				this.raz();
 			}
 		} catch (CreateObjectException e) {
 			System.out.println("Echec d'insertion : "+e.getMessage());
@@ -134,7 +141,31 @@ public class UserController implements Initializable {
 
 	@FXML
 	public void raz() {
-
+		txtNom.setText("");
+		txtPrenom.setText("");
+		txtAdresse.setText("");
+		txtCodePostal.setText("");
+		txtLogin.setText("");
+		txtPassword.setText("");
+		txtSalaire.setText("");
+	}
+	
+	@FXML
+	private void selectedTblViewRow() {
+		Utilisateur selectedCustomer = tblUser.getSelectionModel().getSelectedItem();
+		Integer index = tblUser.getSelectionModel().getSelectedIndex();
+		
+		if (index != -1) {
+			System.out.println(tblUser.getSelectionModel().getSelectedIndex());
+			txtId.setText(String.valueOf(selectedCustomer.getId()));
+			txtNom.setText(selectedCustomer.getNom());
+			txtPrenom.setText(selectedCustomer.getPrenom());
+			txtAdresse.setText(selectedCustomer.getAdresse());
+			txtSalaire.setText(String.valueOf(selectedCustomer.getSalaire()));
+			txtCodePostal.setText(selectedCustomer.getCodePostal());
+			txtLogin.setText(selectedCustomer.getLogin());
+			cmbPoste.getSelectionModel().select(selectedCustomer.getPoste());
+		}
 	}
 
 }
