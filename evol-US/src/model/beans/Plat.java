@@ -1,7 +1,5 @@
 package model.beans;
 
-import model.beans.old.TypeProduit;
-
 //import java.util.Collection;
 
 public class Plat extends TypeProduit {

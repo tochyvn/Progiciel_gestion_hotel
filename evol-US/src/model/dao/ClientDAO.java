@@ -118,7 +118,7 @@ public class ClientDAO extends DAO<Client> {
 							resultat.getString("login"),
 							resultat.getString("password"),
 							resultat.getString("cb_num"),
-							resultat.getString("cb_date_exp"),
+							resultat.getDate("cb_date_exp").toLocalDate(),
 							resultat.getString("cb_code")
 					);
 					customer.setId(id);
@@ -157,7 +157,7 @@ public class ClientDAO extends DAO<Client> {
 							resultat.getString("login"),
 							resultat.getString("password"),
 							resultat.getString("cb_num"),
-							resultat.getString("cb_date_exp"),
+							resultat.getDate("cb_date_exp").toLocalDate(),
 							resultat.getString("cb_code")
 					);
 					customer.setId(resultat.getInt("id_client"));

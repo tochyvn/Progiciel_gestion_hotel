@@ -3,7 +3,10 @@
  */
 package model.beans;
 
+import java.time.LocalDate;
 
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import model.exception.CreateObjectException;
@@ -18,7 +21,7 @@ public class Client extends Personne{
 	private StringProperty ville;
 	private StringProperty pays;
 	private StringProperty cbNum;
-	private StringProperty cbDateExp;
+	private ObjectProperty<LocalDate> cbDateExp;
 	private StringProperty cbCode;
 	
 	/**
@@ -32,7 +35,7 @@ public class Client extends Personne{
 	public Client(String nom, String prenom, String adresse,
 			String codePostal, String ville, String pays, String login,
 			String password, String cbNum,
-			String cbDateExp, String cbCode) throws CreateObjectException {
+			LocalDate cbDateExp, String cbCode) throws CreateObjectException {
 		
 		super(nom, prenom, adresse, codePostal, login, password);
 		String messageConseil = "Veillez modifier ce champ, puis ressayez à nouveau";
@@ -48,7 +51,7 @@ public class Client extends Personne{
 			throw new CreateObjectException("Le champ [ PAYS ] doit être obligatoirement renseigné", messageConseil);
 		}
 		
-		this.cbDateExp = new SimpleStringProperty(cbDateExp);
+		this.cbDateExp = new SimpleObjectProperty<LocalDate>(cbDateExp);
 		this.cbNum = new SimpleStringProperty(cbNum);
 		this.cbCode = new SimpleStringProperty(cbCode);
 		
@@ -99,16 +102,16 @@ public class Client extends Personne{
 		this.cbNum = new SimpleStringProperty(cbNum);
 	}
 	
-	public StringProperty cbDateExpProperty() {
+	public ObjectProperty<LocalDate> cbDateExpProperty() {
 		return this.cbDateExp;
 	}
 
-	public String getCbDateExp() {
+	public LocalDate getCbDateExp() {
 		return this.cbDateExpProperty().get();
 	}
 
-	public void setCbDateExp(String cbDateExp) {
-		this.cbDateExp = new SimpleStringProperty(cbDateExp);
+	public void setCbDateExp(LocalDate cbDateExp) {
+		this.cbDateExp = new SimpleObjectProperty<LocalDate>(cbDateExp);
 	}
 
 	public StringProperty cbCodeProperty() {
