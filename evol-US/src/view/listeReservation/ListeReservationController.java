@@ -4,12 +4,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import controller.ReservationManager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
-import model.beans.Chambre;
+import model.beans.Chambre1;
 import model.beans.Client;
 import model.beans.Reservation;
 import view.composants.reservation.ListeReservation;
@@ -25,7 +24,7 @@ public class ListeReservationController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		ListeReservation listes = new ListeReservation(ReservationManager.getInstance().findAll());
+		ListeReservation listes = new ListeReservation(getReservations());
 		rootSecond.setContent(listes);
 		rootSecond.setFitToHeight(true);
 		rootSecond.setFitToWidth(true);
@@ -36,12 +35,12 @@ public class ListeReservationController implements Initializable {
 	 * @return
 	 */
 	private ArrayList<Reservation> getReservations() {
-		Chambre chambre = new Chambre("300 m2", "0755032386", "2", 2, 0, 0, 0, 250.0, "STANDARD");
-		Chambre chambre1 = new Chambre("300 m2", "0755032386", "2", 2, 0, 0, 0, 250.0, "STANDARD");
-		Chambre chambre2 = new Chambre("300 m2", "0755032386", "2", 2, 0, 0, 0, 250.0, "STANDARD");
-		Chambre chambre3 = new Chambre("300 m2", "0755032386", "2", 2, 0, 0, 0, 250.0, "STANDARD");
+		Chambre1 chambre = new Chambre1("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
+		Chambre1 chambre1 = new Chambre1("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
+		Chambre1 chambre2 = new Chambre1("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
+		Chambre1 chambre3 = new Chambre1("300 m2", "0755032386", "2", "2", false, false, false, 250.0);
 		
-		chambre.setIdChambre(1);
+		chambre.setIdChambre(1);	
 		chambre1.setIdChambre(2);
 		chambre2.setIdChambre(3);	
 		chambre3.setIdChambre(4);  

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -8,7 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 
-<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" stylesheets="@darkTheme.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.RootLayoutController">
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" styleClass="bg-green" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.RootLayoutController">
    <left>
       <AnchorPane fx:id="borderPaneLeft" prefHeight="530.0" prefWidth="141.0" style="-fx-background-color: #D5F0D5;" visible="false" BorderPane.alignment="CENTER">
          <children>
@@ -87,4 +88,8 @@
          </effect>
       </AnchorPane>
    </right>
+   <stylesheets>
+      <URL value="@darkTheme.css" />
+      <URL value="@application.css" />
+   </stylesheets>
 </BorderPane>

@@ -6,6 +6,10 @@
 -fx-effect:  dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
 }
 
+.button-green:hover {
+-fx-background-color: #2196F3;
+}
+
 .input-grey {
 -fx-background-color: #E0E0E0;
 -fx-background-radius: 7px;

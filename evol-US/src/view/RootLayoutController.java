@@ -169,8 +169,8 @@ public class RootLayoutController implements Initializable {
 	private void loadViewChambre() {
 		Parent chambreOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.CHAMBRE_VIEW, 1);
 		root.setCenter(chambreOverview);
-		DoubleProperty translateY = chambreOverview.translateYProperty();
-		Animation.doAnimationProperty(translateY, -70, 10);
+		DoubleProperty opacity = chambreOverview.opacityProperty();
+		Animation.doAnimationProperty(opacity, 0, 1);
 	}
 
 }

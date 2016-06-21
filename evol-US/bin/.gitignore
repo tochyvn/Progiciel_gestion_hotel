@@ -1,4 +1,6 @@
-/model/
-/view/
-/controller/
 /application/
+/controller/
+/library/
+/model/
+/ressources/
+/view/

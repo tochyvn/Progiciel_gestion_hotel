@@ -1,15 +1,11 @@
 package application;
 
-import controller.ChambreManager;
-import controller.ReservationManager;
 import controller.UserPosteDirectionManager;
 import controller.UtilisateurManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.Connexion;
-import model.beans.Chambre;
 import model.beans.Client;
-import model.beans.Reservation;
 import model.beans.UserPosteDirection;
 import model.beans.Utilisateur;
 import model.dao.ClientDAO;
@@ -85,17 +81,7 @@ public class Console {
 		ObservableList<Utilisateur> users = FXCollections.observableArrayList();
 		UtilisateurManager.getInstance().findAll(users);
 		*/
-		//UtilisateurManager.getInstance().deconnected();
-		
-		
-		/*
-		ObservableList<Chambre> chambres = FXCollections.observableArrayList();
-		ChambreManager.getInstance().findAll(chambres);*/
-		
-		ObservableList<Reservation> reservations = FXCollections.observableArrayList();
-		ReservationManager.getInstance().findAll();
-		
-		
+		UtilisateurManager.getInstance().deconnected();
 	}
 
 }

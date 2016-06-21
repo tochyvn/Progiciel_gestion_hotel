@@ -11,14 +11,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.WindowEvent;
-import model.beans.Chambre;
+import model.beans.Chambre1;
 import model.beans.EtatChambre;
 import view.ViewInterfaceConstante;
 import view.composants.popup.Popup;
 
 public class BoxRoom extends VBox {
 	
-	private Chambre chambre;
+	private Chambre1 chambre;
 	private static String url = "/ressources/img/occupe.png";
 
 	public BoxRoom() {
@@ -29,27 +29,26 @@ public class BoxRoom extends VBox {
 		super(spacing);
 	}
 	
-	public BoxRoom(Chambre chambre) {
+	public BoxRoom(Chambre1 chambre) {
 		this(5.0);
 		this.chambre = chambre;
 		this.getStyleClass().add("box-room-shadow");
-		//Couleur du composant en fonction de l'Ã©tat de la chambre
+		//Couleur du composant en fonction de l'état de la chambre
 		if (chambre.getEtat() == EtatChambre.LIBRE) {
 			this.setStyle("-fx-background-color: #4CAF50;");
-		}else if(chambre.getEtat() == EtatChambre.OCCUPEE) {
-			this.setStyle("-fx-background-color: #F25333;");
 		}else {
-			
+			this.setStyle("-fx-background-color: #F25333;");
 		}
 		
 		Image img = new Image(url);
 		ImageView imageView = new ImageView(img);
-		Label roomLabel = new Label("Chambre NÂ° : "+chambre.getIdChambre());
-		Label fumeur = new Label("Fumeur : "+chambre.getFumeurAffiche());
-		Label baignoire = new Label("Baignoire : "+chambre.getBaignoireAffiche());
+		
+		Label roomLabel = new Label("Chambre N° : "+chambre.getIdChambre());
+		Label fumeur = new Label("Fumeur : NON");
+		Label baignoire = new Label("Baignoire : OUI");
 		
 		this.getChildren().addAll(imageView, roomLabel, fumeur, baignoire);
-		//Ajouter l'evenement qui se produira au clique
+		//Ajouter l'evenement qui se produira au clic
 		this.addEvent();
 	}
 	
@@ -67,7 +66,7 @@ public class BoxRoom extends VBox {
 			System.out.println(room);
 			
 			if (ListRoom.roomSelected.getEtat() == EtatChambre.LIBRE) {
-				Scene scene = Popup.loadScene(ViewInterfaceConstante.ADD_RESERVATION_VIEW, 1);
+				Scene scene = Popup.loadScene(ViewInterfaceConstante.ADD_RESERVATION_HOTEL_MODAL, 1);
 				//System.out.println(event.getSource());
 				Popup popup = new Popup(scene);
 				popup.setTitle("Nouvelle reservation");
