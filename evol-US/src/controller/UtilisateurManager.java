@@ -71,23 +71,23 @@ public class UtilisateurManager {
 		
 		if (connected == 0) {
 			//Boite de dialogue password ou identifiant incorrect
-			System.out.println("Boite de dialogue identifiant ou mot de passe incorrect");
+			System.out.println("Boite de dialogue : identifiant ou mot de passe incorrect.");
 		}else if (connected == 1) {
 			//Sauvegarde de la connexion de l'utilisateur
 			isConnected = true;
-			//Rechargement de la scene principale aprÃ¨s connexion
+			//Rechargement de la scene principale après connexion
 			Scene scenePrincipale = LoaderOfScene.loadScene(ViewInterfaceConstante.ROOT_VIEW, 0);
 			MainApplication.primaryStage.setScene(scenePrincipale);
 			
-			Parent center1 = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.CHAMBRE_VIEW, 1);
+			Parent center1 = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.STATISTIQUES_VIEW, 1);
 			//On recupere le root de la scene principale
 			((BorderPane) MainApplication.primaryStage.getScene().getRoot()).setCenter(center1);
 			System.out.println(((BorderPane) MainApplication.primaryStage.getScene().getRoot()));
 			DoubleProperty opacity = center1.opacityProperty();
-			Animation.doAnimationProperty(opacity, 0, 1);
+			//Animation.doAnimationProperty(opacity, 0, 1);
 		}else {
-			//Boite de dialogue problÃ¨me de connexion
-			System.out.println("Boite de dialogue problÃ¨me de connexion");
+			//Boite de dialogue problème de connexion
+			System.out.println("Boite de dialogue : problème de connexion");
 		}
 		
 		return connected;

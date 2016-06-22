@@ -1,23 +1,27 @@
-package view.listeReservation;
+package view.hotel;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import application.MainApplication;
 import controller.ReservationManager;
+import javafx.beans.property.DoubleProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import library.LoaderOfScene;
 import model.beans.Chambre;
 import model.beans.Client;
 import model.beans.Reservation;
+import view.ViewInterfaceConstante;
 import view.composants.reservation.ListeTable;
 
-public class ListeReservationController implements Initializable {
+public class HotelController implements Initializable {
 	
-	@FXML
-	private AnchorPane root;
 	
 	@FXML
 	private ScrollPane rootSecond;
@@ -25,10 +29,25 @@ public class ListeReservationController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		ListeTable listes = new ListeTable(ReservationManager.getInstance().findAll());
-		rootSecond.setContent(listes);
-		rootSecond.setFitToHeight(true);
-		rootSecond.setFitToWidth(true);
+
+	}
+	
+	@FXML
+	private void loadViewAgence() {
+		Parent agenceOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.AGENCE_VIEW, 1);
+		((BorderPane)(MainApplication.primaryStage.getScene().getRoot())).setCenter(agenceOverview);;
+		System.out.println(MainApplication.primaryStage.getScene().getRoot());
+		DoubleProperty opacity = agenceOverview.opacityProperty();
+		//Animation.doAnimationProperty(opacity, 0, 1);
+	}
+	
+	@FXML
+	private void loadViewLivreOr() {
+		Parent livreOrOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.LIVRE_OR_VIEW, 1);
+		((BorderPane)(MainApplication.primaryStage.getScene().getRoot())).setCenter(livreOrOverview);;
+		System.out.println(MainApplication.primaryStage.getScene().getRoot());
+		DoubleProperty opacity = livreOrOverview.opacityProperty();
+		//Animation.doAnimationProperty(opacity, 0, 1);
 	}
 	
 	/**

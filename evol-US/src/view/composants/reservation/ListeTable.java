@@ -9,22 +9,22 @@ import javafx.geometry.Orientation;
 import javafx.scene.layout.FlowPane;
 import model.beans.Reservation;
 
-public class ListeReservation extends FlowPane{
+public class ListeTable extends FlowPane{
 	
-	private ObservableList<BoxReservation> reservations;
+	private ObservableList<BoxTable> reservations;
 	//La chambre selectionn�e dans la liste de chambre
 	public static Reservation reservationSelected;
 
 	
-	public ListeReservation() {
+	public ListeTable() {
 		reservations = FXCollections.observableArrayList();
 	}
 
-	public ListeReservation(Orientation orientation) {
+	public ListeTable(Orientation orientation) {
 		super(orientation);
 	}
 
-	public ListeReservation(ObservableList<Reservation> chambres) {
+	public ListeTable(ObservableList<Reservation> chambres) {
 		this.reservations = FXCollections.observableArrayList();
 		this.setStyle("-fx-background-color: #D5F0D5;");
 		this.putRoom(chambres);
@@ -33,8 +33,8 @@ public class ListeReservation extends FlowPane{
 	/**
 	 * Permet d'ajouter chaque chambre dans le composant liste de chambre
 	 */
-	public void setItems(ObservableList<BoxReservation> reservations) {
-		for (BoxReservation reservation : reservations) {
+	public void setItems(ObservableList<BoxTable> reservations) {
+		for (BoxTable reservation : reservations) {
 			this.getChildren().add(reservation);
 		}
 	}
@@ -43,7 +43,7 @@ public class ListeReservation extends FlowPane{
 	 * @param boxRoom la room à ajouter
 	 * @return Retourne la BoxRoom ajoutée
 	 */
-	public boolean addItem(BoxReservation reservation) {
+	public boolean addItem(BoxTable reservation) {
 		return this.reservations.add(reservation);
 	}
 	
@@ -53,7 +53,7 @@ public class ListeReservation extends FlowPane{
 	 */
 	private void putRoom(ObservableList<Reservation> reservations) {
 		for (Reservation reservation : reservations) {
-			BoxReservation boxReservation = new BoxReservation(reservation);
+			BoxTable boxReservation = new BoxTable(reservation);
 			this.getChildren().add(boxReservation);
 			//Ici on met une marge entre les diff�rentes BoxRoom <====> Chambre
 			setMargin(boxReservation, new Insets(20, 10, 10, 20));
