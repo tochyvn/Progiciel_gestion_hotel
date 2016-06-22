@@ -58,6 +58,9 @@
          <effect>
             <DropShadow />
          </effect>
+         <children>
+            <Label id="topTitre" fx:id="topTitle" />
+         </children>
       </FlowPane>
    </top>
    <bottom>

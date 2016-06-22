@@ -114,7 +114,7 @@ public class UserController implements Initializable {
 			status = UtilisateurManager.getInstance().create(user);
 			utilisateurs.add(user);
 			if (status == 1) {
-				AlertConfirmation  alert = new AlertConfirmation("Confirmation d'inscription", "inscription rÃ©ussie");
+				AlertConfirmation  alert = new AlertConfirmation("Confirmation d'inscription", "inscription réussie");
 				alert.showAndWait();
 				this.raz();
 			}
