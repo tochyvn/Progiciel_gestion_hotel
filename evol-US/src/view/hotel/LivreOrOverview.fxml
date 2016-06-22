@@ -12,19 +12,19 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="407.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.hotel.HotelController">
+<AnchorPane prefHeight="407.0" prefWidth="755.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.hotel.HotelController">
    <children>
-      <Pane prefHeight="45.0" prefWidth="620.0" styleClass="bg-green" stylesheets="@../../application/application.css">
+      <Pane prefHeight="45.0" prefWidth="755.0" styleClass="bg-green" stylesheets="@../../application/application.css">
          <children>
-            <Button layoutX="174.0" layoutY="14.0" mnemonicParsing="false" styleClass="menu-top-green" text="Facture" textAlignment="CENTER" textFill="WHITE">
+            <Button layoutX="215.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#loadViewChambre" styleClass="menu-top-green" text="Réservations" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></Button>
-            <Button layoutX="243.0" layoutY="14.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="97.0" styleClass="border-bottom,menu-top-green" text="Livre d'or" textAlignment="CENTER" textFill="WHITE">
+            <Button layoutX="319.0" layoutY="13.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="97.0" styleClass="border-bottom,menu-top-green" text="Livre d'or" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></Button>
-            <Button layoutX="340.0" layoutY="14.0" prefHeight="30.0" prefWidth="124.0" styleClass="menu-top-green" onMouseClicked="#loadViewAgence" text="Agence voyage" textAlignment="CENTER" textFill="WHITE">
+            <Button layoutX="416.0" layoutY="14.0" onMouseClicked="#loadViewAgence" prefHeight="30.0" prefWidth="124.0" styleClass="menu-top-green" text="Agence voyage" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></Button>

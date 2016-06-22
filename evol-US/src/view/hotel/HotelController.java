@@ -50,6 +50,15 @@ public class HotelController implements Initializable {
 		//Animation.doAnimationProperty(opacity, 0, 1);
 	}
 	
+	@FXML
+	private void loadViewChambre() {
+		Parent chambreOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.CHAMBRE_VIEW, 1);
+		((BorderPane)(MainApplication.primaryStage.getScene().getRoot())).setCenter(chambreOverview);;
+		System.out.println(MainApplication.primaryStage.getScene().getRoot());
+		DoubleProperty opacity = chambreOverview.opacityProperty();
+		//Animation.doAnimationProperty(opacity, 0, 1);
+	}
+	
 	/**
 	 * Liste de reservation à récupérer dans la base de donnée
 	 * @return
