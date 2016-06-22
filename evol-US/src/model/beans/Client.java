@@ -6,6 +6,7 @@ package model.beans;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import library.Validator;
 import model.exception.CreateObjectException;
 
 /**
@@ -42,10 +43,10 @@ public class Client extends Personne{
 		}else {
 			throw new CreateObjectException("Le champ [ VILLE ] doit être obligatoirement renseigné", messageConseil);
 		}
-		if (!pays.equals("")) {
+		if (Validator.regexp(pays, Validator.REGEXP_EMAIL)) {
 			this.pays = new SimpleStringProperty(pays);
 		}else {
-			throw new CreateObjectException("Le champ [ PAYS ] doit être obligatoirement renseigné", messageConseil);
+			throw new CreateObjectException("Le champ [ EMAIL ] est invalide", messageConseil);
 		}
 		
 		this.cbDateExp = new SimpleStringProperty(cbDateExp);

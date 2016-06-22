@@ -1,162 +1,142 @@
-package model.beans;
+package model.beans.old;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import model.beans.old.ConfirmationReservation;
-import model.beans.old.DemandeReservation;
 
-//import java.util.Collection;
-
+/**
+ * @author silnti
+ *
+ */
 public class Chambre {
-
+	
 	private IntegerProperty idChambre;
 	private StringProperty surface;
 	private StringProperty telephone;
-	private StringProperty etage;
+	private IntegerProperty etage;
 	private IntegerProperty nbrePlace;
 	private IntegerProperty douche;
 	private IntegerProperty baignoire;
-	private IntegerProperty fumeur;
-	private DoubleProperty prix;
-	private DoubleProperty tva;
-	private EtatChambre etat;
-	private StringProperty categorie;
-	public static double TVA = 0.75;
-	
-	public static HashMap<Integer , ArrayList<DemandeReservation>> demandes;
-	public static HashMap<Integer, ArrayList<ConfirmationReservation>> reservations;
+	private CategorieChambre categorieChambre;
 
 	/**
 	 * 
 	 */
 	public Chambre() {
-		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
+	 * @param idChambre
 	 * @param surface
 	 * @param telephone
 	 * @param etage
 	 * @param nbrePlace
 	 * @param douche
 	 * @param baignoire
-	 * @param fumeur
-	 * @param prix
-	 * @param etat
-	 * @param categorie
+	 * @param categorieChambre
 	 */
-	public Chambre(String surface, String telephone, String etage, Integer nbrePlace, Integer douche, Integer baignoire,
-			Integer fumeur, Double prix, String categorie) {
+	public Chambre(String surface, String telephone, Integer etage,
+			Integer nbrePlace, Integer douche, Integer baignoire,
+			CategorieChambre categorieChambre) {
 		super();
 		this.surface = new SimpleStringProperty(surface);
 		this.telephone = new SimpleStringProperty(telephone);
-		this.etage = new SimpleStringProperty(etage);
+		this.etage = new SimpleIntegerProperty(etage);
 		this.nbrePlace = new SimpleIntegerProperty(nbrePlace);
 		this.douche = new SimpleIntegerProperty(douche);
 		this.baignoire = new SimpleIntegerProperty(baignoire);
-		this.fumeur = new SimpleIntegerProperty(fumeur);
-		this.prix = new SimpleDoubleProperty(prix);
-		this.categorie = new SimpleStringProperty(categorie);
-		this.tva = new SimpleDoubleProperty(TVA);
-		this.etat = EtatChambre.LIBRE;
+		this.setCategorieChambre(categorieChambre);
 	}
-	
-	
 
 	public final IntegerProperty idChambreProperty() {
 		return this.idChambre;
 	}
 	
 
-	public Integer getIdChambre() {
+	public final int getIdChambre() {
 		return this.idChambreProperty().get();
 	}
 	
 
-	public final void setIdChambre(Integer idChambre) {
-		this.idChambre = new SimpleIntegerProperty(idChambre);
+	public final void setIdChambre(final int idChambre) {
+		this.idChambreProperty().set(idChambre);
 	}
 	
 
-	public StringProperty surfaceProperty() {
+	public final StringProperty surfaceProperty() {
 		return this.surface;
 	}
 	
 
-	public String getSurface() {
+	public final java.lang.String getSurface() {
 		return this.surfaceProperty().get();
 	}
 	
 
-	public void setSurface(String surface) {
-		this.surface = new SimpleStringProperty(surface);
+	public final void setSurface(final java.lang.String surface) {
+		this.surfaceProperty().set(surface);
 	}
 	
 
-	public StringProperty telephoneProperty() {
+	public final StringProperty telephoneProperty() {
 		return this.telephone;
 	}
 	
 
-	public String getTelephone() {
+	public final java.lang.String getTelephone() {
 		return this.telephoneProperty().get();
 	}
 	
 
-	public void setTelephone(String telephone) {
-		this.telephone = new SimpleStringProperty(telephone);
+	public final void setTelephone(final java.lang.String telephone) {
+		this.telephoneProperty().set(telephone);
 	}
 	
 
-	public StringProperty etageProperty() {
+	public final IntegerProperty etageProperty() {
 		return this.etage;
 	}
 	
 
-	public String getEtage() {
+	public final int getEtage() {
 		return this.etageProperty().get();
 	}
 	
 
-	public void setEtage(String etage) {
-		this.etage = new SimpleStringProperty(etage);
+	public final void setEtage(final int etage) {
+		this.etageProperty().set(etage);
 	}
 	
 
-	public IntegerProperty nbrePlaceProperty() {
+	public final IntegerProperty nbrePlaceProperty() {
 		return this.nbrePlace;
 	}
 	
 
-	public Integer getNbrePlace() {
+	public final int getNbrePlace() {
 		return this.nbrePlaceProperty().get();
 	}
 	
 
-	public void setNbrePlace(Integer nbrePlace) {
-		this.nbrePlace = new SimpleIntegerProperty(nbrePlace);
+	public final void setNbrePlace(final int nbrePlace) {
+		this.nbrePlaceProperty().set(nbrePlace);
 	}
 	
 
-	public IntegerProperty doucheProperty() {
+	public final IntegerProperty doucheProperty() {
 		return this.douche;
 	}
 	
 
-	public Integer isDouche() {
+	public final int getDouche() {
 		return this.doucheProperty().get();
 	}
 	
 
-	public void setDouche(Integer douche) {
-		this.douche = new SimpleIntegerProperty(douche);
+	public final void setDouche(final int douche) {
+		this.doucheProperty().set(douche);
 	}
 	
 
@@ -165,132 +145,21 @@ public class Chambre {
 	}
 	
 
-	public Integer isBaignoire() {
+	public final int getBaignoire() {
 		return this.baignoireProperty().get();
 	}
 	
 
-	public void setBaignoire(Integer baignoire) {
-		this.baignoire = new SimpleIntegerProperty(baignoire);
-	}
-	
-
-	public IntegerProperty fumeurProperty() {
-		return this.fumeur;
-	}
-	
-
-	public Integer isFumeur() {
-		return this.fumeurProperty().get();
-	}
-	
-
-	public void setFumeur(Integer fumeur) {
-		this.fumeur = new SimpleIntegerProperty(fumeur);
-	}
-	
-
-	public DoubleProperty prixProperty() {
-		return this.prix;
-	}
-	
-
-	public Double getPrix() {
-		return this.prixProperty().get();
-	}
-	
-
-	public void setPrix(Double prix) {
-		this.prix = new SimpleDoubleProperty(prix);
+	public final void setBaignoire(final int baignoire) {
+		this.baignoireProperty().set(baignoire);
 	}
 
-	public EtatChambre getEtat() {
-		return etat;
+	public CategorieChambre getCategorieChambre() {
+		return categorieChambre;
 	}
 
-	public void setEtat(EtatChambre etat) {
-		this.etat = etat;
+	public void setCategorieChambre(CategorieChambre categorieChambre) {
+		this.categorieChambre = categorieChambre;
 	}
-
-	public final DoubleProperty tvaProperty() {
-		return this.tva;
-	}
-	
-	public final double getTva() {
-		return this.tvaProperty().get();
-	}
-	
-	public final void setTva(final double tva) {
-		this.tva = new SimpleDoubleProperty(tva);
-	}
-	
-	public static EtatChambre getEtatChambreEnum(String etat) {
-		EtatChambre etatEnum = null;
-		if(etat.equals("OCCUPEE")) {
-			etatEnum = EtatChambre.OCCUPEE;
-		}else if (etat.equals("MAINTENANCE")) {
-			etatEnum = EtatChambre.MAINTENANCE;
-		}else if (etat.equals("LIBRE")){
-			etatEnum = EtatChambre.LIBRE;
-		}
-		
-		return etatEnum;
-	}
-
-	@Override
-	public String toString() {
-		return "NUM : "+idChambre+" SURFACE : "+surface;
-	}
-	
-	public String getFumeurAffiche() {
-		String fumeur = null;
-		if (isFumeur() == 0) {
-			fumeur = "NON";
-		}else if(isFumeur() == 1) {
-			fumeur = "OUI";
-		}
-		
-		return fumeur;
-	}
-	
-	public String getBaignoireAffiche() {
-		String baignoire = null;
-		if (isBaignoire() == 0) {
-			baignoire = "NON";
-		}else if(isBaignoire() == 1) {
-			baignoire = "OUI";
-		}
-		
-		return baignoire;
-	}
-	
-	public String getDoucheAffiche() {
-		String baignoire = null;
-		if (isDouche() == 0) {
-			baignoire = "NON";
-		}else if(isDouche() == 1) {
-			baignoire = "OUI";
-		}
-		
-		return baignoire;
-	}
-
-	public final StringProperty categorieProperty() {
-		return this.categorie;
-	}
-	
-
-	public final java.lang.String getCategorie() {
-		return this.categorieProperty().get();
-	}
-	
-
-	public final void setCategorie(final java.lang.String categorie) {
-		this.categorie = new SimpleStringProperty(categorie);
-	}
-	
-	
-	
-	
 
 }

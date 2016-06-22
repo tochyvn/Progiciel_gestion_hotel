@@ -18,6 +18,7 @@ import model.beans.UserPosteDirection;
 import model.beans.Utilisateur;
 import model.exception.CreateObjectException;
 import view.composants.alerte.AlertConfirmation;
+import view.composants.alerte.AlertError;
 
 public class UserController implements Initializable {
 
@@ -41,7 +42,7 @@ public class UserController implements Initializable {
 
 	@FXML
 	private TableColumn<Utilisateur, UserPosteDirection> tblColumnPoste;
-	
+
 	@FXML
 	private TableColumn<Utilisateur, String> tblColumnSalaire;
 
@@ -50,7 +51,7 @@ public class UserController implements Initializable {
 
 	@FXML
 	private TextField txtNom;
-	
+
 	@FXML
 	private TextField txtPrenom;
 
@@ -68,7 +69,7 @@ public class UserController implements Initializable {
 
 	@FXML
 	private ComboBox<UserPosteDirection> cmbPoste;
-	
+
 	@FXML
 	private TextField txtSalaire;
 
@@ -100,7 +101,7 @@ public class UserController implements Initializable {
 	public void create() {
 		int status = 0;
 		try {
-			
+
 			Utilisateur user = new Utilisateur(
 					txtNom.getText(), 
 					txtPrenom.getText(), 
@@ -127,16 +128,58 @@ public class UserController implements Initializable {
 
 	@FXML
 	public void update() {
+		int status = 0;
+		try {
 
+			Utilisateur user = new Utilisateur(
+					txtNom.getText(), 
+					txtPrenom.getText(), 
+					txtAdresse.getText(), 
+					txtCodePostal.getText(), 
+					txtLogin.getText(), 
+					txtPassword.getText(), 
+					cmbPoste.getSelectionModel().getSelectedItem(),
+					txtSalaire.getText()
+					);
+			user.setId(Integer.valueOf(txtId.getText()));
+			status = UtilisateurManager.getInstance().create(user);
+			if (status == 1) {
+				AlertConfirmation  alert = new AlertConfirmation("Confirmation d'inscription", "Modification réussie");
+				alert.showAndWait();
+				this.raz();
+				//Mise à jour du customer dans l'observableList
+				Integer selectedIndex = tblUser.getSelectionModel().getSelectedIndex();
+				utilisateurs.set(selectedIndex, user);
+			}else {
+				AlertError alert = new AlertError("Erreur", "Echec de la modification veuillez reesayer plustard.");
+				alert.showAndWait();
+			}
+		} catch (CreateObjectException e) {
+			System.out.println("Echec d'insertion : "+e.getMessage());
+			e.showError();
+		}
 	}
 
 	@FXML
 	public void delete() {
-
+		int status = UtilisateurManager.getInstance().delete(Integer.valueOf(txtId.getText()));
+		if (status == 1) {
+			AlertConfirmation alert = new AlertConfirmation("Confirmation de suppression", "L'utilisateur [ "+txtNom.getText()+" ] à été supprimé avec succès");
+			alert.showAndWait();
+			this.raz();
+			//Mise à jour du customer dans l'observableList
+			Utilisateur user = tblUser.getSelectionModel().getSelectedItem();
+			utilisateurs.remove(user);
+			System.out.println("Le supprimé est : "+user);
+		}else if (status == 3) {
+			AlertError alert = new AlertError("Erreur de connexion", "Veuillez réessayer plustard.");
+			alert.showAndWait();
+		}
 	}
 
 	@FXML
 	public void raz() {
+		txtId.setText("");
 		txtNom.setText("");
 		txtPrenom.setText("");
 		txtAdresse.setText("");
@@ -145,12 +188,12 @@ public class UserController implements Initializable {
 		txtPassword.setText("");
 		txtSalaire.setText("");
 	}
-	
+
 	@FXML
 	private void selectedTblViewRow() {
 		Utilisateur selectedCustomer = tblUser.getSelectionModel().getSelectedItem();
 		Integer index = tblUser.getSelectionModel().getSelectedIndex();
-		
+
 		if (index != -1) {
 			System.out.println(tblUser.getSelectionModel().getSelectedIndex());
 			txtId.setText(String.valueOf(selectedCustomer.getId()));
