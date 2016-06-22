@@ -38,6 +38,14 @@
 	-fx-border-color : transparent transparent yellow transparent;
 }
 
+.menu-left{
+	-fx-font-size : 25px;
+	-fx-underline : false;
+}
+.menu-left:hover{
+	-fx-text-fill : black;
+}
+
 .menu-top-green{
 	-fx-background-color: #4CAF50;
 }
