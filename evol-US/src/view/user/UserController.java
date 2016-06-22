@@ -30,7 +30,6 @@ public class UserController implements Initializable {
 	@FXML
 	private TableView<Utilisateur> tblUser;
 
-
 	@FXML
 	private TableColumn<Utilisateur, String> tblColumnNom;
 
@@ -44,7 +43,7 @@ public class UserController implements Initializable {
 	private TableColumn<Utilisateur, UserPosteDirection> tblColumnPoste;
 	
 	@FXML
-	private TableColumn<Utilisateur, Double> tblColumnSalaire;
+	private TableColumn<Utilisateur, String> tblColumnSalaire;
 
 	@FXML
 	private TextField txtId;
@@ -91,7 +90,7 @@ public class UserController implements Initializable {
 		UtilisateurManager.getInstance().findAll(utilisateurs);
 		tblUser.setItems(utilisateurs);
 		tblColumnNom.setCellValueFactory(new PropertyValueFactory<Utilisateur, String>("nom"));
-		tblColumnSalaire.setCellValueFactory(new PropertyValueFactory<Utilisateur, Double>("salaire"));
+		tblColumnSalaire.setCellValueFactory(new PropertyValueFactory<Utilisateur, String>("salaire"));
 		tblColumnAdresse.setCellValueFactory(new PropertyValueFactory<Utilisateur, String>("adresse"));
 		tblColumnCodeP.setCellValueFactory(new PropertyValueFactory<Utilisateur, String>("codePostal"));
 		tblColumnPoste.setCellValueFactory(new PropertyValueFactory<Utilisateur, UserPosteDirection>("poste"));
@@ -101,10 +100,7 @@ public class UserController implements Initializable {
 	public void create() {
 		int status = 0;
 		try {
-			Double salaire = 0.0;
-			if (!txtSalaire.getText().equals("") && !Double.valueOf(txtSalaire.getText()).isNaN()) {
-				salaire = Double.valueOf(txtSalaire.getText());
-			}
+			
 			Utilisateur user = new Utilisateur(
 					txtNom.getText(), 
 					txtPrenom.getText(), 
@@ -113,7 +109,7 @@ public class UserController implements Initializable {
 					txtLogin.getText(), 
 					txtPassword.getText(), 
 					cmbPoste.getSelectionModel().getSelectedItem(),
-					salaire
+					txtSalaire.getText()
 					);
 			status = UtilisateurManager.getInstance().create(user);
 			utilisateurs.add(user);

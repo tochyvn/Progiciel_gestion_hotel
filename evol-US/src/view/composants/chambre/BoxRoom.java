@@ -11,14 +11,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.WindowEvent;
-import model.beans.Chambre1;
+import model.beans.Chambre;
 import model.beans.EtatChambre;
 import view.ViewInterfaceConstante;
 import view.composants.popup.Popup;
 
 public class BoxRoom extends VBox {
 	
-	private Chambre1 chambre;
+	private Chambre chambre;
 	private static String url = "/ressources/img/occupe.png";
 
 	public BoxRoom() {
@@ -29,11 +29,11 @@ public class BoxRoom extends VBox {
 		super(spacing);
 	}
 	
-	public BoxRoom(Chambre1 chambre) {
+	public BoxRoom(Chambre chambre) {
 		this(5.0);
 		this.chambre = chambre;
 		this.getStyleClass().add("box-room-shadow");
-		//Couleur du composant en fonction de l'état de la chambre
+		//Couleur du composant en fonction de l'ï¿½tat de la chambre
 		if (chambre.getEtat() == EtatChambre.LIBRE) {
 			this.setStyle("-fx-background-color: #4CAF50;");
 		}else {
@@ -43,7 +43,7 @@ public class BoxRoom extends VBox {
 		Image img = new Image(url);
 		ImageView imageView = new ImageView(img);
 		
-		Label roomLabel = new Label("Chambre N° : "+chambre.getIdChambre());
+		Label roomLabel = new Label("Chambre Nï¿½ : "+chambre.getIdChambre());
 		Label fumeur = new Label("Fumeur : NON");
 		Label baignoire = new Label("Baignoire : OUI");
 		

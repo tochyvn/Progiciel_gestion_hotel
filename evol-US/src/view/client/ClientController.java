@@ -10,7 +10,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -85,7 +84,7 @@ public class ClientController implements Initializable {
 	private TextField cbNum;
 	
 	@FXML
-	private DatePicker cbExp;
+	private TextField cbExp;
 	
 	@FXML
 	private TextField cbCode;
@@ -126,7 +125,7 @@ public class ClientController implements Initializable {
 					txtLogin.getText(), 
 					txtPassword.getText(),
 					cbNum.getText(),
-					cbExp.getValue(),
+					cbExp.getText(),
 					cbCode.getText()
 			);
 			
@@ -173,7 +172,7 @@ public class ClientController implements Initializable {
 						txtLogin.getText(),
 						txtPassword.getText(),
 						cbNum.getText(),
-						cbExp.getValue(),
+						cbExp.getText(),
 						cbCode.getText()
 						);
 				customer.setId(Integer.valueOf(txtId.getText()));

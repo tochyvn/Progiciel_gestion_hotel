@@ -25,7 +25,7 @@ public class ChambreManager {
 		ChambreDAO.findAll(arrayList);
 	}
 	
-	public ObservableList<Chambre> findAll1() {
+	public ObservableList<Chambre> findAll() {
 		return ChambreDAO.findAll();
 	}
 	

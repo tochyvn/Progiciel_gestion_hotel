@@ -16,7 +16,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.beans.UserPosteDirection;
 import model.beans.Utilisateur;
-import model.exception.CreateObjectException;
 
 public class StockController implements Initializable {
 
@@ -98,28 +97,7 @@ public class StockController implements Initializable {
 
 	@FXML
 	public void create() {
-		int status = 0;
-		try {
-			Utilisateur user = new Utilisateur(
-					txtNom.getText(), 
-					txtPrenom.getText(), 
-					txtAdresse.getText(), 
-					txtCodePostal.getText(), 
-					txtLogin.getText(), 
-					txtPassword.getText(), 
-					cmbPoste.getSelectionModel().getSelectedItem()
-					);
-			status = UtilisateurManager.getInstance().create(user);
-			utilisateurs.add(user);
-			if (status == 1) {
-				//Show success message
-
-			}
-		} catch (CreateObjectException e) {
-			System.out.println("Echec d'insertion : "+e.getMessage());
-			e.showError();
-		}
-		System.out.println("fin de l'execution de la methode");
+		
 	}
 
 	@FXML

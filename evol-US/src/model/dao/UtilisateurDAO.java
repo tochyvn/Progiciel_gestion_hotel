@@ -42,7 +42,7 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
 			requete.setString(4, objet.getCodePostal());
 			requete.setString(5, objet.getLogin());
 			requete.setString(6, Cryptographie.encodePassword(objet.getPassword()));
-			requete.setDouble(7, objet.getSalaire());
+			requete.setString(7, objet.getSalaire());
 			requete.setInt(8, objet.getPoste().getIdPoste());
 			status = requete.executeUpdate();
 			
@@ -56,7 +56,34 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
 
 	@Override
 	public int update(Utilisateur objet) {
-		return 0;
+		String sql = "UPDATE client SET nom = ?, "
+				+ "prenom = ?, "
+				+ "adresse = ?, "
+				+ "code_postal = ?, "
+				+ "login = ?, "
+				+ "password = ?, "
+				+ "salaire = ?, "
+				+ "id_poste = ?"
+			+ "WHERE id_client = ?;";
+		int status = 0;
+		try {
+			PreparedStatement requete = this.connexion.prepareStatement(sql);
+			requete.setString(1, objet.getNom());
+			requete.setString(2, objet.getPrenom());
+			requete.setString(3, objet.getAdresse());
+			requete.setString(4, objet.getCodePostal());
+			requete.setString(5, objet.getLogin());
+			requete.setString(6, Cryptographie.encodePassword(objet.getPassword()));
+			requete.setString(7, objet.getSalaire());
+			requete.setInt(8, objet.getPoste().getIdPoste());
+			status = requete.executeUpdate();
+			
+			System.out.println("Insertion réussie waouhhh youpiiiii!!!!!!!!  "+status);
+		} catch (SQLException e) {
+			System.out.println("Erreur dans la requête SQL : "+e.getMessage());
+			//e.printStackTrace();
+		}
+		return status;
 	}
 
 	@Override
@@ -84,6 +111,8 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
 					Utilisateur user;
 					UserPosteDirection userPoste = new UserPosteDirection(resultat.getString("user_poste_direction.libelle"));
 					userPoste.setIdPoste(resultat.getInt("user.id_poste"));
+					//Double salaire = Validator.convertToDouble(resultat.getDouble("salaire"));
+					
 					user = new Utilisateur(
 							resultat.getString("nom"),
 							resultat.getString("prenom"),
@@ -92,11 +121,11 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
 							resultat.getString("login"),
 							resultat.getString("password"),
 							userPoste,
-							resultat.getDouble("salaire")
+							resultat.getString("salaire")
 						);
 					user.setId(resultat.getInt("user.id_user"));
 					arrayList.add(user);
-					System.out.println("ID : "+user.getId()+" NOM : "+user.getNom()+" POSTE : "+user.getPoste());
+					System.out.println("ID : "+user.getId()+" NOM : "+user.getNom()+" POSTE : "+user.getPoste()+" SALAIRE : "+user.getSalaire());
 					
 				}
 				//Fermeture des curseurs ouverts
