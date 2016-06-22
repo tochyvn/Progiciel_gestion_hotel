@@ -47,6 +47,11 @@ public class CompteController implements Initializable {
 	}
 	
 	@FXML
+	private void onEnter() {
+		getConnexion();
+	}
+	
+	@FXML
 	private void getConnexion() {
 		System.out.println("Cliquez.");
 		
@@ -61,9 +66,9 @@ public class CompteController implements Initializable {
 			//Chargement de la vue d'accueil selon le type de user
 			System.out.println("Vous êtes bien connecté.");
 		}else {
-			System.out.println("Erreur de connexion STATUT : "+connected);
-		}
-		
+			System.out.println("L'identifiant ou le mot de passe est incorrect. Erreur : "+connected);
+			
+		}		
 	}
 	
 	@FXML

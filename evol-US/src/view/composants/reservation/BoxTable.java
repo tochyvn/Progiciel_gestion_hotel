@@ -15,20 +15,20 @@ import view.ViewInterfaceConstante;
 import view.composants.chambre.ListRoom;
 import view.composants.popup.Popup;
 
-public class BoxReservation extends VBox {
+public class BoxTable extends VBox {
 	
 	private Reservation reservation;
 	private static String url = "/ressources/img/restaurant.png";
 
-	public BoxReservation() {
+	public BoxTable() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public BoxReservation(double spacing) {
+	public BoxTable(double spacing) {
 		super(spacing);
 	}
 	
-	public BoxReservation(Reservation reservation) {
+	public BoxTable(Reservation reservation) {
 		this(5.0);
 		this.reservation = reservation;
 		this.getStyleClass().add("box-room-shadow");
@@ -43,12 +43,12 @@ public class BoxReservation extends VBox {
 		Image img = new Image(url);
 		ImageView imageView = new ImageView(img);
 		Label roomLabel = new Label("Reservation N° : "+reservation.getId());
-		Label status = new Label("STATUT : "+reservation.getStatutString());
-		Label chambre = new Label("CHAMBRE : "+reservation.getChambre().getIdChambre());
+		Label status = new Label("Statut : "+reservation.getStatutString());
+		Label chambre = new Label("Chambre : "+reservation.getChambre().getIdChambre());
 		Label client = new Label("Client : "+reservation.getClient().getNom());
 		
 		this.getChildren().addAll(imageView, roomLabel, status, chambre, client);
-		//Ajouter l'evenement qui se produira au clique
+		//Ajouter l'evenement qui se produira au clic
 		this.addEvent();
 	}
 	
@@ -56,9 +56,9 @@ public class BoxReservation extends VBox {
 		this.setOnMouseClicked((event) -> {
 			
 			//On recupï¿½re la BoxRoom sur laquelle l'on a cliquï¿½
-			BoxReservation boxReservation = (BoxReservation) event.getSource();
+			BoxTable boxReservation = (BoxTable) event.getSource();
 			//On affecte cette chambre ï¿½ la variable statique afin de pouvoir la rï¿½cupï¿½rer dans la Popup
-			ListeReservation.reservationSelected = boxReservation.reservation;
+			ListeTable.reservationSelected = boxReservation.reservation;
 			System.out.println(reservation);
 			
 			//if (ListeReservation.reservationSelected.getStatut() == EtatReservation.EN_COURS) {
