@@ -94,7 +94,7 @@
       </AnchorPane>
    </right>
    <stylesheets>
-      <URL value="@darkTheme.css" />
+      <URL value="@default.css" />
       <URL value="@application.css" />
    </stylesheets>
 </BorderPane>
