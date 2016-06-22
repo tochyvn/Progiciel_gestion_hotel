@@ -3,19 +3,26 @@ package view.restaurant;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import application.MainApplication;
 import controller.UserPosteDirectionManager;
 import controller.UtilisateurManager;
+import javafx.beans.property.DoubleProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import library.LoaderOfScene;
 import model.beans.UserPosteDirection;
 import model.beans.Utilisateur;
+import view.ViewInterfaceConstante;
 
 public class StockController implements Initializable {
 
@@ -94,7 +101,26 @@ public class StockController implements Initializable {
 		tblColumnCodeP.setCellValueFactory(new PropertyValueFactory<Utilisateur, String>("codePostal"));
 		tblColumnPoste.setCellValueFactory(new PropertyValueFactory<Utilisateur, UserPosteDirection>("poste"));
 	}
-
+	
+	@FXML
+	private void loadViewStock() {
+		Parent stockOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.STOCK_VIEW, 1);
+		((BorderPane)(MainApplication.primaryStage.getScene().getRoot())).setCenter(stockOverview);;
+		System.out.println(MainApplication.primaryStage.getScene().getRoot());
+		DoubleProperty opacity = stockOverview.opacityProperty();
+		//Animation.doAnimationProperty(opacity, 0, 1);
+	}
+	
+	@FXML
+	private void loadViewReservation() {
+		Parent reservationOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.RESERVATION_VIEW, 1);
+		((BorderPane)(MainApplication.primaryStage.getScene().getRoot())).setCenter(reservationOverview);;
+		System.out.println(MainApplication.primaryStage.getScene().getRoot());
+		DoubleProperty opacity = reservationOverview.opacityProperty();
+		//Animation.doAnimationProperty(opacity, 0, 1);
+	}
+	
+	
 	@FXML
 	public void create() {
 		

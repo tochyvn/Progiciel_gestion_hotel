@@ -48,6 +48,15 @@
 	-fx-text-fill : black;
 }
 
+.menu-top-orange{
+	-fx-background-color: #FF5722;
+}
+.menu-top-orange:hover{
+	-fx-text-fill : #000000;
+	-fx-background-color: #D5F0D5;
+	-fx-cursor : hand;
+}
+
 .menu-top-green{
 	-fx-background-color: #4CAF50;
 }
