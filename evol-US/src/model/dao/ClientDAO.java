@@ -1,7 +1,6 @@
 package model.dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +18,7 @@ public class ClientDAO extends DAO<Client> {
 
 	@Override
 	public int create(Client objet) {
-		String sql = "INSERT INTO client VALUES(NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO client VALUES(NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		int status = 0;
 		try {
 			PreparedStatement requete = this.connexion.prepareStatement(sql);
@@ -32,13 +31,15 @@ public class ClientDAO extends DAO<Client> {
 			requete.setString(7, objet.getLogin());
 			requete.setString(8, Cryptographie.encodePassword(objet.getPassword()));
 			requete.setString(9, objet.getCbNum());
-			requete.setDate(10, Date.valueOf(objet.getCbDateExp()));
+			requete.setString(10, objet.getCbDateExp());
+			requete.setString(11, objet.getCbCode());
+			requete.setInt(12, 1);
 			status = requete.executeUpdate();
 			
 			System.out.println("Insertion réussie waouhhh youpiiiii!!!!!!!!  "+status);
 		} catch (SQLException e) {
 			System.out.println("Erreur dans le DELETE SQL "+e.getMessage());
-			//e.printStackTrace();
+			e.printStackTrace();
 		}
 		return status;
 	}
@@ -56,7 +57,7 @@ public class ClientDAO extends DAO<Client> {
 					+ "password = ?, "
 					+ "cb_num = ?, "
 					+ "cb_date_exp = ?,"
-					+ "cb_code = ?"
+					+ "cb_chiffres_derriere = ?"
 				+ "WHERE id_client = ?;";
 		try {
 			PreparedStatement requete = this.connexion.prepareStatement(sql);
@@ -69,7 +70,7 @@ public class ClientDAO extends DAO<Client> {
 			requete.setString(7, objet.getLogin());
 			requete.setString(8, Cryptographie.encodePassword(objet.getPassword()));
 			requete.setString(9, Cryptographie.encodePassword(objet.getCbNum()));
-			requete.setDate(10, Date.valueOf(objet.getCbDateExp()));
+			requete.setString(10, objet.getCbDateExp());
 			requete.setString(11, Cryptographie.encodePassword(objet.getCbCode()));
 			requete.setInt(12, objet.getId());
 			status = requete.executeUpdate();
@@ -89,6 +90,7 @@ public class ClientDAO extends DAO<Client> {
 			requete.setInt(1, id);
 			status = requete.executeUpdate();
 		} catch (SQLException e) {
+			status = 3;
 			System.out.println("Erreur dans la requête DELETE SQL "+e.getMessage());
 		}
 		
@@ -136,6 +138,30 @@ public class ClientDAO extends DAO<Client> {
 		
 		return customer;
 	}
+	
+	
+	public Client findByEmail(String email) {
+		
+		String sql = "SELECT * FROM client WHERE pays = ?";
+		Client customer = null;
+		try {
+			PreparedStatement requete = this.connexion.prepareStatement(sql);
+			requete.setString(1, email);
+			ResultSet resultat = requete.executeQuery();
+			//S'il y a un resultat
+			if (resultat.next()) {
+					customer = new Client();
+					customer.setId(resultat.getInt("id_client"));
+					customer.setNom(resultat.getString("nom"));
+					customer.setPrenom(resultat.getString("prenom"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("ERREUR dans la requete SELECT : "+e.getMessage());
+		}
+		
+		return customer;
+	}
 
 	@Override
 	public void findAll(ObservableList<Client> arrayList) {
@@ -158,7 +184,7 @@ public class ClientDAO extends DAO<Client> {
 							resultat.getString("password"),
 							resultat.getString("cb_num"),
 							resultat.getString("cb_date_exp"),
-							resultat.getString("cb_code")
+							resultat.getString("cb_chiffres_derriere")
 					);
 					customer.setId(resultat.getInt("id_client"));
 					arrayList.add(customer);

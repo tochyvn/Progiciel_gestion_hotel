@@ -99,7 +99,7 @@ public class Validator {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(Validator.regexp("lion.tochlion@yahoo.fr", Validator.REGEXP_EMAIL));
+		System.out.println(Validator.regexp("lion.tochlion@yaho.fr", Validator.REGEXP_EMAIL));
 	}
 
 }

@@ -4,20 +4,25 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+import controller.ClientManager;
+import javafx.beans.property.DoubleProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.FlowPane;
+import library.Animation;
 import library.Validator;
-import model.Connexion;
 import model.beans.Client;
-import model.dao.ClientDAO;
 import model.exception.CreateObjectException;
 import view.composants.alerte.AlertConfirmation;
 import view.composants.alerte.AlertError;
@@ -27,10 +32,6 @@ public class ClientController implements Initializable {
 	
 	//Observable permettant de remplir la table
 	private ObservableList<Client> customers;
-	
-	//Permet l'accès au données DAO du client
-	private ClientDAO customerDAO;
-	
 	
 	@FXML
 	private TableView<Client> tblCustomer;
@@ -89,17 +90,32 @@ public class ClientController implements Initializable {
 	@FXML
 	private TextField cbCode;
 	
+	@FXML
+	private TextField txtRecherche;
+	
+	@FXML
+	private FlowPane resultRecherche;
+	
+	@FXML
+	private ComboBox<String> cmbHotel;
+	
+	
+	
 	public ClientController() {
-		customerDAO = new ClientDAO(Connexion.getConnexion());
+		
 	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
+		ObservableList<String> hotel = FXCollections.observableArrayList();
+		hotel.add(new String("1"));
+		cmbHotel.setItems(hotel);
+		cmbHotel.getSelectionModel().select(0);
 		customers = FXCollections.observableArrayList();
-		customerDAO.findAll(customers);
+		ClientManager.getInstance().findAll(customers);
 		tblCustomer.setItems(customers);
-		
+		resultRecherche.setStyle("-fx-background-color:  white;");
+		resultRecherche.setVisible(false);
 		//Matcher la correspondance tablView <-->Custom
 		tblColumnId.setCellValueFactory(new PropertyValueFactory<Client, Integer>("id"));
 		tblColumnNom.setCellValueFactory(new PropertyValueFactory<Client, String>("nom"));
@@ -107,7 +123,6 @@ public class ClientController implements Initializable {
 		tblColumnAdresse.setCellValueFactory(new PropertyValueFactory<Client, String>("adresse"));
 		tblColumnCodeP.setCellValueFactory(new PropertyValueFactory<Client, String>("codePostal"));
 		tblColumnLogin.setCellValueFactory(new PropertyValueFactory<Client, String>("login"));
-		
 	}
 	
 	@FXML
@@ -129,10 +144,10 @@ public class ClientController implements Initializable {
 					cbCode.getText()
 			);
 			
-			status = customerDAO.create(customer);
+			status = ClientManager.getInstance().create(customer);
 			System.out.println("status "+status);
 			if (status == 1) {
-				dialog = new AlertInfo("Statut de votre demande", "Insertion reussie");
+				dialog = new AlertInfo("Statut de votre demande", "Insertion reussie du client [ "+customer.getNom()+" ]");
 				dialog.showAndWait();
 				int idLastCustomer = customers.get(customers.size()-1).getId();
 				customer.setId(idLastCustomer+1);
@@ -145,6 +160,7 @@ public class ClientController implements Initializable {
 			}
 		} catch (CreateObjectException e) {
 			System.out.println("Erreur d'insertion");
+			e.showError();
 			//e.printStackTrace();
 		}
 		
@@ -176,7 +192,7 @@ public class ClientController implements Initializable {
 						cbCode.getText()
 						);
 				customer.setId(Integer.valueOf(txtId.getText()));
-				status = customerDAO.update(customer);
+				status = ClientManager.getInstance().update(customer);
 				System.out.println(status);
 				if (status == 1) {
 					Alert dialog = new AlertInfo("Statut de votre demande", "Modification reussie");
@@ -213,7 +229,7 @@ public class ClientController implements Initializable {
 			Optional<ButtonType> answer = dialog.showAndWait();
 			if (answer.get() == ButtonType.OK) {
 				System.out.println("Button OK");
-				status = customerDAO.delete(Integer.valueOf(txtId.getText()));
+				status = ClientManager.getInstance().delete(Integer.valueOf(txtId.getText()));
 				System.out.println(status);
 				if (status == 1) {
 					dialog = new AlertInfo("Statut de votre demande", "Suppression réussie");
@@ -232,6 +248,28 @@ public class ClientController implements Initializable {
 	}
 	
 	@FXML
+	private void findByEmail() {
+		
+		Client client = ClientManager.getInstance().findByEmail(txtRecherche.getText());
+		DoubleProperty opacity = resultRecherche.opacityProperty();
+		if (client != null) {
+			System.out.println(client.getId());
+			resultRecherche.setVisible(true);
+			Label nom = new Label(client.getNom());
+			nom.setStyle("-fx-color: white; -fx-font-size: 14pt; -fx-font-weight: bold;");
+			resultRecherche.setAlignment(Pos.CENTER);
+			if (resultRecherche.getChildren().size() != 0) {
+				resultRecherche.getChildren().remove(0); 
+			}
+			resultRecherche.getChildren().add(0, nom);
+			Animation.doAnimationProperty(opacity, 0, 1);
+		}else {
+			resultRecherche.setVisible(false);
+		}
+		
+	}
+	
+	@FXML
 	private void selectedTblViewRow() {
 		Client selectedCustomer = tblCustomer.getSelectionModel().getSelectedItem();
 		Integer index = tblCustomer.getSelectionModel().getSelectedIndex();
@@ -246,6 +284,9 @@ public class ClientController implements Initializable {
 			txtCodePostal.setText(selectedCustomer.getCodePostal());
 			txtPays.setText(selectedCustomer.getPays());
 			txtLogin.setText(selectedCustomer.getLogin());
+			cbCode.setText(selectedCustomer.getCbCode());
+			cbNum.setText(selectedCustomer.getCbNum());
+			cbExp.setText(selectedCustomer.getCbDateExp());
 		}
 	}
 	
@@ -260,6 +301,9 @@ public class ClientController implements Initializable {
 		txtPays.setText("");
 		txtLogin.setText("");
 		txtPassword.setText("");
+		cbCode.setText("");
+		cbExp.setText("");
+		cbNum.setText("");
 	}
 	
 

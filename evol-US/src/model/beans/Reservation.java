@@ -1,5 +1,6 @@
 package model.beans;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 import javafx.beans.property.ObjectProperty;
@@ -9,7 +10,7 @@ public class Reservation extends Produit {
 	
 	private ObjectProperty<LocalDate> dateDebut;
 	private ObjectProperty<LocalDate> dateFin;
-	private ObjectProperty<LocalDate> date;
+	private Date date;
 	private Chambre chambre;
 	private Client client;
 	private EtatReservation statut;
@@ -28,7 +29,7 @@ public class Reservation extends Produit {
 		this.chambre = chambre;
 		this.client = client;
 		this.statut = EtatReservation.EN_COURS;
-		this.date = new SimpleObjectProperty<>(LocalDate.now());
+		this.date = Date.valueOf(LocalDate.now());
 	}
 
 	public final ObjectProperty<LocalDate> dateDebutProperty() {
@@ -55,16 +56,14 @@ public class Reservation extends Produit {
 		this.dateFin = new SimpleObjectProperty<>(dateFin);
 	}
 
-	public final ObjectProperty<LocalDate> dateProperty() {
-		return this.date;
+
+	public Date getDate() {
+		return date;
 	}
 
-	public final LocalDate getDate() {
-		return this.dateProperty().get();
-	}
 
-	public final void setDate(final LocalDate date) {
-		this.date = new SimpleObjectProperty<>(date);
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 	public Chambre getChambre() {

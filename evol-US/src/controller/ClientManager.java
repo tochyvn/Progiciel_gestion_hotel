@@ -40,5 +40,9 @@ public class ClientManager {
 	public Client findById(Integer id) {
 		return clientDAO.findById(id);
 	}
+	
+	public Client findByEmail(String email) {
+		return clientDAO.findByEmail(email);
+	}
 
 }
