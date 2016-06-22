@@ -32,7 +32,7 @@
                <effect>
                   <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
                </effect></PasswordField>
-            <Button id="connect" fx:id="connect" layoutX="241.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#getConnexion" onMouseMoved="#changeCloseColorToActivate" prefHeight="27.0" prefWidth="105.0" style="-fx-background-color: #4CAF50;" stylesheets="@../../application/application.css" text="CONNEXION" textFill="WHITE">
+            <Button id="connect" fx:id="connect" layoutX="241.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#getConnexion" onMouseMoved="#changeCloseColorToActivate" prefHeight="27.0" prefWidth="105.0" styleClass="menu-top-green" stylesheets="@../../application/application.css" text="CONNEXION" textFill="WHITE">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -43,7 +43,7 @@
                   <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
                </effect>
             </Button>
-            <Button layoutX="100.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#raz" prefHeight="27.0" prefWidth="111.0" stylesheets="@../../application/application.css" text="EFFACER" textFill="#1f1f1fc1">
+            <Button layoutX="100.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#raz" prefHeight="27.0" prefWidth="111.0" styleClass="button-default" stylesheets="@../../application/application.css" text="EFFACER" textFill="#1f1f1fc1">
                <font>
                   <Font name="Corbel" size="12.0" />
                </font>
