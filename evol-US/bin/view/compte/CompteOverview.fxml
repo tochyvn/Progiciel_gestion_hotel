@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -12,33 +20,51 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="447.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.compte.CompteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="447.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.compte.CompteController">
    <children>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="443.0" prefWidth="447.0" styleClass="bg-green" stylesheets="@../../application/application.css">
          <children>
-            <TextField fx:id="identifiant" layoutX="100.0" layoutY="213.0" prefWidth="246.0" promptText="Identifiant" styleClass="input-grey" stylesheets="@../../application/application.css" />
-            <PasswordField fx:id="password" layoutX="100.0" layoutY="248.0" prefHeight="25.0" prefWidth="246.0" promptText="Mot de passe" styleClass="input-grey" stylesheets="@../../application/application.css" />
-            <Button id="connect" fx:id="connect" layoutX="241.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#getConnexion" onMouseMoved="#changeCloseColorToActivate" prefHeight="27.0" prefWidth="105.0" styleClass="button-green" stylesheets="@../../application/application.css" text="CONNEXION" textFill="WHITE">
+            <TextField fx:id="identifiant" layoutX="100.0" layoutY="213.0" prefWidth="246.0" promptText="Identifiant" styleClass="input-grey" stylesheets="@../../application/application.css">
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect></TextField>
+            <PasswordField fx:id="password" layoutX="100.0" layoutY="248.0" prefHeight="25.0" prefWidth="246.0" promptText="Mot de passe" styleClass="input-grey" stylesheets="@../../application/application.css">
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect></PasswordField>
+            <Button id="connect" fx:id="connect" layoutX="241.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#getConnexion" onMouseMoved="#changeCloseColorToActivate" prefHeight="27.0" prefWidth="105.0" style="-fx-background-color: #4CAF50;" stylesheets="@../../application/application.css" text="CONNEXION" textFill="WHITE">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect>
             </Button>
-            <Button layoutX="100.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#raz" prefHeight="27.0" prefWidth="111.0" styleClass="button-grey" stylesheets="@../../application/application.css" text="EFFACER" textFill="#1f1f1fc1">
+            <Button layoutX="100.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#raz" prefHeight="27.0" prefWidth="111.0" stylesheets="@../../application/application.css" text="EFFACER" textFill="#1f1f1fc1">
                <font>
                   <Font name="Corbel" size="12.0" />
                </font>
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect>
             </Button>
-            <HBox layoutX="360.0" layoutY="14.0" prefHeight="122.0" prefWidth="74.0" style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+            <HBox layoutX="360.0" layoutY="14.0" prefHeight="122.0" prefWidth="74.0" style="-fx-background-color: white;">
                <children>
                   <ImageView fitHeight="73.0" fitWidth="76.0">
                      <image>
                         <Image url="@../../ressources/img/Evol-Us.png" />
                      </image>
+                     <effect>
+                        <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+                     </effect>
                   </ImageView>
                </children>
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect>
             </HBox>
             <Label layoutX="157.0" layoutY="136.0" prefHeight="58.0" prefWidth="132.0" text="LOGIN " textFill="WHITE">
                <font>
