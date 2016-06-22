@@ -32,7 +32,7 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
 	@Override
 	public int create(Utilisateur objet) {
 		
-		String sql = "INSERT INTO user VALUES(NULL, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO user VALUES(NULL, ?, ?, ?, ?, ?, ?, ?, ?)";
 		int status = 0;
 		try {
 			PreparedStatement requete = this.connexion.prepareStatement(sql);
@@ -42,7 +42,8 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
 			requete.setString(4, objet.getCodePostal());
 			requete.setString(5, objet.getLogin());
 			requete.setString(6, Cryptographie.encodePassword(objet.getPassword()));
-			requete.setInt(7, objet.getPoste().getIdPoste());
+			requete.setDouble(7, objet.getSalaire());
+			requete.setInt(8, objet.getPoste().getIdPoste());
 			status = requete.executeUpdate();
 			
 			System.out.println("Insertion réussie waouhhh youpiiiii!!!!!!!!  "+status);
@@ -90,7 +91,8 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
 							resultat.getString("code_postal"),
 							resultat.getString("login"),
 							resultat.getString("password"),
-							userPoste
+							userPoste,
+							resultat.getDouble("salaire")
 						);
 					user.setId(resultat.getInt("user.id_user"));
 					arrayList.add(user);

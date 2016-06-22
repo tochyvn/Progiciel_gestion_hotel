@@ -128,23 +128,23 @@ public class RootLayoutController implements Initializable {
 	}
 	
 	/**
-	 * Gestion de l'affichage du menu enfonction du niveau d'acc�s de l'utilisateur connect�
+	 * Gestion de l'affichage du menu en fonction du niveau d'acc�s de l'utilisateur connexion
 	 */
 	private void chechAuthentificationType() {
 		String droit = UtilisateurManager.typeCompte;
-		if (droit != "DIRECTEUR") {
-			hyperStatistique.setVisible(false);
+		if (droit != "DIRECTION") {
+			hyperStatistique.setVisible(true);
 		}
-		if (droit != "DIRECTEUR" && droit != "MAINTENANCE") {
+		if (droit != "DIRECTION" && droit != "MAINTENANCE") {
 			//hyperStatistique.setVisible(false);
 		}
-		if (droit != "DIRECTEUR" && droit != "SPA") {
+		if (droit != "DIRECTION" && droit != "SPA") {
 			//hyperStatistique.setVisible(false);
 		}
-		if (droit != "DIRECTEUR" && droit != "RECEPTION") {
+		if (droit != "DIRECTION" && droit != "RECEPTION") {
 			//hyperStatistique.setVisible(false);
 		}
-		if (droit != "DIRECTEUR" && droit != "HEBERGEMENT") {
+		if (droit != "DIRECTION" && droit != "HEBERGEMENT") {
 			//hyperStatistique.setVisible(false);
 		}
 	}
@@ -159,11 +159,12 @@ public class RootLayoutController implements Initializable {
 	
 	@FXML
 	private void loadViewEmployee() {
-		Parent reservatonOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.USER_VIEW, 1);
-		root.setCenter(reservatonOverview);
-		DoubleProperty opacity = reservatonOverview.opacityProperty();
+		Parent userOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.USER_VIEW, 1);
+		root.setCenter(userOverview);
+		DoubleProperty opacity = userOverview.opacityProperty();
 		Animation.doAnimationProperty(opacity, 0, 1);
 	}
+	
 	
 	@FXML
 	private void loadViewChambre() {
@@ -173,4 +174,101 @@ public class RootLayoutController implements Initializable {
 		Animation.doAnimationProperty(opacity, 0, 1);
 	}
 
+	@FXML
+	private void loadViewStatistiques() {
+		Parent statistiquesOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.STATISTIQUES_VIEW, 1);
+		root.setCenter(statistiquesOverview);
+		DoubleProperty opacity = statistiquesOverview.opacityProperty();
+		Animation.doAnimationProperty(opacity, 0, 1);
+	}
+
+	@FXML
+	private void loadViewStock() {
+		Parent stockOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.STOCK_VIEW, 1);
+		root.setCenter(stockOverview);
+		DoubleProperty opacity = stockOverview.opacityProperty();
+		Animation.doAnimationProperty(opacity, 0, 1);
+	}
+
+	@FXML
+	private void loadViewAgence() {
+		Parent agenceOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.AGENCE_VIEW, 1);
+		root.setCenter(agenceOverview);
+		DoubleProperty opacity = agenceOverview.opacityProperty();
+		Animation.doAnimationProperty(opacity, 0, 1);
+	}
+
+	@FXML
+	private void loadViewLivreOr() {
+		Parent livreOrOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.LIVRE_OR_VIEW, 1);
+		root.setCenter(livreOrOverview);
+		DoubleProperty opacity = livreOrOverview.opacityProperty();
+		Animation.doAnimationProperty(opacity, 0, 1);
+	}
+
+	@FXML
+	private void loadViewEncaissement() {
+		Parent encaissementOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.ENCAISSEMENT_VIEW, 1);
+		root.setCenter(encaissementOverview);
+		DoubleProperty opacity = encaissementOverview.opacityProperty();
+		Animation.doAnimationProperty(opacity, 0, 1);
+	}
+
+	@FXML
+	private void loadViewFactures() {
+		Parent facturesOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.FACTURES_VIEW, 1);
+		root.setCenter(facturesOverview);
+		DoubleProperty opacity = facturesOverview.opacityProperty();
+		Animation.doAnimationProperty(opacity, 0, 1);
+	}
+
+
+	@FXML
+	private void loadViewPlanning() {
+		Parent planningOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.PLANNING_VIEW, 1);
+		root.setCenter(planningOverview);
+		DoubleProperty opacity = planningOverview.opacityProperty();
+		Animation.doAnimationProperty(opacity, 0, 1);
+	}
+
+	@FXML
+	private void loadViewSurMesure() {
+		Parent surmesureOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.SURMESURE_VIEW, 1);
+		root.setCenter(surmesureOverview);
+		DoubleProperty opacity = surmesureOverview.opacityProperty();
+		Animation.doAnimationProperty(opacity, 0, 1);
+	}
+
+	@FXML
+	private void loadViewSpa() {
+		Parent spaOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.SPA_VIEW, 1);
+		root.setCenter(spaOverview);
+		DoubleProperty opacity = spaOverview.opacityProperty();
+		Animation.doAnimationProperty(opacity, 0, 1);
+	}
+
+	@FXML
+	private void loadViewNettoyage() {
+		Parent nettoyageOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.NETTOYAGE_VIEW, 1);
+		root.setCenter(nettoyageOverview);
+		DoubleProperty opacity = nettoyageOverview.opacityProperty();
+		Animation.doAnimationProperty(opacity, 0, 1);
+	}
+
+	@FXML
+	private void loadViewReparationHotel() {
+		Parent reparationOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.REPARATION_HOTEL_VIEW, 1);
+		root.setCenter(reparationOverview);
+		DoubleProperty opacity = reparationOverview.opacityProperty();
+		Animation.doAnimationProperty(opacity, 0, 1);
+	}	
+
+	@FXML
+	private void loadViewReparationResto() {
+		Parent reparationOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.REPARATION_RESTO_VIEW, 1);
+		root.setCenter(reparationOverview);
+		DoubleProperty opacity = reparationOverview.opacityProperty();
+		Animation.doAnimationProperty(opacity, 0, 1);
+	}	
+	
 }
