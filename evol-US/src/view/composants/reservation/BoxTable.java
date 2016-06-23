@@ -42,7 +42,7 @@ public class BoxTable extends VBox {
 		*/
 		Image img = new Image(url);
 		ImageView imageView = new ImageView(img);
-		Label roomLabel = new Label("Reservation N° : "+reservation.getId());
+		Label roomLabel = new Label("Reservation NÂ° : "+reservation.getId());
 		Label status = new Label("STATUT : "+reservation.getStatutString());
 		Label chambre = new Label("CHAMBRE : "+reservation.getChambre().getIdChambre());
 		Label client = new Label("Client : "+reservation.getClient().getNom());

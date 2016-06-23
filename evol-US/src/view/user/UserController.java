@@ -115,7 +115,7 @@ public class UserController implements Initializable {
 			status = UtilisateurManager.getInstance().create(user);
 			utilisateurs.add(user);
 			if (status == 1) {
-				AlertConfirmation  alert = new AlertConfirmation("Confirmation d'inscription", "inscription réussie");
+				AlertConfirmation  alert = new AlertConfirmation("Confirmation d'inscription", "inscription rÃ©ussie");
 				alert.showAndWait();
 				this.raz();
 			}
@@ -151,7 +151,7 @@ public class UserController implements Initializable {
 				Integer selectedIndex = tblUser.getSelectionModel().getSelectedIndex();
 				utilisateurs.set(selectedIndex, user);
 			}else {
-				AlertError alert = new AlertError("Erreur", "Echec de la modification veuillez reesayer plustard.");
+				AlertError alert = new AlertError("Erreur", "Echec de la modification veuillez reesayer plus tard.");
 				alert.showAndWait();
 			}
 		} catch (CreateObjectException e) {

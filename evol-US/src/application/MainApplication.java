@@ -20,7 +20,7 @@ public class MainApplication extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			MainApplication.primaryStage = primaryStage;
-			MainApplication.primaryStage.setTitle("Gestion Hotelière - Aurora");
+			MainApplication.primaryStage.setTitle("Gestion HoteliÃ¨re - Le Gold Motion");
 			primaryStage.setX(0);
 			primaryStage.setY(0);
 			primaryStage.setWidth(1500);

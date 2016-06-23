@@ -64,7 +64,7 @@ public class CompteController implements Initializable {
 		int connected = UtilisateurManager.getInstance().getConnexion(user);
 		if (connected == 1) {
 			//Chargement de la vue d'accueil selon le type de user
-			System.out.println("Vous êtes bien connecté.");
+			System.out.println("Vous Ãªtes bien connectÃ©.");
 		}else {
 			System.out.println("L'identifiant ou le mot de passe est incorrect. Erreur : "+connected);
 			

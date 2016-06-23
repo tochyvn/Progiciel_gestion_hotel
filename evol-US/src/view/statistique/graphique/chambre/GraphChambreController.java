@@ -33,8 +33,8 @@ public class GraphChambreController implements Initializable {
 		pieCharData = FXCollections.observableArrayList(
 					new PieChart.Data("Chambres vides", 13),
 					new PieChart.Data("Chambres en maintenance", 25),
-					new PieChart.Data("Chambres ocupp�es", 10),
-					new PieChart.Data("Chambre reserv�e non confirm�e", 22),
+					new PieChart.Data("Chambres ocuppées", 10),
+					new PieChart.Data("Chambres reservée non confirmée", 22),
 					new PieChart.Data("Chambres neutes", 30)
 				);
 		pieChart.setLabelLineLength(30);
