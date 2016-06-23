@@ -3,6 +3,7 @@ package view.statistique.graphique.chambre;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import controller.ChambreManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
@@ -29,13 +30,19 @@ public class GraphChambreController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-
+		
+		int total = ChambreManager.getInstance().countAll();
+		int libre = ChambreManager.getInstance().countRoom("LIBRE");
+		int maintenance = ChambreManager.getInstance().countRoom("MAINTENANCE");
+		int occupee = ChambreManager.getInstance().countRoom("OCCUPEE");
+		double pourcentLibre = libre*100/total;
+		double pourcentMaintenance = maintenance*100/total;
+		double pourcentOccupee = occupee*100/total;
+		
 		pieCharData = FXCollections.observableArrayList(
-					new PieChart.Data("Chambres vides", 13),
-					new PieChart.Data("Chambres en maintenance", 25),
-					new PieChart.Data("Chambres ocuppées", 10),
-					new PieChart.Data("Chambres reservée non confirmée", 22),
-					new PieChart.Data("Chambres neutes", 30)
+					new PieChart.Data("Chambres libre", pourcentLibre),
+					new PieChart.Data("Chambres en maintenance", pourcentMaintenance),
+					new PieChart.Data("Chambres ocuppées", pourcentOccupee)
 				);
 		pieChart.setLabelLineLength(30);
 		//pieChart.setLegendSide(Side.LEFT);

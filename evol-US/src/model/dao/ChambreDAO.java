@@ -113,5 +113,46 @@ public class ChambreDAO extends DAO<Chambre> {
 
 		return arrayList;
 	}
+	
+	public int countRoom(String etat) {
+		int nbre = 0;
+		String sql = "SELECT COUNT(*) AS \"count\" FROM chambre WHERE etat = ?";
+		PreparedStatement requete;
+		if (connexion != null) {
+			try {
+				requete = this.connexion.prepareStatement(sql);
+				requete.setString(1, etat);
+				ResultSet resultat = requete.executeQuery();
+				if (resultat.next()) {
+					nbre = resultat.getInt("count");
+				}
+			} catch (SQLException e) {
+				System.out.println("ERREUR : "+e.getMessage());
+			}
+		}
+
+		return nbre;
+	}
+	
+	public int countAll() {
+		int nbre = 0;
+		String sql = "SELECT COUNT(*) AS \"count\" FROM chambre";
+		PreparedStatement requete;
+		if (connexion != null) {
+			try {
+				requete = this.connexion.prepareStatement(sql);
+				
+				ResultSet resultat = requete.executeQuery();
+				if (resultat.next()) {
+					nbre = resultat.getInt("count");
+				}
+			} catch (SQLException e) {
+				System.out.println("ERREUR : "+e.getMessage());
+			}
+		}
+
+		return nbre;
+	}
+	
 
 }
