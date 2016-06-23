@@ -4,9 +4,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 
 import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleObjectProperty;
 
 public class LivreOr {
 	private IntegerProperty idLivreOr;

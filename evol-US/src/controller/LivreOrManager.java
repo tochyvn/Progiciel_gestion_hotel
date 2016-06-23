@@ -3,7 +3,6 @@ package controller;
 import javafx.collections.ObservableList;
 import model.Connexion;
 import model.beans.LivreOr;
-import model.beans.Reservation;
 import model.dao.LivreOrDAO;
 
 public class LivreOrManager {

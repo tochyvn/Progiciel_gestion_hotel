@@ -7,9 +7,7 @@ import javafx.beans.property.DoubleProperty;
 import javafx.collections.ObservableList;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import library.Animation;
 import library.LoaderOfScene;
 import model.Connexion;
 import model.beans.Utilisateur;
@@ -79,10 +77,10 @@ public class UtilisateurManager {
 			Scene scenePrincipale = LoaderOfScene.loadScene(ViewInterfaceConstante.ROOT_VIEW, 0);
 			MainApplication.primaryStage.setScene(scenePrincipale);
 			
-			Parent center1 = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.STATISTIQUES_VIEW, 1);
+			Parent center1 = LoaderOfScene.loadParent(ViewInterfaceConstante.STATISTIQUES_VIEW, 1);
 			//On recupere le root de la scene principale
 			((BorderPane) MainApplication.primaryStage.getScene().getRoot()).setCenter(center1);
-			System.out.println(((BorderPane) MainApplication.primaryStage.getScene().getRoot()));
+			System.out.println((MainApplication.primaryStage.getScene().getRoot()));
 			DoubleProperty opacity = center1.opacityProperty();
 			//Animation.doAnimationProperty(opacity, 0, 1);
 		}else {

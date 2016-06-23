@@ -4,7 +4,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import application.MainApplication;
 import controller.ReservationManager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -30,7 +29,6 @@ public class ListeReservationController implements Initializable {
 		rootSecond.setContent(listes);
 		rootSecond.setFitToHeight(true);
 		rootSecond.setFitToWidth(true);
-		
 	}
 	
 	/**

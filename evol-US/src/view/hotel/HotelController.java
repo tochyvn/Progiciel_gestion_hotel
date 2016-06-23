@@ -5,20 +5,17 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import application.MainApplication;
-import controller.ReservationManager;
 import javafx.beans.property.DoubleProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import library.LoaderOfScene;
 import model.beans.Chambre;
 import model.beans.Client;
 import model.beans.Reservation;
 import view.ViewInterfaceConstante;
-import view.composants.reservation.ListeTable;
 
 public class HotelController implements Initializable {
 	
@@ -34,7 +31,7 @@ public class HotelController implements Initializable {
 	
 	@FXML
 	private void loadViewAgence() {
-		Parent agenceOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.AGENCE_VIEW, 1);
+		Parent agenceOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.AGENCE_VIEW, 1);
 		((BorderPane)(MainApplication.primaryStage.getScene().getRoot())).setCenter(agenceOverview);;
 		System.out.println(MainApplication.primaryStage.getScene().getRoot());
 		DoubleProperty opacity = agenceOverview.opacityProperty();
@@ -43,7 +40,7 @@ public class HotelController implements Initializable {
 	
 	@FXML
 	private void loadViewLivreOr() {
-		Parent livreOrOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.LIVRE_OR_VIEW, 1);
+		Parent livreOrOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.LIVRE_OR_VIEW, 1);
 		((BorderPane)(MainApplication.primaryStage.getScene().getRoot())).setCenter(livreOrOverview);;
 		System.out.println(MainApplication.primaryStage.getScene().getRoot());
 		DoubleProperty opacity = livreOrOverview.opacityProperty();
@@ -52,7 +49,7 @@ public class HotelController implements Initializable {
 	
 	@FXML
 	private void loadViewChambre() {
-		Parent chambreOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.CHAMBRE_VIEW, 1);
+		Parent chambreOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.CHAMBRE_VIEW, 1);
 		((BorderPane)(MainApplication.primaryStage.getScene().getRoot())).setCenter(chambreOverview);;
 		System.out.println(MainApplication.primaryStage.getScene().getRoot());
 		DoubleProperty opacity = chambreOverview.opacityProperty();

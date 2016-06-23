@@ -11,36 +11,36 @@
 
 <BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" styleClass="bg-green" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.RootLayoutController">
    <left>
-      <AnchorPane fx:id="borderPaneLeft" prefHeight="607.0" prefWidth="163.0" style="-fx-background-color: #D5F0D5;" visible="false" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="borderPaneLeft" prefHeight="530.0" prefWidth="141.0" style="-fx-background-color: #D5F0D5;" visible="false" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="14.0" layoutY="14.0" text="Aurora" />
             <Hyperlink fx:id="hyperStatistique" layoutX="12.0" layoutY="50.0" onMouseClicked="#loadViewStatistiques" prefHeight="23.0" prefWidth="128.0" text="Statistiques" />
             <Label layoutX="12.0" layoutY="73.0" prefHeight="23.0" prefWidth="128.0" text="Restaurant" />
             <Hyperlink fx:id="hyperReservation" layoutX="37.0" layoutY="96.0" onMouseClicked="#loadViewReservation" prefHeight="23.0" prefWidth="105.0" text="Réservations" />
-            <Hyperlink fx:id="hyperStock" layoutX="37.0" layoutY="119.0" onMouseClicked="#loadViewStock" prefHeight="23.0" prefWidth="105.0" text="Stock" />
+            <Hyperlink layoutX="37.0" layoutY="119.0" onMouseClicked="#loadViewStock" prefHeight="23.0" prefWidth="105.0" text="Stock" />
             <Label layoutX="12.0" layoutY="142.0" prefHeight="23.0" prefWidth="128.0" text="Hebergement" />
             <Hyperlink fx:id="hyperChambre" layoutX="37.0" layoutY="165.0" onMouseClicked="#loadViewChambre" prefHeight="23.0" prefWidth="105.0" text="Réservations" />
-            <Hyperlink fx:id="hyperAgence" layoutX="37.0" layoutY="188.0" onMouseClicked="#loadViewAgence" prefHeight="23.0" prefWidth="126.0" text="Agence de voyages" />
-            <Hyperlink fx:id="hyperLivreOr" layoutX="37.0" layoutY="211.0" onMouseClicked="#loadViewLivreOr" prefHeight="23.0" prefWidth="105.0" text="Livre d'or" />
+            <Hyperlink layoutX="37.0" layoutY="188.0" onMouseClicked="#loadViewAgence" prefHeight="23.0" prefWidth="126.0" text="Agence de voyages" />
+            <Hyperlink layoutX="37.0" layoutY="211.0" onMouseClicked="#loadViewLivreOr" prefHeight="23.0" prefWidth="105.0" text="Livre d'or" />
             <Label layoutX="12.0" layoutY="234.0" prefHeight="23.0" prefWidth="128.0" text="Réception" />
-            <Hyperlink fx:id="hyperEncaissement" layoutX="37.0" layoutY="257.0" onMouseClicked="#loadViewEncaissement" prefHeight="23.0" prefWidth="105.0" text="Encaissement" />
-			<Hyperlink fx:id="hyperFactures" layoutX="37.0" layoutY="280.0" onMouseClicked="#loadViewFactures" prefHeight="23.0" prefWidth="105.0" text="Factures" />
-            <Hyperlink fx:id="hyperPlanning" layoutX="37.0" layoutY="303.0" onMouseClicked="#loadViewPlanning" prefHeight="23.0" prefWidth="105.0" text="Planning" />
-            <Hyperlink fx:id="hyperSurMesure" layoutX="37.0" layoutY="326.0" prefHeight="23.0" prefWidth="105.0" text="Services sur mesure" />
-            <Hyperlink fx:id="hyperSpa" layoutX="12.0" layoutY="349.0" onMouseClicked="#loadViewSpa" prefHeight="23.0" prefWidth="128.0" text="SPA" />
+            <Hyperlink layoutX="37.0" layoutY="257.0" onMouseClicked="#loadViewEncaissement" prefHeight="23.0" prefWidth="105.0" text="Encaissement" />
+			<Hyperlink layoutX="37.0" layoutY="280.0" onMouseClicked="#loadViewFactures" prefHeight="23.0" prefWidth="105.0" text="Factures" />
+            <Hyperlink layoutX="37.0" layoutY="303.0" onMouseClicked="#loadViewPlanning" prefHeight="23.0" prefWidth="105.0" text="Planning" />
+            <Hyperlink layoutX="37.0" layoutY="326.0" prefHeight="23.0" prefWidth="105.0" text="Services sur mesure" />
+            <Hyperlink layoutX="12.0" layoutY="349.0" onMouseClicked="#loadViewSpa" prefHeight="23.0" prefWidth="128.0" text="SPA" />
             <Label layoutX="12.0" layoutY="372.0" prefHeight="23.0" prefWidth="128.0" text="Gouvernante" />
-            <Hyperlink fx:id="hyperNettoyage" layoutX="37.0" layoutY="395.0" onMouseClicked="#loadViewNettoyage" prefHeight="23.0" prefWidth="105.0" text="Nettoyage" />
+            <Hyperlink layoutX="37.0" layoutY="395.0" onMouseClicked="#loadViewNettoyage" prefHeight="23.0" prefWidth="105.0" text="Nettoyage" />
             <Label layoutX="12.0" layoutY="418.0" prefHeight="23.0" prefWidth="128.0" text="Maintenance" />
-            <Hyperlink fx:id="hyperReparation" layoutX="37.0" layoutY="441.0" onMouseClicked="#loadViewReparationHotel" prefHeight="23.0" prefWidth="105.0" text="Réparation Hotel" />
-            <Hyperlink fx:id="hyperReparation" layoutX="37.0" layoutY="464.0" onMouseClicked="#loadViewReparationResto" prefHeight="23.0" prefWidth="105.0" text="Réparation Restaurant" />
+            <Hyperlink layoutX="37.0" layoutY="441.0" onMouseClicked="#loadViewReparationHotel" prefHeight="23.0" prefWidth="105.0" text="Réparation Hotel" />
+            <Hyperlink layoutX="37.0" layoutY="464.0" onMouseClicked="#loadViewReparationResto" prefHeight="23.0" prefWidth="105.0" text="Réparation Restaurant" />
             <Hyperlink fx:id="hyperEmployee" layoutX="12.0" layoutY="487.0" onMouseClicked="#loadViewEmployee" prefHeight="23.0" prefWidth="128.0" text="Employés" />
-            <Hyperlink fx:id="hyperClient" layoutX="12.0" layoutY="510.0" onMouseClicked="#loadViewClient" prefHeight="23.0" prefWidth="128.0" text="Clients" />
-            <Label layoutX="12.0" layoutY="533.0" text="Evol-Us © 2016" />
-            <Hyperlink layoutX="8.0" layoutY="556.0" onMouseClicked="#loadViewMentions" text="Mentions légales" />
+            <Hyperlink layoutX="12.0" layoutY="510.0" onAction="#loadViewClient" prefHeight="23.0" prefWidth="128.0" text="Clients" />
+            <Label layoutX="14.0" layoutY="14.0" text="Evol-Us" />
+            <Label layoutX="12.0" layoutY="533.0" text="Aurora © 2016" />
+            <Hyperlink layoutX="8.0" layoutY="556.0" text="Mentions légales" />
                   
          </children>
          <BorderPane.margin>
-            <Insets left="10.0" right="10.0" />
+            <Insets bottom="20.0" left="10.0" right="20.0" top="20.0" />
          </BorderPane.margin>
          <effect>
             <DropShadow />
@@ -58,6 +58,9 @@
          <effect>
             <DropShadow />
          </effect>
+         <children>
+            <Label id="topTitre" fx:id="topTitle" />
+         </children>
       </FlowPane>
    </top>
    <bottom>
@@ -71,7 +74,7 @@
       </AnchorPane>
    </bottom>
    <center>
-      <BorderPane prefHeight="538.0" prefWidth="413.0" style="-fx-background-color: #D5F0D5;" BorderPane.alignment="CENTER">
+      <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #D5F0D5;" BorderPane.alignment="CENTER">
          <right>
             <AnchorPane prefHeight="538.0" prefWidth="67.0" BorderPane.alignment="CENTER" />
          </right>

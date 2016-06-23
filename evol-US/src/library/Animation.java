@@ -31,7 +31,7 @@ public class Animation {
         //Faire l'aller et retour automatique
         timeline.setAutoReverse(true);
         //Durée des cycles indéterminé
-        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.setCycleCount(Timeline.animation.Animation.INDEFINITE);
         timeline.play();
 	}
 }

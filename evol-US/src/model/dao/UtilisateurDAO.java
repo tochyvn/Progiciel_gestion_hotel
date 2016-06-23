@@ -64,21 +64,26 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
 				+ "password = ?, "
 				+ "salaire = ?, "
 				+ "id_poste = ?"
-			+ "WHERE id_client = ?;";
+			+ "WHERE id_user = ?;";
 		int status = 0;
 		try {
-			PreparedStatement requete = this.connexion.prepareStatement(sql);
-			requete.setString(1, objet.getNom());
-			requete.setString(2, objet.getPrenom());
-			requete.setString(3, objet.getAdresse());
-			requete.setString(4, objet.getCodePostal());
-			requete.setString(5, objet.getLogin());
-			requete.setString(6, Cryptographie.encodePassword(objet.getPassword()));
-			requete.setString(7, objet.getSalaire());
-			requete.setInt(8, objet.getPoste().getIdPoste());
-			status = requete.executeUpdate();
-			
-			System.out.println("Insertion réussie waouhhh youpiiiii!!!!!!!!  "+status);
+			if (connexion != null) {
+				PreparedStatement requete = this.connexion.prepareStatement(sql);
+				requete.setString(1, objet.getNom());
+				requete.setString(2, objet.getPrenom());
+				requete.setString(3, objet.getAdresse());
+				requete.setString(4, objet.getCodePostal());
+				requete.setString(5, objet.getLogin());
+				requete.setString(6, Cryptographie.encodePassword(objet.getPassword()));
+				requete.setString(7, objet.getSalaire());
+				requete.setInt(8, objet.getPoste().getIdPoste());
+				requete.setInt(9, objet.getId());
+				status = requete.executeUpdate();
+				
+				System.out.println("Modification réussie waouhhh youpiiiii!!!!!!!!  "+status);
+			}else {
+				status = 3;
+			}
 		} catch (SQLException e) {
 			System.out.println("Erreur dans la requête SQL : "+e.getMessage());
 			//e.printStackTrace();
@@ -88,7 +93,21 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
 
 	@Override
 	public int delete(Integer id) {
-		return 0;
+		String sql = "DELETE FROM user WHERE id_user = ?";
+		int status = 0;
+		try {
+			if (connexion != null) {
+				PreparedStatement requete = this.connexion.prepareStatement(sql);
+				requete.setInt(1, id);
+				status = requete.executeUpdate();
+			}else{
+				status = 3;
+			}
+		} catch (SQLException e) {
+			System.out.println("Erreur dans la requête DELETE SQL "+e.getMessage());
+		}
+		
+		return status;
 	}
 
 	@Override

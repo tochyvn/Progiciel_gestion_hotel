@@ -17,7 +17,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import library.LoaderOfScene;
 import model.beans.UserPosteDirection;
@@ -104,7 +103,7 @@ public class StockController implements Initializable {
 	
 	@FXML
 	private void loadViewStock() {
-		Parent stockOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.STOCK_VIEW, 1);
+		Parent stockOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.STOCK_VIEW, 1);
 		((BorderPane)(MainApplication.primaryStage.getScene().getRoot())).setCenter(stockOverview);;
 		System.out.println(MainApplication.primaryStage.getScene().getRoot());
 		DoubleProperty opacity = stockOverview.opacityProperty();
@@ -113,7 +112,7 @@ public class StockController implements Initializable {
 	
 	@FXML
 	private void loadViewReservation() {
-		Parent reservationOverview = (AnchorPane) LoaderOfScene.loadParent(ViewInterfaceConstante.RESERVATION_VIEW, 1);
+		Parent reservationOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.RESERVATION_VIEW, 1);
 		((BorderPane)(MainApplication.primaryStage.getScene().getRoot())).setCenter(reservationOverview);;
 		System.out.println(MainApplication.primaryStage.getScene().getRoot());
 		DoubleProperty opacity = reservationOverview.opacityProperty();

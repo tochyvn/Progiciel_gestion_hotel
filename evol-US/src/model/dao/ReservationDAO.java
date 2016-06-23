@@ -32,8 +32,8 @@ public class ReservationDAO extends DAO<Reservation> {
 				requete.setDate(2, Date.valueOf(objet.getDateFin()));
 				requete.setDate(3, Date.valueOf(LocalDate.now()));
 				requete.setString(4, objet.getStatutString());
-				requete.setInt(5, objet.getChambre().getIdChambre());
-				requete.setInt(6, objet.getClient().getId());
+				requete.setInt(6, objet.getChambre().getIdChambre());
+				requete.setInt(5, objet.getClient().getId());
 				status = requete.executeUpdate();
 				
 				System.out.println("Insertion réussie waouhhh youpiiiii!!!!!!!!  "+status);

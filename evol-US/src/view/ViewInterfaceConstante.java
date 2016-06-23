@@ -8,7 +8,8 @@ public interface ViewInterfaceConstante {
 	public final static String DEFAULT_CSS = VIEW_PACKAGE+"default.css";
 	public final static String ROOT_VIEW = VIEW_PACKAGE+"RootLayout.fxml";
 	public final static String ROOT_CONTROLLER = VIEW_PACKAGE+"RootLayoutController.java";
-	
+	public final static String HEADER_RECEPTION = VIEW_PACKAGE+"reception/header/HeaderReceptionOverview.fxml";
+	public final static String HEADER_RESTAURANT = VIEW_PACKAGE+"restaurant/header/HeaderRestaurantOverview.fxml"; 
 	
 	/* POPUPS */
 	public final static String POPUP_ROOT_VIEW = VIEW_PACKAGE+"composants/popup/PopupOverview.fxml";

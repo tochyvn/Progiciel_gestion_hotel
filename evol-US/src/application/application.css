@@ -3,33 +3,34 @@
 .button-green {
 	-fx-background-color:  #4CAF50;
 	-fx-border-radius: 7px;
+-fx-effect:  dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
 }
 
-
 .button-green:hover {
-	-fx-background-color: #2196F3;
+-fx-background-color: #2196F3;
 }
 
 .input-grey {
-	-fx-background-color: #E0E0E0;
-	-fx-background-radius: 7px;
+-fx-background-color: #E0E0E0;
+-fx-background-radius: 7px;
 }
 
 .button-grey {
-	-fx-background-color: #BDBDBD;
-	-fx-border-radius: 7px;
+-fx-background-color: #BDBDBD;
+-fx-border-radius: 7px;
+-fx-effect:  dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
 }
 
 .bg-green {
-	-fx-background-color:  #4CAF50;
+-fx-background-color:  #4CAF50;
 }
 
 .bg-blue {
-	-fx-background-color: #2196F3;
+-fx-background-color: #2196F3;
 }
 
 .bg-purple {
-	-fx-background-color: #9C27B0;
+-fx-background-color: #9C27B0;
 }
 
 .bg-orange {

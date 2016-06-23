@@ -43,8 +43,8 @@ public class BoxTable extends VBox {
 		Image img = new Image(url);
 		ImageView imageView = new ImageView(img);
 		Label roomLabel = new Label("Reservation N° : "+reservation.getId());
-		Label status = new Label("Statut : "+reservation.getStatutString());
-		Label chambre = new Label("Chambre : "+reservation.getChambre().getIdChambre());
+		Label status = new Label("STATUT : "+reservation.getStatutString());
+		Label chambre = new Label("CHAMBRE : "+reservation.getChambre().getIdChambre());
 		Label client = new Label("Client : "+reservation.getClient().getNom());
 		
 		this.getChildren().addAll(imageView, roomLabel, status, chambre, client);
@@ -56,9 +56,9 @@ public class BoxTable extends VBox {
 		this.setOnMouseClicked((event) -> {
 			
 			//On recupï¿½re la BoxRoom sur laquelle l'on a cliquï¿½
-			BoxTable boxReservation = (BoxTable) event.getSource();
+			BoxTable boxTable = (BoxTable) event.getSource();
 			//On affecte cette chambre ï¿½ la variable statique afin de pouvoir la rï¿½cupï¿½rer dans la Popup
-			ListeTable.reservationSelected = boxReservation.reservation;
+			ListeTable.reservationSelected = boxTable.reservation;
 			System.out.println(reservation);
 			
 			//if (ListeReservation.reservationSelected.getStatut() == EtatReservation.EN_COURS) {

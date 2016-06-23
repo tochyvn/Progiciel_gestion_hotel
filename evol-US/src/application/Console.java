@@ -1,15 +1,6 @@
 package application;
 
-import controller.UserPosteDirectionManager;
 import controller.UtilisateurManager;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import model.Connexion;
-import model.beans.Client;
-import model.beans.UserPosteDirection;
-import model.beans.Utilisateur;
-import model.dao.ClientDAO;
-import model.exception.CreateObjectException;
 
 public class Console {
 
