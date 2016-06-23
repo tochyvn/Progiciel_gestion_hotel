@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
@@ -38,7 +39,10 @@
       </Pane>
       <Pane layoutX="13.0" layoutY="51.0" prefHeight="342.0" prefWidth="595.0" styleClass="bg-grey">
          <children>
-            <ComboBox layoutX="503.0" layoutY="27.0" prefHeight="25.0" prefWidth="78.0" styleClass="bg-green" />
+            <ComboBox layoutX="503.0" layoutY="27.0" prefHeight="25.0" prefWidth="78.0" styleClass="bg-green">
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect></ComboBox>
             <Text layoutX="374.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numéro de chambre : " />
             <Pane layoutX="14.0" layoutY="61.0" prefHeight="79.0" prefWidth="568.0" style="-fx-background-color: white;">
                <children>
@@ -50,9 +54,15 @@
                   <CheckBox layoutX="298.0" layoutY="31.0" mnemonicParsing="false" text="Truc 4" />
                   <CheckBox layoutX="370.0" layoutY="31.0" mnemonicParsing="false" text="Truc 5" />
                </children>
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect>
             </Pane>
-            <ComboBox layoutX="177.0" layoutY="27.0" prefHeight="25.0" prefWidth="174.0" styleClass="bg-green" />
-            <Text layoutX="132.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client :" />
+            <ComboBox layoutX="146.0" layoutY="27.0" prefHeight="25.0" prefWidth="174.0" styleClass="bg-green">
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect></ComboBox>
+            <Text layoutX="101.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client :" />
             <Pane layoutX="14.0" layoutY="148.0" prefHeight="79.0" prefWidth="568.0" style="-fx-background-color: white;">
                <children>
                   <Circle fill="#4caf50" layoutX="39.0" layoutY="39.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
@@ -63,6 +73,9 @@
                   <CheckBox layoutX="298.0" layoutY="31.0" mnemonicParsing="false" text="Truc 4" />
                   <CheckBox layoutX="370.0" layoutY="31.0" mnemonicParsing="false" text="Truc 5" />
                </children>
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect>
             </Pane>
          </children>
       </Pane>
