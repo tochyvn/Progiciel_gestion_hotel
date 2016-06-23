@@ -5,6 +5,7 @@ import java.time.LocalDate;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import model.exception.CreateObjectException;
 
 public class Reservation extends Produit {
 	
@@ -22,14 +23,26 @@ public class Reservation extends Produit {
 
 
 	public Reservation(LocalDate dateDebut, LocalDate dateFin, Chambre chambre,
-			Client client) {
+			Client client) throws CreateObjectException {
 		super(Chambre.TVA);
-		this.dateDebut = new SimpleObjectProperty<>(dateDebut);
-		this.dateFin = new SimpleObjectProperty<>(dateFin);
+		Double debut = (double) (Date.valueOf(dateDebut).getTime()/86400000);
+		Double fin = (double) (Date.valueOf(dateFin).getTime()/86400000);
+		Double now = (double) (Date.valueOf(LocalDate.now()).getTime()/86400000);
+		this.date = Date.valueOf(LocalDate.now());
+		
+		if(fin>debut && debut>=now && fin>=debut)
+		{
+			this.dateDebut = new SimpleObjectProperty<>(dateDebut);
+			this.dateFin = new SimpleObjectProperty<>(dateFin);
+		}
+		else
+		{
+			throw new CreateObjectException("Veuillez renseigner des dates valides", "Erreur dans les dates");
+		}
+		
 		this.chambre = chambre;
 		this.client = client;
 		this.statut = EtatReservation.EN_COURS;
-		this.date = Date.valueOf(LocalDate.now());
 	}
 
 	public final ObjectProperty<LocalDate> dateDebutProperty() {

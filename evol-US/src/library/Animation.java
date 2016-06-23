@@ -9,8 +9,8 @@ import javafx.util.Duration;
 public class Animation {
 	
 	/**
-	 * Créer des animation sur une Property d'un composante par exple l'opacité, la translation
-	 * @param property représente la propriété de l'objet à animer
+	 * Crï¿½er des animation sur une Property d'un composante par exple l'opacitï¿½, la translation
+	 * @param property reprï¿½sente la propriï¿½tï¿½ de l'objet ï¿½ animer
 	 */
 	public static void doAnimationProperty(DoubleProperty property, double start, double end) {
 		Timeline timeline = new Timeline();
@@ -30,8 +30,8 @@ public class Animation {
         );
         //Faire l'aller et retour automatique
         timeline.setAutoReverse(true);
-        //Durée des cycles indéterminé
-        timeline.setCycleCount(Timeline.animation.Animation.INDEFINITE);
+        //Durï¿½e des cycles indï¿½terminï¿½
+        timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
 	}
 }

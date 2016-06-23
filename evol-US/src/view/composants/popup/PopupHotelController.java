@@ -17,6 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.util.StringConverter;
 import model.beans.Client;
 import model.beans.Reservation;
+import model.exception.CreateObjectException;
 import view.composants.alerte.AlertConfirmation;
 import view.composants.alerte.AlertError;
 import view.composants.chambre.ListRoom;
@@ -110,13 +111,21 @@ public class PopupHotelController implements Initializable {
 	
 	@FXML
 	private void create() {
-		Reservation reservation = new Reservation(depart.getValue(),
-				arrivee.getValue(),
-				ListRoom.roomSelected,
-				cmbClient.getSelectionModel().getSelectedItem()
-				);
+		Reservation reservation = null;
+		int status = 0;
+		try {
+			reservation = new Reservation(depart.getValue(),
+					arrivee.getValue(),
+					ListRoom.roomSelected,
+					cmbClient.getSelectionModel().getSelectedItem()
+					);
+			 status = ReservationManager.getInstance().create(reservation);
+		} catch (CreateObjectException e) {
+			// TODO Auto-generated catch block
+			e.showError();
+		}
 		
-		int status = ReservationManager.getInstance().create(reservation);
+
 		if (status == 1) {
 			AlertConfirmation alert = new AlertConfirmation("Confirmation de la reservation", "Votre reservation à bien été efféctué");
 			alert.showAndWait();

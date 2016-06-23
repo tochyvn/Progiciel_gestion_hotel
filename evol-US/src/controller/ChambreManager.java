@@ -45,4 +45,15 @@ public class ChambreManager {
 		return ChambreDAO.findById(id);
 	}
 
+	public int countRoom (String etat) {
+	
+		return ChambreDAO.countRoom(etat);
+		
+	}
+	
+	public int countAll () {
+		
+		return ChambreDAO.countAll();
+		
+	}
 }

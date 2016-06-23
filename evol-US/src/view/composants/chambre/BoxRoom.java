@@ -36,8 +36,11 @@ public class BoxRoom extends VBox {
 		//Couleur du composant en fonction de l'�tat de la chambre
 		if (chambre.getEtat() == EtatChambre.LIBRE) {
 			this.setStyle("-fx-background-color: #4CAF50;");
-		}else {
+		}else if(chambre.getEtat()== EtatChambre.OCCUPEE) {
 			this.setStyle("-fx-background-color: #F25333;");
+		}else
+		{
+			this.setStyle("-fx-background-color: #FFA200;");
 		}
 		
 		Image img = new Image(url);
@@ -45,8 +48,9 @@ public class BoxRoom extends VBox {
 		Label roomLabel = new Label("Chambre n° : "+chambre.getIdChambre());
 		Label fumeur = new Label("Fumeur : Non");
 		Label baignoire = new Label("Baignoire : Oui");
+		Label place = new Label("Nbr de places : "+chambre.getNbrePlace());
 		
-		this.getChildren().addAll(imageView, roomLabel, fumeur, baignoire);
+		this.getChildren().addAll(place, imageView, roomLabel, fumeur, baignoire);
 		//Ajouter l'evenement qui se produira au clic
 		this.addEvent();
 	}
