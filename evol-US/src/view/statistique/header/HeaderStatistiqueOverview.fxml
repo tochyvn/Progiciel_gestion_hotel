@@ -20,7 +20,7 @@
             <Insets right="10.0" />
          </FlowPane.margin>
       </Button>
-      <Button fx:id="chambre" mnemonicParsing="false" prefHeight="37.0" prefWidth="130.0" onMouseClicked="#showHebergement" styleClass="menu-top-green" text="Hebergement">
+      <Button fx:id="hebergement" mnemonicParsing="false" prefHeight="37.0" prefWidth="130.0" onMouseClicked="#showHebergement" styleClass="menu-top-green" text="Hebergement">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>

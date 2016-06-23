@@ -17,7 +17,7 @@ import library.Animation;
 import library.LoaderOfScene;
 import view.ViewInterfaceConstante;
 
-public class HeaderRestaurantOverview implements Initializable {
+public class HeaderRestaurantController implements Initializable {
 	
 	@FXML
 	private Label stock;
@@ -28,7 +28,7 @@ public class HeaderRestaurantOverview implements Initializable {
 	
 	private Parent root;
 
-	public HeaderRestaurantOverview() {
+	public HeaderRestaurantController() {
 		root = MainApplication.primaryStage.getScene().getRoot();
 	}
 

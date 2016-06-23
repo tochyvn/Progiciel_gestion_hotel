@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import library.Animation;
@@ -20,16 +21,16 @@ import view.ViewInterfaceConstante;
 public class HeaderStatistiqueController implements Initializable {
 	
 	@FXML
-	private Label restaurant;
+	private Button restaurant;
 	
 	@FXML
-	private Label hebergement;
+	private Button hebergement;
 	
 	@FXML
-	private Label reception;
+	private Button reception;
 	
 	@FXML
-	private Label maintenance;
+	private Button maintenance;
 	
 	
 	private Parent root;
