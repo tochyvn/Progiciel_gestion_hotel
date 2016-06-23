@@ -1,10 +1,9 @@
-package view.listeReservation;
+package view.reception;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import application.MainApplication;
 import controller.ReservationManager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,7 +14,7 @@ import model.beans.Client;
 import model.beans.Reservation;
 import view.composants.reservation.ListeTable;
 
-public class ListeReservationController implements Initializable {
+public class ReceptionController implements Initializable {
 	
 	@FXML
 	private AnchorPane root;
@@ -30,7 +29,6 @@ public class ListeReservationController implements Initializable {
 		rootSecond.setContent(listes);
 		rootSecond.setFitToHeight(true);
 		rootSecond.setFitToWidth(true);
-		
 	}
 	
 	/**

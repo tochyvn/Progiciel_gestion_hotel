@@ -19,7 +19,7 @@ import view.composants.popup.Popup;
 public class BoxRoom extends VBox {
 	
 	private Chambre chambre;
-	private static String url = "/ressources/img/occupe.png";
+	private static String url = "/ressources/img/bed.png";
 
 	public BoxRoom() {
 		// TODO Auto-generated constructor stub

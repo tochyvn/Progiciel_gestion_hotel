@@ -11,13 +11,17 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="407.0" prefWidth="619.0" stylesheets="@../../../bin/application/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+
+<AnchorPane fx:id="root" prefHeight="450.0" prefWidth="1000.0" style="-fx-background-color: #4CAF50;" stylesheets="@reception.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.reception.ReceptionController">
+   <effect>
+      <DropShadow />
+   </effect>
    <children>
+<<<<<<< HEAD
       <Pane prefHeight="45.0" prefWidth="620.0" styleClass="bg-green" stylesheets="@../../application/application.css">
          <children>
             <Button layoutX="146.0" layoutY="19.0" mnemonicParsing="false" styleClass="bg-green" text="Encaissement" textFill="WHITE">
@@ -97,5 +101,8 @@
             </Pane>
          </children>
       </Pane>
+=======
+      <ScrollPane fx:id="rootSecond" layoutX="224.0" layoutY="100.0" prefHeight="450.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+>>>>>>> 81171446ecaf331ee217c5dcab7f5eed9b0506c9
    </children>
 </AnchorPane>
