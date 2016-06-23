@@ -1,44 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="84.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.statistique.header.HeaderStatistiqueController">
+<FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="84.0" prefWidth="700.0" stylesheets="@../../application.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.statistique.header.HeaderStatistiqueController">
    <children>
-      <Button fx:id="restaurant" mnemonicParsing="false" prefHeight="37.0" prefWidth="130.0" onMouseClicked="#showRestaurant" styleClass="menu-top-green" text="Restaurant">
+      <Button fx:id="restaurant" mnemonicParsing="false" onMouseClicked="#showRestaurant" prefHeight="37.0" prefWidth="130.0" styleClass="menu-top-green" text="Restaurant" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="Roboto Regular" size="16.0" />
          </font>
          <FlowPane.margin>
             <Insets right="10.0" />
          </FlowPane.margin>
       </Button>
-      <Button fx:id="hebergement" mnemonicParsing="false" prefHeight="37.0" prefWidth="130.0" onMouseClicked="#showHebergement" styleClass="menu-top-green" text="Hebergement">
+      <Button fx:id="hebergement" mnemonicParsing="false" onMouseClicked="#showHebergement" prefHeight="37.0" prefWidth="130.0" styleClass="menu-top-green" text="Hebergement" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="Roboto Regular" size="16.0" />
          </font>
          <FlowPane.margin>
             <Insets right="10.0" />
          </FlowPane.margin>
       </Button>
-      <Button fx:id="maintenance" mnemonicParsing="false" prefHeight="37.0" prefWidth="130.0" onMouseClicked="#showMaintenance" styleClass="menu-top-green" text="Maintenance">
+      <Button fx:id="maintenance" mnemonicParsing="false" onMouseClicked="#showMaintenance" prefHeight="37.0" prefWidth="130.0" styleClass="menu-top-green" text="Maintenance" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="Roboto Regular" size="16.0" />
          </font>
          <FlowPane.margin>
             <Insets right="10.0" />
          </FlowPane.margin>
       </Button>
-      <Button fx:id="reception" mnemonicParsing="false" prefHeight="37.0" prefWidth="130.0" onMouseClicked="#showReception" styleClass="menu-top-green" text="Reception">
+      <Button fx:id="reception" mnemonicParsing="false" onMouseClicked="#showReception" prefHeight="37.0" prefWidth="130.0" styleClass="menu-top-green" text="Reception" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="Roboto Regular" size="16.0" />
          </font>
       </Button>
    </children>
