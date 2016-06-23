@@ -3,72 +3,103 @@
 .button-green {
 	-fx-background-color:  #4CAF50;
 	-fx-border-radius: 7px;
--fx-effect:  dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+	-fx-effect:  dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+	-fx-font: "Roboto Regular";
 }
 
 .button-green:hover {
 -fx-background-color: #2196F3;
+	-fx-font: "Roboto Regular";
+
 }
 
 .input-grey {
 -fx-background-color: #E0E0E0;
 -fx-background-radius: 7px;
+	-fx-font: "Roboto Regular";
+
 }
 
 .button-grey {
 -fx-background-color: #BDBDBD;
 -fx-border-radius: 7px;
 -fx-effect:  dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+	-fx-font: "Roboto Regular";
+
 }
 
 .bg-green {
 -fx-background-color:  #4CAF50;
+	-fx-font: "Roboto Regular";
+
 }
 
 .bg-blue {
 -fx-background-color: #2196F3;
+	-fx-font: "Roboto Regular";
+
 }
 
 .bg-purple {
 -fx-background-color: #9C27B0;
+	-fx-font: "Roboto Regular";
+
 }
 
 .bg-orange {
 	-fx-background-color: #FF5722;
+		-fx-font: "Roboto Regular";
+	
 }
 
 .border-bottom {
 	-fx-border-color : transparent transparent yellow transparent;
+		-fx-font: "Roboto Regular";
+	
 }
 
 .menu-left{
 	-fx-font-size : 25px;
 	-fx-underline : false;
+		-fx-font: "Roboto Regular";
+	
 }
 .menu-left:hover{
 	-fx-text-fill : black;
+		-fx-font: "Roboto Regular";
+	
 }
 
 .menu-top-orange{
 	-fx-background-color: #FF5722;
+		-fx-font: "Roboto Regular";
+	
 }
 .menu-top-orange:hover{
 	-fx-text-fill : #000000;
 	-fx-background-color: #D5F0D5;
 	-fx-cursor : hand;
+		-fx-font: "Roboto Regular";
+	
 }
 
 .menu-top-green{
 	-fx-background-color: #4CAF50;
+		-fx-font: "Roboto Regular";
+	
 }
 .menu-top-green:hover{
 	-fx-text-fill : #000000;
 	-fx-background-color: #D5F0D5;
 	-fx-cursor : hand;
+		-fx-font: "Roboto Regular";
+	
 }
 
 .button-default:hover {
 	-fx-text-fill : #000000;
 	-fx-background-color: #D5F0D5;
 	-fx-cursor : hand;
+		-fx-font: "Roboto Regular";
+	
 }

@@ -14,7 +14,7 @@
    <children>
       <Button fx:id="encaissement" mnemonicParsing="false" prefHeight="37.0" prefWidth="130.0" onMouseClicked="#showEncaissement" styleClass="menu-top-green" text="Encaissement">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="Roboto Regular" size="16.0" />
          </font>
          <FlowPane.margin>
             <Insets right="10.0" />
@@ -22,7 +22,7 @@
       </Button>
       <Button fx:id="reservation" mnemonicParsing="false" prefHeight="37.0" prefWidth="130.0" onMouseClicked="#showReservation" styleClass="menu-top-green" text="Réservations">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="Roboto Regular" size="16.0" />
          </font>
          <FlowPane.margin>
             <Insets right="10.0" />
@@ -30,7 +30,7 @@
       </Button>
       <Button fx:id="planning" mnemonicParsing="false" prefHeight="37.0" prefWidth="130.0" onMouseClicked="#showPlanning" styleClass="menu-top-green" text="Planning">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="Roboto Regular" size="16.0" />
          </font>
          <FlowPane.margin>
             <Insets right="10.0" />
@@ -38,7 +38,7 @@
       </Button>
       <Button fx:id="service" mnemonicParsing="false" prefHeight="37.0" prefWidth="130.0" onMouseClicked="#showService" styleClass="menu-top-green" text="Service">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="Roboto Regular" size="16.0" />
          </font>
       </Button>
    </children>

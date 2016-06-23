@@ -25,28 +25,28 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="Roboto Regular" size="14.0" />
                </font></Button>
             <Button layoutX="222.0" layoutY="13.0" mnemonicParsing="false" styleClass="menu-top-green" text="Réservation" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="Roboto Regular" size="14.0" />
                </font></Button>
             <Button layoutX="320.0" layoutY="13.0" mnemonicParsing="false" styleClass="menu-top-green" text="Planning" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="Roboto Regular" size="14.0" />
                </font></Button>
             <Button layoutX="398.0" layoutY="13.0" mnemonicParsing="false" styleClass="menu-top-green" text="Services sur-mesure" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="Roboto Regular" size="14.0" />
                </font></Button>
          </children>
       </Pane>
