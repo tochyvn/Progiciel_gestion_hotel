@@ -42,9 +42,9 @@ public class BoxRoom extends VBox {
 		
 		Image img = new Image(url);
 		ImageView imageView = new ImageView(img);		
-		Label roomLabel = new Label("Chambre NÂ° : "+chambre.getIdChambre());
-		Label fumeur = new Label("Fumeur : NON");
-		Label baignoire = new Label("Baignoire : OUI");
+		Label roomLabel = new Label("Chambre ° : "+chambre.getIdChambre());
+		Label fumeur = new Label("Fumeur : Non");
+		Label baignoire = new Label("Baignoire : Oui");
 		
 		this.getChildren().addAll(imageView, roomLabel, fumeur, baignoire);
 		//Ajouter l'evenement qui se produira au clic

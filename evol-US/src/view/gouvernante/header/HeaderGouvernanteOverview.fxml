@@ -9,7 +9,7 @@
    <children>
       <Label fx:id="nettoyage" onMouseClicked="#showNettoyage" text="Nettoyage">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Roboto Regular" size="18.0" />
          </font>
          <FlowPane.margin>
             <Insets right="20.0" />

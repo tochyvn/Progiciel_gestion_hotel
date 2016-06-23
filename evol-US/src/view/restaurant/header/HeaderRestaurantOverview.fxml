@@ -9,7 +9,7 @@
    <children>
       <Label fx:id="reservation" onMouseClicked="#showReservation" text="Reservations">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Roboto Regular" size="18.0" />
          </font>
          <FlowPane.margin>
             <Insets right="20.0" />
@@ -17,7 +17,7 @@
       </Label>
       <Label fx:id="stock" onMouseClicked="#showStock" text="Stocks">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Roboto Regular" size="18.0" />
          </font>
          <FlowPane.margin>
             <Insets right="20.0" />

@@ -19,7 +19,7 @@
          <children>
             <Button layoutX="274.0" layoutY="10.0" mnemonicParsing="false" styleClass="bg-purple" text="Nettoyage" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="Roboto Regular" size="14.0" />
                </font></Button>
          </children>
       </Pane>

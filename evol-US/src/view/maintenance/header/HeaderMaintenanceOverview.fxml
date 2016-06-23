@@ -9,7 +9,7 @@
    <children>
       <Label fx:id="encaissement" onMouseClicked="#showEncaissement" text="Encaissement">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Roboto Regular" size="18.0" />
          </font>
          <FlowPane.margin>
             <Insets right="20.0" />
@@ -17,7 +17,7 @@
       </Label>
       <Label fx:id="planning" onMouseClicked="#showPlanning" text="Planning">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Roboto Regular" size="18.0" />
          </font>
          <FlowPane.margin>
             <Insets right="20.0" />
@@ -25,7 +25,7 @@
       </Label>
       <Label fx:id="reservation" onMouseClicked="#showReservation" text="Reservation">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Roboto Regular" size="18.0" />
          </font>
          <FlowPane.margin>
             <Insets right="20.0" />
@@ -33,7 +33,7 @@
       </Label>
       <Label fx:id="service" onMouseClicked="#showService" text="Service">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Roboto Regular" size="18.0" />
          </font>
          <FlowPane.margin>
             <Insets right="20.0" />

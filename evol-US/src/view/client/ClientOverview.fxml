@@ -33,7 +33,7 @@
                      <top>
                         <Label text="Informations des clients" BorderPane.alignment="CENTER">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font name="Roboto Regular" size="14.0" />
                            </font>
                         </Label>
                      </top>
@@ -127,32 +127,32 @@
                            <children>
                               <Label text="Nom" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="Roboto Regular" size="14.0" />
                                  </font>
                               </Label>
                               <Label text="Prenom" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="Roboto Regular" size="14.0" />
                                  </font>
                               </Label>
                               <Label text="Adresse" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="Roboto Regular" size="14.0" />
                                  </font>
                               </Label>
                               <Label text="Ville" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="Roboto Regular" size="14.0" />
                                  </font>
                               </Label>
                               <Label text="Code_Postal" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="5">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="Roboto Regular" size="14.0" />
                                  </font>
                               </Label>
                               <Label text="Email" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="6">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="Roboto Regular" size="14.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="txtNom" GridPane.columnIndex="3" GridPane.rowIndex="1">
@@ -181,7 +181,7 @@
                                  </effect></TextField>
                               <Label text="Login" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="7">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="Roboto Regular" size="14.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="txtLogin" GridPane.columnIndex="3" GridPane.rowIndex="7">
@@ -190,7 +190,7 @@
                                  </effect></TextField>
                               <Label text="Password" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="8">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="Roboto Regular" size="14.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="txtPassword" GridPane.columnIndex="3" GridPane.rowIndex="8">
@@ -199,7 +199,7 @@
                                  </effect></TextField>
                               <Label text="Numéro de carte" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="9">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="Roboto Regular" size="14.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="cbNum" GridPane.columnIndex="3" GridPane.rowIndex="9">
@@ -208,12 +208,12 @@
                                  </effect></TextField>
                               <Label text="Date d'expiration" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="10">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="Roboto Regular" size="14.0" />
                                  </font>
                               </Label>
                               <Label text="Cryptogramme" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="11">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="Roboto Regular" size="14.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="cbCode" GridPane.columnIndex="3" GridPane.rowIndex="11">
@@ -226,7 +226,7 @@
                                  </effect></ComboBox>
                               <Label text="Hotel" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="12">
                                  <font>
-                                    <Font name="System Bold" size="14.0" />
+                                    <Font name="Roboto Regular" size="14.0" />
                                  </font>
                               </Label>
                               <TextField fx:id="cbExp" GridPane.columnIndex="3" GridPane.rowIndex="10" />
@@ -247,7 +247,7 @@
                               <Insets bottom="20.0" />
                            </BorderPane.margin>
                            <font>
-                              <Font name="System Bold" size="19.0" />
+                              <Font name="Roboto Regular" size="19.0" />
                            </font>
                         </Label>
                      </top>
