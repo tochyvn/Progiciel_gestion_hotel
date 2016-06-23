@@ -36,8 +36,11 @@ public class BoxRoom extends VBox {
 		//Couleur du composant en fonction de l'�tat de la chambre
 		if (chambre.getEtat() == EtatChambre.LIBRE) {
 			this.setStyle("-fx-background-color: #4CAF50;");
-		}else {
+		}else if(chambre.getEtat()== EtatChambre.OCCUPEE) {
 			this.setStyle("-fx-background-color: #F25333;");
+		}else
+		{
+			this.setStyle("-fx-background-color: #FFA200;");
 		}
 		
 		Image img = new Image(url);
