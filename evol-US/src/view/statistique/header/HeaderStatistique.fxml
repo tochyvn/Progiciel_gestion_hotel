@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="84.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.reception.header.HeaderStatistiqueOverview">
+<FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="84.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.statistique.header.HeaderStatistiqueController">
    <children>
       <Button fx:id="restaurant" mnemonicParsing="false" prefHeight="37.0" prefWidth="130.0" onMouseClicked="#showRestaurant" styleClass="menu-top-green" text="Restaurant">
          <font>
@@ -20,7 +20,7 @@
             <Insets right="10.0" />
          </FlowPane.margin>
       </Button>
-      <Button fx:id="chambre" mnemonicParsing="false" prefHeight="37.0" prefWidth="130.0" onMouseClicked="#showChambre" styleClass="menu-top-green" text="Chambre">
+      <Button fx:id="chambre" mnemonicParsing="false" prefHeight="37.0" prefWidth="130.0" onMouseClicked="#showHebergement" styleClass="menu-top-green" text="Hebergement">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
