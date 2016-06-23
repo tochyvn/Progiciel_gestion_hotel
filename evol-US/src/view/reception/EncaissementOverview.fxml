@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import javafx.scene.*?>
@@ -19,36 +20,66 @@
    <children>
       <Pane prefHeight="45.0" prefWidth="620.0" styleClass="bg-green" stylesheets="@../../application/application.css">
          <children>
-            <Button layoutX="146.0" layoutY="19.0" mnemonicParsing="false" styleClass="bg-green" text="Encaissement" textFill="WHITE">
+            <Button layoutX="113.0" layoutY="13.0" mnemonicParsing="false" styleClass="menu-top-green,border-bottom" text="Encaissement" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Button layoutX="243.0" layoutY="19.0" mnemonicParsing="false" styleClass="bg-green" text="Réservation" textFill="WHITE">
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <Button layoutX="222.0" layoutY="13.0" mnemonicParsing="false" styleClass="menu-top-green" text="Réservation" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Button layoutX="330.0" layoutY="19.0" mnemonicParsing="false" styleClass="bg-green" text="Planning" textFill="WHITE">
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <Button layoutX="320.0" layoutY="13.0" mnemonicParsing="false" styleClass="menu-top-green" text="Planning" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Button layoutX="403.0" layoutY="19.0" mnemonicParsing="false" styleClass="bg-green" text="Services sur-mesure" textFill="WHITE">
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <Button layoutX="398.0" layoutY="13.0" mnemonicParsing="false" styleClass="menu-top-green" text="Services sur-mesure" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Button>
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
          </children>
       </Pane>
       <Pane layoutX="14.0" layoutY="61.0" prefHeight="330.0" prefWidth="592.0" styleClass="bg-grey">
          <children>
-            <ComboBox layoutX="72.0" layoutY="19.0" prefHeight="25.0" prefWidth="444.0" styleClass="bg-green" stylesheets="@../../application/application.css" />
-            <Button layoutX="72.0" layoutY="279.0" mnemonicParsing="false" styleClass="bg-green" stylesheets="@../../application/application.css" text="Carte Bancaire" textFill="WHITE" />
+            <ComboBox layoutX="72.0" layoutY="19.0" prefHeight="25.0" prefWidth="444.0" styleClass="bg-green" stylesheets="@../../application/application.css">
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect></ComboBox>
+            <Button layoutX="72.0" layoutY="279.0" mnemonicParsing="false" styleClass="bg-green" stylesheets="@../../application/application.css" text="Carte Bancaire" textFill="WHITE">
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect></Button>
             <Label layoutX="17.0" layoutY="97.0" text="Table :" />
             <Text layoutX="17.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client :" />
             <Label layoutX="286.0" layoutY="58.0" text="Ou" />
-            <ComboBox layoutX="72.0" layoutY="93.0" prefHeight="25.0" prefWidth="444.0" styleClass="bg-green" stylesheets="@../../application/application.css" />
-            <Label layoutX="17.0" layoutY="165.0" text="Table :" />
-            <TextField layoutX="72.0" layoutY="161.0" prefHeight="25.0" prefWidth="444.0" />
-            <Button layoutX="263.0" layoutY="279.0" mnemonicParsing="false" styleClass="bg-green" stylesheets="@../../application/application.css" text="Chèques" textFill="WHITE" />
-            <Button layoutX="458.0" layoutY="279.0" mnemonicParsing="false" styleClass="bg-green" stylesheets="@../../application/application.css" text="Espèces" textFill="WHITE" />
+            <ComboBox layoutX="72.0" layoutY="93.0" prefHeight="25.0" prefWidth="444.0" styleClass="bg-green" stylesheets="@../../application/application.css">
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect></ComboBox>
+            <Label layoutX="17.0" layoutY="165.0" text="Prix :" />
+            <TextField layoutX="72.0" layoutY="161.0" prefHeight="25.0" prefWidth="444.0">
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect></TextField>
+            <Button layoutX="263.0" layoutY="279.0" mnemonicParsing="false" styleClass="menu-top-green" stylesheets="@../../application/application.css" text="Chèques" textFill="WHITE">
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect></Button>
+            <Button layoutX="440.0" layoutY="279.0" mnemonicParsing="false" styleClass="bg-green" stylesheets="@../../application/application.css" text="Espèces" textFill="WHITE">
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect></Button>
          </children>
          <stylesheets>
             <URL value="@../../../bin/application/application.css" />

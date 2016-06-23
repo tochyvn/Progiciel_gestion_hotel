@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
@@ -41,31 +42,58 @@
          <children>
             <Text layoutX="14.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chambres dispo." />
             <CheckBox layoutX="114.0" layoutY="31.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="5.0" />
-            <ComboBox layoutX="148.0" layoutY="27.0" prefHeight="25.0" prefWidth="106.0" styleClass="bg-green" />
-            <ComboBox layoutX="268.0" layoutY="27.0" prefHeight="25.0" prefWidth="106.0" styleClass="bg-green" />
-            <ComboBox layoutX="503.0" layoutY="27.0" prefHeight="25.0" prefWidth="78.0" styleClass="bg-green" />
+            <ComboBox layoutX="148.0" layoutY="27.0" prefHeight="25.0" prefWidth="106.0" styleClass="bg-green">
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect></ComboBox>
+            <ComboBox layoutX="268.0" layoutY="27.0" prefHeight="25.0" prefWidth="106.0" styleClass="bg-green">
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect></ComboBox>
+            <ComboBox layoutX="503.0" layoutY="27.0" prefHeight="25.0" prefWidth="78.0" styleClass="bg-green">
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect></ComboBox>
             <Text layoutX="437.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numéro :" />
             <Pane layoutX="14.0" layoutY="61.0" prefHeight="99.0" prefWidth="568.0" style="-fx-background-color: white;">
                <children>
                   <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4 personnes" />
                   <Circle fill="#4caf50" layoutX="39.0" layoutY="60.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
                   <Text fill="WHITE" layoutX="36.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
-                  <DatePicker layoutX="143.0" layoutY="23.0" />
-                  <DatePicker layoutX="369.0" layoutY="23.0" />
+                  <DatePicker layoutX="143.0" layoutY="23.0">
+                     <effect>
+                        <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+                     </effect></DatePicker>
+                  <DatePicker layoutX="369.0" layoutY="23.0">
+                     <effect>
+                        <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+                     </effect></DatePicker>
                   <Text layoutX="106.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="De : " />
                   <Text layoutX="341.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A :" />
                </children>
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect>
             </Pane>
             <Pane layoutX="14.0" layoutY="171.0" prefHeight="99.0" prefWidth="568.0" style="-fx-background-color: white;">
                <children>
                   <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6 personnes" />
                   <Circle fill="#4caf50" layoutX="39.0" layoutY="60.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
                   <Text fill="WHITE" layoutX="36.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" />
-                  <DatePicker layoutX="143.0" layoutY="23.0" />
-                  <DatePicker layoutX="369.0" layoutY="23.0" />
+                  <DatePicker layoutX="143.0" layoutY="23.0">
+                     <effect>
+                        <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+                     </effect></DatePicker>
+                  <DatePicker layoutX="369.0" layoutY="23.0">
+                     <effect>
+                        <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+                     </effect></DatePicker>
                   <Text layoutX="106.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="De : " />
                   <Text layoutX="341.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A :" />
                </children>
+               <effect>
+                  <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
+               </effect>
             </Pane>
          </children>
       </Pane>
