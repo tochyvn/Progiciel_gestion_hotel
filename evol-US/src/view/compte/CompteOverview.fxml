@@ -25,7 +25,7 @@
                <effect>
                   <DropShadow color="#00000099" height="5.0" offsetX="3.0" offsetY="2.0" radius="2.0" spread="0.1" width="5.0" />
                </effect></PasswordField>
-            <Button id="connect" fx:id="connect" defaultButton="true" layoutX="241.0" layoutY="290.0" mnemonicParsing="false" onKeyPressed="#onEnter" onMouseClicked="#getConnexion" onMouseMoved="#changeCloseColorToActivate" prefHeight="27.0" prefWidth="105.0" styleClass="menu-top-green" stylesheets="@../../application/application.css" text="CONNEXION" textFill="WHITE">
+            <Button id="connect" fx:id="connect" defaultButton="true" layoutX="241.0" layoutY="290.0" onAction="#onEnter" mnemonicParsing="false" onKeyPressed="#onEnter" onMouseClicked="#getConnexion" onMouseMoved="#changeCloseColorToActivate" prefHeight="27.0" prefWidth="105.0" styleClass="menu-top-green" stylesheets="@../../application/application.css" text="CONNEXION" textFill="WHITE">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
