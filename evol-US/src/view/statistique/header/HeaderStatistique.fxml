@@ -7,7 +7,7 @@
 
 <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="84.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.statistique.header.HeaderStatistiqueController">
    <children>
-      <Label text="Restaurant">
+      <Label fx:id="restaurant" onMouseClicked="#showRestaurant" text="Restaurant">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -15,7 +15,7 @@
             <Insets right="20.0" />
          </FlowPane.margin>
       </Label>
-      <Label text="Hebergement">
+      <Label fx:id="hebergement" onMouseClicked="#showHebergement" text="Hebergement">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -23,7 +23,7 @@
             <Insets right="20.0" />
          </FlowPane.margin>
       </Label>
-      <Label text="Maintenance">
+      <Label fx:id="maintenance" onMouseClicked="#showMaintenance" text="Maintenance">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -31,7 +31,7 @@
             <Insets right="10.0" />
          </FlowPane.margin>
       </Label>
-      <Label text="Reception">
+      <Label fx:id="reception" onMouseClicked="#showReception" text="Reception">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

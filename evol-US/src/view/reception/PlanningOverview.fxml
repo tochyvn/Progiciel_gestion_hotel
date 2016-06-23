@@ -21,7 +21,6 @@
       <DropShadow />
    </effect>
    <children>
-<<<<<<< HEAD
       <Pane prefHeight="45.0" prefWidth="620.0" styleClass="bg-green" stylesheets="@../../application/application.css">
          <children>
             <Button layoutX="146.0" layoutY="19.0" mnemonicParsing="false" styleClass="bg-green" text="Encaissement" textFill="WHITE">
@@ -101,8 +100,6 @@
             </Pane>
          </children>
       </Pane>
-=======
       <ScrollPane fx:id="rootSecond" layoutX="224.0" layoutY="100.0" prefHeight="450.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
->>>>>>> 81171446ecaf331ee217c5dcab7f5eed9b0506c9
    </children>
 </AnchorPane>

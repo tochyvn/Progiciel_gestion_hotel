@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.statistique.graphique.chambre.GraphChambreController">
+   <bottom>
+      <Pane prefHeight="88.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="pourcentage" layoutX="24.0" layoutY="36.0" text="TOTAL 100%" />
+         </children></Pane>
+   </bottom>
+   <center>
+      <PieChart fx:id="pieChart" prefHeight="500.0" prefWidth="1500.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

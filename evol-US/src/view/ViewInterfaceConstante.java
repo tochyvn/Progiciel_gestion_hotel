@@ -8,8 +8,15 @@ public interface ViewInterfaceConstante {
 	public final static String DEFAULT_CSS = VIEW_PACKAGE+"default.css";
 	public final static String ROOT_VIEW = VIEW_PACKAGE+"RootLayout.fxml";
 	public final static String ROOT_CONTROLLER = VIEW_PACKAGE+"RootLayoutController.java";
+	
+	/* HEADER */
 	public final static String HEADER_RECEPTION = VIEW_PACKAGE+"reception/header/HeaderReceptionOverview.fxml";
 	public final static String HEADER_RESTAURANT = VIEW_PACKAGE+"restaurant/header/HeaderRestaurantOverview.fxml"; 
+	public final static String HEADER_HOTEL = VIEW_PACKAGE+"hotel/header/HeaderHotelOverview.fxml"; 
+	public final static String HEADER_MAINTENANCE = VIEW_PACKAGE+"maintenance/header/HeaderMaintenanceOverview.fxml"; 
+	public final static String HEADER_GOUVERNANTE = VIEW_PACKAGE+"gouvernante/header/HeaderGouvernanteOverview.fxml"; 
+	public final static String HEADER_SPA = VIEW_PACKAGE+"spa/header/HeaderSpaOverview.fxml"; 
+	public final static String HEADER_STATISTIQUE = VIEW_PACKAGE+"statistique/header/HeaderStatistiqueOverview.fxml"; 
 	
 	/* POPUPS */
 	public final static String POPUP_ROOT_VIEW = VIEW_PACKAGE+"composants/popup/PopupOverview.fxml";
@@ -18,7 +25,8 @@ public interface ViewInterfaceConstante {
 	public final static String ADD_RESERVATION_SPA_MODAL = VIEW_PACKAGE+"composants/popup/PopupSpaOverview.fxml";
 
 	/* DIRECTION */
-	public final static String STATISTIQUES_VIEW = VIEW_PACKAGE+"directeur/StatistiquesOverview.fxml";
+	public final static String STATISTIQUES_VIEW = VIEW_PACKAGE+"statistique/StatistiqueHebergement.fxml";
+	public final static String GRAPHE_CHAMBRE = VIEW_PACKAGE+"statistique/graphique/chambre/GraphChambre.fxml";
 	
 	/* UTILISATEURS & CLIENTS */
 	public final static String USER_VIEW = VIEW_PACKAGE+"user/UserOverview.fxml";

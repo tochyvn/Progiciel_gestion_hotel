@@ -158,9 +158,9 @@ public class RootLayoutController implements Initializable {
 		Parent header = LoaderOfScene.loadParent(ViewInterfaceConstante.HEADER_RESTAURANT, 3);
 		root.setTop(header);
 		DoubleProperty opacity = reservatonOverview.opacityProperty();
-		Animation.doAnimationProperty(opacity, 0, 1);
+		//Animation.doAnimationProperty(opacity, 0, 1);
 		DoubleProperty opacityheader = reservatonOverview.opacityProperty();
-		Animation.doAnimationProperty(opacityheader, 0, 1);
+		//Animation.doAnimationProperty(opacityheader, 0, 1);
 	}
 	
 	@FXML
@@ -168,7 +168,7 @@ public class RootLayoutController implements Initializable {
 		Parent userOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.USER_VIEW, 1);
 		root.setCenter(userOverview);
 		DoubleProperty opacity = userOverview.opacityProperty();
-		Animation.doAnimationProperty(opacity, 0, 1);
+		//Animation.doAnimationProperty(opacity, 0, 1);
 	}
 	
 	
@@ -176,20 +176,20 @@ public class RootLayoutController implements Initializable {
 	private void loadViewChambre() {
 		Parent chambreOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.CHAMBRE_VIEW, 1);
 		root.setCenter(chambreOverview);
-		Parent header = LoaderOfScene.loadParent(ViewInterfaceConstante.HEADER_RECEPTION, 3);
+		Parent header = LoaderOfScene.loadParent(ViewInterfaceConstante.HEADER_HOTEL, 3);
 		root.setTop(header);
-		DoubleProperty opacityheader = chambreOverview.opacityProperty();
-		Animation.doAnimationProperty(opacityheader, 0, 1);
 		DoubleProperty opacity = chambreOverview.opacityProperty();
-		Animation.doAnimationProperty(opacity, 0, 1);
+		DoubleProperty opacityheader = chambreOverview.opacityProperty();
 	}
 
 	@FXML
 	private void loadViewStatistiques() {
 		Parent statistiquesOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.STATISTIQUES_VIEW, 1);
 		root.setCenter(statistiquesOverview);
+		Parent header = LoaderOfScene.loadParent(ViewInterfaceConstante.HEADER_STATISTIQUE, 3);
+		root.setTop(header);
+		DoubleProperty opacityheader = statistiquesOverview.opacityProperty();
 		DoubleProperty opacity = statistiquesOverview.opacityProperty();
-		Animation.doAnimationProperty(opacity, 0, 1);
 	}
 
 	@FXML
@@ -197,7 +197,7 @@ public class RootLayoutController implements Initializable {
 		Parent stockOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.STOCK_VIEW, 1);
 		root.setCenter(stockOverview);
 		DoubleProperty opacity = stockOverview.opacityProperty();
-		Animation.doAnimationProperty(opacity, 0, 1);
+		//Animation.doAnimationProperty(opacity, 0, 1);
 	}
 
 	@FXML
@@ -205,7 +205,7 @@ public class RootLayoutController implements Initializable {
 		Parent agenceOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.AGENCE_VIEW, 1);
 		root.setCenter(agenceOverview);
 		DoubleProperty opacity = agenceOverview.opacityProperty();
-		Animation.doAnimationProperty(opacity, 0, 1);
+		//Animation.doAnimationProperty(opacity, 0, 1);
 	}
 
 	@FXML
@@ -213,23 +213,29 @@ public class RootLayoutController implements Initializable {
 		Parent livreOrOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.LIVRE_OR_VIEW, 1);
 		root.setCenter(livreOrOverview);
 		DoubleProperty opacity = livreOrOverview.opacityProperty();
-		Animation.doAnimationProperty(opacity, 0, 1);
+		//Animation.doAnimationProperty(opacity, 0, 1);
 	}
 
 	@FXML
 	private void loadViewEncaissement() {
 		Parent encaissementOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.ENCAISSEMENT_VIEW, 1);
 		root.setCenter(encaissementOverview);
+		Parent header = LoaderOfScene.loadParent(ViewInterfaceConstante.HEADER_RECEPTION, 3);
+		root.setTop(header);
 		DoubleProperty opacity = encaissementOverview.opacityProperty();
-		Animation.doAnimationProperty(opacity, 0, 1);
+		DoubleProperty opacityheader = encaissementOverview.opacityProperty();
+		//Animation.doAnimationProperty(opacity, 0, 1);
 	}
 
 	@FXML
 	private void loadViewFactures() {
 		Parent facturesOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.FACTURES_VIEW, 1);
 		root.setCenter(facturesOverview);
+		Parent header = LoaderOfScene.loadParent(ViewInterfaceConstante.HEADER_RECEPTION, 3);
+		root.setTop(header);
 		DoubleProperty opacity = facturesOverview.opacityProperty();
-		Animation.doAnimationProperty(opacity, 0, 1);
+		DoubleProperty opacityheader = facturesOverview.opacityProperty();
+		//Animation.doAnimationProperty(opacity, 0, 1);
 	}
 
 
@@ -237,40 +243,55 @@ public class RootLayoutController implements Initializable {
 	private void loadViewPlanning() {
 		Parent planningOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.PLANNING_VIEW, 1);
 		root.setCenter(planningOverview);
+		Parent header = LoaderOfScene.loadParent(ViewInterfaceConstante.HEADER_RECEPTION, 3);
+		root.setTop(header);
 		DoubleProperty opacity = planningOverview.opacityProperty();
-		Animation.doAnimationProperty(opacity, 0, 1);
+		DoubleProperty opacityheader = planningOverview.opacityProperty();
+		//Animation.doAnimationProperty(opacity, 0, 1);
 	}
 
 	@FXML
 	private void loadViewSurMesure() {
 		Parent surmesureOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.SURMESURE_VIEW, 1);
 		root.setCenter(surmesureOverview);
+		Parent header = LoaderOfScene.loadParent(ViewInterfaceConstante.HEADER_RECEPTION, 3);
+		root.setTop(header);
 		DoubleProperty opacity = surmesureOverview.opacityProperty();
-		Animation.doAnimationProperty(opacity, 0, 1);
+		DoubleProperty opacityheader = surmesureOverview.opacityProperty();
+		//Animation.doAnimationProperty(opacity, 0, 1);
 	}
 
 	@FXML
 	private void loadViewSpa() {
 		Parent spaOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.SPA_VIEW, 1);
 		root.setCenter(spaOverview);
+		Parent header = LoaderOfScene.loadParent(ViewInterfaceConstante.HEADER_SPA, 3);
+		root.setTop(header);
 		DoubleProperty opacity = spaOverview.opacityProperty();
-		Animation.doAnimationProperty(opacity, 0, 1);
+		DoubleProperty opacityheader = spaOverview.opacityProperty();
+		//Animation.doAnimationProperty(opacity, 0, 1);
 	}
 
 	@FXML
 	private void loadViewNettoyage() {
 		Parent nettoyageOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.NETTOYAGE_VIEW, 1);
 		root.setCenter(nettoyageOverview);
+		Parent header = LoaderOfScene.loadParent(ViewInterfaceConstante.HEADER_GOUVERNANTE, 3);
+		root.setTop(header);
 		DoubleProperty opacity = nettoyageOverview.opacityProperty();
-		Animation.doAnimationProperty(opacity, 0, 1);
+		DoubleProperty opacityheader = nettoyageOverview.opacityProperty();
+		//Animation.doAnimationProperty(opacity, 0, 1);
 	}
 
 	@FXML
 	private void loadViewReparationHotel() {
 		Parent reparationOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.REPARATION_HOTEL_VIEW, 1);
 		root.setCenter(reparationOverview);
+		Parent header = LoaderOfScene.loadParent(ViewInterfaceConstante.HEADER_MAINTENANCE, 3);
+		root.setTop(header);
 		DoubleProperty opacity = reparationOverview.opacityProperty();
-		Animation.doAnimationProperty(opacity, 0, 1);
+		DoubleProperty opacityheader = reparationOverview.opacityProperty();
+		//Animation.doAnimationProperty(opacity, 0, 1);
 	}	
 
 	@FXML
@@ -278,7 +299,7 @@ public class RootLayoutController implements Initializable {
 		Parent reparationOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.REPARATION_RESTO_VIEW, 1);
 		root.setCenter(reparationOverview);
 		DoubleProperty opacity = reparationOverview.opacityProperty();
-		Animation.doAnimationProperty(opacity, 0, 1);
+		//Animation.doAnimationProperty(opacity, 0, 1);
 	}	
 	
 }

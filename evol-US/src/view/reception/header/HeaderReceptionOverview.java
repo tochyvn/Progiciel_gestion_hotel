@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import library.Animation;
@@ -20,16 +21,16 @@ import view.ViewInterfaceConstante;
 public class HeaderReceptionOverview implements Initializable {
 	
 	@FXML
-	private Label encaissement;
+	private Button encaissement;
 	
 	@FXML
-	private Label planning;
+	private Button planning;
 	
 	@FXML
-	private Label reservation;
+	private Button reservation;
 	
 	@FXML
-	private Label service;
+	private Button service;
 	
 	private Parent root;
 
