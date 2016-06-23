@@ -17,7 +17,8 @@ public interface ViewInterfaceConstante {
 	public final static String HEADER_GOUVERNANTE = VIEW_PACKAGE+"gouvernante/header/HeaderGouvernanteOverview.fxml"; 
 	public final static String HEADER_SPA = VIEW_PACKAGE+"spa/header/HeaderSpaOverview.fxml"; 
 	public final static String HEADER_STATISTIQUE = VIEW_PACKAGE+"statistique/header/HeaderStatistiqueOverview.fxml"; 
-	
+	public final static String HEADER_MENTIONS = VIEW_PACKAGE+"mentions/header/HeaderMentionsOverview.fxml"; 
+
 	/* POPUPS */
 	public final static String POPUP_ROOT_VIEW = VIEW_PACKAGE+"composants/popup/PopupOverview.fxml";
 	public final static String ADD_RESERVATION_HOTEL_MODAL = VIEW_PACKAGE+"composants/popup/PopupHotelOverview.fxml";
