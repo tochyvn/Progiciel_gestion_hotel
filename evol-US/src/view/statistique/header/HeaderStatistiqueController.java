@@ -75,7 +75,7 @@ public class HeaderStatistiqueController implements Initializable {
 	private void showMaintenance() {
 		this.desactivateStyle();
 		maintenance.setStyle("-fx-background-color: white");
-		Parent scene = LoaderOfScene.loadParent(ViewInterfaceConstante.STATISTIQUE_MAINTENANCE, 2);
+		Parent scene = LoaderOfScene.loadParent(ViewInterfaceConstante.MAINTENANCE_STATISTIQUE, 2);
 		((BorderPane)root).setCenter(scene);
 		DoubleProperty opacity = scene.opacityProperty();
 		Animation.doAnimationProperty(opacity, 0, 1);
@@ -86,7 +86,7 @@ public class HeaderStatistiqueController implements Initializable {
 	private void showRestaurant() {
 		this.desactivateStyle();
 		restaurant.setStyle("-fx-background-color: white");
-		Parent scene = LoaderOfScene.loadParent(ViewInterfaceConstante.STATISTIQUE_RESTAURANT, 2);
+		Parent scene = LoaderOfScene.loadParent(ViewInterfaceConstante.RESTAURANT_STATISTIQUE, 2);
 		((BorderPane)root).setCenter(scene);
 		DoubleProperty opacity = scene.opacityProperty();
 		Animation.doAnimationProperty(opacity, 0, 1);
@@ -96,7 +96,7 @@ public class HeaderStatistiqueController implements Initializable {
 	private void showReception() {
 		this.desactivateStyle();
 		reception.setStyle("-fx-background-color: white");
-		Parent scene = LoaderOfScene.loadParent(ViewInterfaceConstante.STATISTIQUE_RECEPTION, 2);
+		Parent scene = LoaderOfScene.loadParent(ViewInterfaceConstante.RECEPTION_STATISTIQUE, 2);
 		((BorderPane)root).setCenter(scene);
 		DoubleProperty opacity = scene.opacityProperty();
 		Animation.doAnimationProperty(opacity, 0, 1);
@@ -107,7 +107,7 @@ public class HeaderStatistiqueController implements Initializable {
 	private void showHebergement() {
 		this.desactivateStyle();
 		hebergement.setStyle("-fx-background-color: white");
-		Parent scene = LoaderOfScene.loadParent(ViewInterfaceConstante.STATISTIQUE_HEBERGEMENT, 1);
+		Parent scene = LoaderOfScene.loadParent(ViewInterfaceConstante.HEBERGEMENT_STATISTIQUE, 1);
 		((BorderPane)root).setCenter(scene);
 		DoubleProperty opacity = scene.opacityProperty();
 		Animation.doAnimationProperty(opacity, 0, 1);

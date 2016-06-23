@@ -25,8 +25,14 @@ public interface ViewInterfaceConstante {
 	public final static String ADD_RESERVATION_SPA_MODAL = VIEW_PACKAGE+"composants/popup/PopupSpaOverview.fxml";
 
 	/* DIRECTION */
-	public final static String STATISTIQUES_VIEW = VIEW_PACKAGE+"statistique/StatistiqueHebergement.fxml";
+	public final static String HEBERGEMENT_STATISTIQUE = VIEW_PACKAGE+"statistique/StatistiqueHebergement.fxml";
+	public final static String MAINTENANCE_STATISTIQUE = VIEW_PACKAGE+"statistique/StatistiqueMaintenance.fxml";
+	public final static String RESTAURANT_STATISTIQUE = VIEW_PACKAGE+"statistique/StatistiqueRestaurant.fxml";
+	public final static String RECEPTION_STATISTIQUE = VIEW_PACKAGE+"statistique/StatistiqueReception.fxml";
 	public final static String GRAPHE_CHAMBRE = VIEW_PACKAGE+"statistique/graphique/chambre/GraphChambre.fxml";
+	public final static String GRAPHE_RESTAURANT = VIEW_PACKAGE+"statistique/graphique/restaurant/GraphRestaurant.fxml";
+	public final static String GRAPHE_MAINTENANCE = VIEW_PACKAGE+"statistique/graphique/maintenance/GraphMaintenance.fxml";
+	public final static String GRAPHE_RECEPTION = VIEW_PACKAGE+"statistique/graphique/reception/GraphReception.fxml";
 	
 	/* UTILISATEURS & CLIENTS */
 	public final static String USER_VIEW = VIEW_PACKAGE+"user/UserOverview.fxml";

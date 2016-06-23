@@ -77,7 +77,7 @@ public class UtilisateurManager {
 			Scene scenePrincipale = LoaderOfScene.loadScene(ViewInterfaceConstante.ROOT_VIEW, 0);
 			MainApplication.primaryStage.setScene(scenePrincipale);
 			
-			Parent center1 = LoaderOfScene.loadParent(ViewInterfaceConstante.STATISTIQUES_VIEW, 1);
+			Parent center1 = LoaderOfScene.loadParent(ViewInterfaceConstante.HEBERGEMENT_STATISTIQUE, 1);
 			//On recupere le root de la scene principale
 			((BorderPane) MainApplication.primaryStage.getScene().getRoot()).setCenter(center1);
 			System.out.println((MainApplication.primaryStage.getScene().getRoot()));

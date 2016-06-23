@@ -184,7 +184,7 @@ public class RootLayoutController implements Initializable {
 
 	@FXML
 	private void loadViewStatistiques() {
-		Parent statistiquesOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.STATISTIQUES_VIEW, 1);
+		Parent statistiquesOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.HEBERGEMENT_STATISTIQUE, 1);
 		root.setCenter(statistiquesOverview);
 		Parent header = LoaderOfScene.loadParent(ViewInterfaceConstante.HEADER_STATISTIQUE, 3);
 		root.setTop(header);
