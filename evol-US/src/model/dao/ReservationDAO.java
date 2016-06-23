@@ -36,7 +36,7 @@ public class ReservationDAO extends DAO<Reservation> {
 				requete.setInt(5, objet.getClient().getId());
 				status = requete.executeUpdate();
 				
-				System.out.println("Insertion réussie waouhhh youpiiiii!!!!!!!!  "+status);
+				System.out.println("Insertion réussie!!!!!!!!  "+status);
 			}else {
 				status = 3;
 			}

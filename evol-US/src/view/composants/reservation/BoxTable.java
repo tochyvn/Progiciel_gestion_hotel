@@ -18,7 +18,7 @@ import view.composants.popup.Popup;
 public class BoxTable extends VBox {
 	
 	private Reservation reservation;
-	private static String url = "/ressources/img/restaurant.png";
+	private static String url = "/ressources/img/bed.png";
 
 	public BoxTable() {
 		// TODO Auto-generated constructor stub

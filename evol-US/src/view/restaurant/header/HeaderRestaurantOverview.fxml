@@ -7,7 +7,7 @@
 
 <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="84.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.restaurant.header.HeaderRestaurantController">
    <children>
-      <Label fx:id="reservation" onMouseClicked="#showReservation" text="Reservations">
+      <Label fx:id="reservation" onMouseClicked="#showReservation" text="">
          <font>
             <Font name="Roboto Regular" size="18.0" />
          </font>
@@ -15,7 +15,7 @@
             <Insets right="20.0" />
          </FlowPane.margin>
       </Label>
-      <Label fx:id="stock" onMouseClicked="#showStock" text="Stocks">
+      <Label fx:id="stock" onMouseClicked="#showStock" text="">
          <font>
             <Font name="Roboto Regular" size="18.0" />
          </font>

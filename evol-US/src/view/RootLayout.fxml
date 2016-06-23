@@ -14,8 +14,8 @@
       <AnchorPane fx:id="borderPaneLeft" prefHeight="530.0" prefWidth="141.0" style="-fx-background-color: #D5F0D5;" BorderPane.alignment="CENTER">
          <children>
             <Hyperlink fx:id="hyperStatistique" layoutX="14.0" layoutY="50.0" onMouseClicked="#loadViewStatistiques" prefHeight="23.0" prefWidth="128.0" text="Statistiques" />
-            <Hyperlink fx:id="hyperReservation" layoutX="14.0" layoutY="73.0" onMouseClicked="#loadViewReservation" prefHeight="23.0" prefWidth="105.0" text="Restaurant" />
-            <Hyperlink fx:id="hyperReception" layoutX="14.0" layoutY="96.0" onMouseClicked="#loadViewPlanning" prefHeight="23.0" prefWidth="105.0" text="Réception" />
+            <Hyperlink fx:id="hyperReservation" layoutX="14.0" layoutY="73.0" onMouseClicked="#loadViewReservation" prefHeight="23.0" prefWidth="105.0" text="Chambres" />
+            <Hyperlink fx:id="hyperReception" layoutX="14.0" layoutY="96.0" onMouseClicked="#loadViewPlanning" prefHeight="23.0" prefWidth="105.0" text="Réception" />          
             <Hyperlink fx:id="hyperSpa" layoutX="14.0" layoutY="119.0" onMouseClicked="#loadViewSpa" prefHeight="23.0" prefWidth="128.0" text="SPA" />
             <Hyperlink fx:id="hyperGouvernante" layoutX="14.0" layoutY="142.0" onMouseClicked="#loadViewNettoyage" prefHeight="23.0" prefWidth="105.0" text="Gouvernante" />
             <Hyperlink fx:id="hyperMaintenance" layoutX="14.0" layoutY="165.0" onMouseClicked="#loadViewReparationHotel" prefHeight="23.0" prefWidth="105.0" text="Maintenance" />

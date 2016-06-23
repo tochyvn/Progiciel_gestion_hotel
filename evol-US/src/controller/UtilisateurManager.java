@@ -7,12 +7,14 @@ import javafx.beans.property.DoubleProperty;
 import javafx.collections.ObservableList;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import library.LoaderOfScene;
 import model.Connexion;
 import model.beans.Utilisateur;
 import model.dao.UtilisateurDAO;
 import view.ViewInterfaceConstante;
+import view.composants.alerte.AlertConfirmation;
 
 public class UtilisateurManager {
 	
@@ -66,26 +68,69 @@ public class UtilisateurManager {
 	public int getConnexion(Utilisateur user) {
 		int connected = 0;
 		connected = utilisateurDAO.getConnexion(user);
-		
+		//System.out.println("User.getPost()" + user+" === "+typeCompte);
 		if (connected == 0) {
 			//Boite de dialogue password ou identifiant incorrect
 			System.out.println("Boite de dialogue : identifiant ou mot de passe incorrect.");
+			AlertConfirmation alert = new AlertConfirmation("Mot de passe ou identifiant incorrecte", "Veuillez recommencez");
+			alert.showAndWait();
 		}else if (connected == 1) {
 			//Sauvegarde de la connexion de l'utilisateur
 			isConnected = true;
-			//Rechargement de la scene principale après connexion
+			//Rechargement de la scene principale aprï¿½s connexion
 			Scene scenePrincipale = LoaderOfScene.loadScene(ViewInterfaceConstante.ROOT_VIEW, 0);
 			MainApplication.primaryStage.setScene(scenePrincipale);
 			
-			Parent center1 = LoaderOfScene.loadParent(ViewInterfaceConstante.HEBERGEMENT_STATISTIQUE, 1);
+			if(typeCompte.equals("DIRECTION")) {
+				Parent center1 = LoaderOfScene.loadParent(ViewInterfaceConstante.HEBERGEMENT_STATISTIQUE, 1);
+				
+				((BorderPane) MainApplication.primaryStage.getScene().getRoot()).setCenter(center1);
+				/*
+				Parent chambre = LoaderOfScene.loadParent(ViewInterfaceConstante.GRAPHE_CHAMBRE, 0);
+				((AnchorPane)center1).getChildren().add(chambre);
+				AnchorPane.setBottomAnchor(chambre, 0.0);
+				AnchorPane.setLeftAnchor(chambre, 0.0);
+				AnchorPane.setRightAnchor(chambre, 0.0);
+				AnchorPane.setTopAnchor(chambre, 0.0);
+				*/
+				System.out.println((MainApplication.primaryStage.getScene().getRoot()));
+				DoubleProperty opacity = center1.opacityProperty();
+				//Animation.doAnimationProperty(opacity, 0, 1);
+			} else if(typeCompte.equals("MAINTENANCE")) {
+				Parent center1 = LoaderOfScene.loadParent(ViewInterfaceConstante.REPARATION_HOTEL_VIEW, 1);
+				((BorderPane) MainApplication.primaryStage.getScene().getRoot()).setCenter(center1);
+				
+				System.out.println((MainApplication.primaryStage.getScene().getRoot()));
+				DoubleProperty opacity = center1.opacityProperty();
+				//Animation.doAnimationProperty(opacity, 0, 1);
+				
+			} else if(typeCompte == "SPA") {
+				Parent center1 = LoaderOfScene.loadParent(ViewInterfaceConstante.SPA_VIEW, 1);
+				((BorderPane) MainApplication.primaryStage.getScene().getRoot()).setCenter(center1);
+				System.out.println((MainApplication.primaryStage.getScene().getRoot()));
+				DoubleProperty opacity = center1.opacityProperty();
+				//Animation.doAnimationProperty(opacity, 0, 1);
+				
+			} else if(typeCompte == "GOUVERNANTE") {
+				Parent center1 = LoaderOfScene.loadParent(ViewInterfaceConstante.NETTOYAGE_VIEW, 1);
+				((BorderPane) MainApplication.primaryStage.getScene().getRoot()).setCenter(center1);
+				System.out.println((MainApplication.primaryStage.getScene().getRoot()));
+				DoubleProperty opacity = center1.opacityProperty();
+				//Animation.doAnimationProperty(opacity, 0, 1);
+				
+			} else if(typeCompte == "RECEPTION") {
+				Parent center1 = LoaderOfScene.loadParent(ViewInterfaceConstante.PLANNING_VIEW, 1);
+				((BorderPane) MainApplication.primaryStage.getScene().getRoot()).setCenter(center1);
+				System.out.println((MainApplication.primaryStage.getScene().getRoot()));
+				DoubleProperty opacity = center1.opacityProperty();
+				//Animation.doAnimationProperty(opacity, 0, 1);
+				
+			}
 			//On recupere le root de la scene principale
-			((BorderPane) MainApplication.primaryStage.getScene().getRoot()).setCenter(center1);
-			System.out.println((MainApplication.primaryStage.getScene().getRoot()));
-			DoubleProperty opacity = center1.opacityProperty();
-			//Animation.doAnimationProperty(opacity, 0, 1);
+			
 		}else {
-			//Boite de dialogue problème de connexion
-			System.out.println("Boite de dialogue : problème de connexion");
+			//Boite de dialogue problï¿½me de connexion
+			System.out.println("Boite de dialogue : problï¿½me de connexion");
 		}
 		
 		return connected;

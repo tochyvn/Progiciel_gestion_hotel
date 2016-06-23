@@ -25,9 +25,14 @@
 
 <AnchorPane prefHeight="585.0" prefWidth="1016.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.mentions.MentionsLegalesController">
    <children>
+      <Pane focusTraversable="true" prefHeight="587.0" prefWidth="1017.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <effect>
+            <DropShadow color="#00000080" height="10.0" offsetY="3.0" radius="3.75" width="7.0" />
+         </effect>
+      </Pane>
       <Pane layoutX="14.0" layoutY="91.0" prefHeight="480.0" prefWidth="978.0" styleClass="bg-grey" stylesheets="@../../../bin/application/application.css">
          <children>
-            <TextArea layoutX="14.0" layoutY="172.0" prefHeight="268.0" prefWidth="932.0" text="1. Préambule&#10;&#10;&#10;La notice légale permettant une identification précise de LE GOLD MOTION et indiquant sa raison sociale, l’adresse où elle est établie, son adresse de courrier électronique, son numéro de téléphone, son siège social, son numéro individuel d’identification d’assujettissement à la taxe sur la valeur ajoutée.&#10;&#10;1. Le client déclare avoir la pleine capacité juridique lui permettant de s'engager au titre des présentes conditions générales.&#10;&#10;1. LE GOLD MOTION est tenu de la garantie de conformité des services, dans les conditions posées aux articles L. 212-1 et s. du Code de la consommation.&#10; &#10;1. Les présentes Conditions générales de vente sont régies par la loi française.&#10;&#10;L’adresse postale est la suivante :  Hôtel Le Gold Motion – 21 rue marc Donadile - 13013 Marseille – FRANCE&#10;&#10;2. Il en est ainsi pour les règles de fond comme pour les règles de forme.&#10;&#10;EDITEUR DE LA PUBLICATION : HOTEL Le Gold Motion&#10;DIRECTEUR DE LA PUBLICATION : HOTEL Le Gold Motion&#10;RESPONSABLE DE LA REDACTION : HOTEL Le Gold Motion&#10;HEBERGEUR : OVH &#10;WEBMASTER : Aurora.Inc" wrapText="true">
+            <TextArea editable="false" layoutX="14.0" layoutY="172.0" prefHeight="268.0" prefWidth="932.0" style="-fx-background-color: #f5f5f5;" text="1. Préambule&#10;&#10;&#10;La notice légale permettant une identification précise de LE GOLD MOTION et indiquant sa raison sociale, l’adresse où elle est établie, son adresse de courrier électronique, son numéro de téléphone, son siège social, son numéro individuel d’identification d’assujettissement à la taxe sur la valeur ajoutée.&#10;&#10;1. Le client déclare avoir la pleine capacité juridique lui permettant de s'engager au titre des présentes conditions générales.&#10;&#10;1. LE GOLD MOTION est tenu de la garantie de conformité des services, dans les conditions posées aux articles L. 212-1 et s. du Code de la consommation.&#10; &#10;1. Les présentes Conditions générales de vente sont régies par la loi française.&#10;&#10;L’adresse postale est la suivante :  Hôtel Le Gold Motion – 21 rue marc Donadile - 13013 Marseille – FRANCE&#10;&#10;2. Il en est ainsi pour les règles de fond comme pour les règles de forme.&#10;&#10;EDITEUR DE LA PUBLICATION : HOTEL Le Gold Motion&#10;DIRECTEUR DE LA PUBLICATION : HOTEL Le Gold Motion&#10;RESPONSABLE DE LA REDACTION : HOTEL Le Gold Motion&#10;HEBERGEUR : OVH &#10;WEBMASTER : Aurora.Inc" wrapText="true">
                <font>
                   <Font name="Roboto" size="12.0" />
                </font>
@@ -37,7 +42,7 @@
                   <Font name="Roboto" size="25.0" />
                </font>
             </Label>
-            <TextArea layoutX="14.0" layoutY="51.0" prefHeight="105.0" prefWidth="932.0" text="Nom de la société : Aurora.Inc&#10;Numéro de Siret :  00000000000008&#10;Nom du responsable : Clément ROSEY&#10;&#10;Adresse de la société :  21 rue marc Donadile - 13013 Marseille" wrapText="true">
+            <TextArea editable="false" layoutX="14.0" layoutY="51.0" prefHeight="105.0" prefWidth="932.0" style="-fx-background-color: #f5f5f5;" text="Nom de la société : Aurora.Inc&#10;Numéro de Siret :  00000000000008&#10;Nom du responsable : Clément ROSEY&#10;&#10;Adresse de la société :  21 rue marc Donadile - 13013 Marseille" wrapText="true">
                <font>
                   <Font name="Roboto" size="12.0" />
                </font>

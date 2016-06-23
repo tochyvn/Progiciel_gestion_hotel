@@ -160,18 +160,18 @@ public class RootLayoutController implements Initializable {
 	 */
 	private void chechAuthentificationType() {
 		String droit = UtilisateurManager.typeCompte;
-		if (droit != "DIRECTION") {
-			hyperStatistique.setVisible(false);
-			hyperReservation.setVisible(false);
-			hyperEmployee.setVisible(false);
-			hyperReception.setVisible(false);
-			hyperSpa.setVisible(false);
-			hyperGouvernante.setVisible(false);
-			hyperMaintenance.setVisible(false);
-			hyperClient.setVisible(false);
-			hyperStatistique.setVisible(false);
+		if (droit.equals("DIRECTION")) {
+			hyperStatistique.setVisible(true);
+			hyperReservation.setVisible(true);
+			hyperEmployee.setVisible(true);
+			hyperReception.setVisible(true);
+			hyperSpa.setVisible(true);
+			hyperGouvernante.setVisible(true);
+			hyperMaintenance.setVisible(true);
+			hyperClient.setVisible(true);
+			hyperStatistique.setVisible(true);
 		}
-		if (droit == "MAINTENANCE") {
+		if (droit.equals("MAINTENANCE")) {
 			hyperStatistique.setVisible(false);
 			hyperReservation.setVisible(false);
 			hyperEmployee.setVisible(false);
@@ -182,7 +182,7 @@ public class RootLayoutController implements Initializable {
 			hyperClient.setVisible(false);
 			hyperStatistique.setVisible(false);
 		}
-		if (droit == "SPA") {
+		if (droit.equals("SPA")) {
 			hyperStatistique.setVisible(false);
 			hyperReservation.setVisible(false);
 			hyperEmployee.setVisible(false);
@@ -193,7 +193,7 @@ public class RootLayoutController implements Initializable {
 			hyperClient.setVisible(false);
 			hyperStatistique.setVisible(false);
 		}
-		if (droit == "RECEPTION") {
+		if (droit.equals("RECEPTION")) {
 			hyperStatistique.setVisible(false);
 			hyperReservation.setVisible(false);
 			hyperEmployee.setVisible(true);
@@ -204,25 +204,14 @@ public class RootLayoutController implements Initializable {
 			hyperClient.setVisible(false);
 			hyperStatistique.setVisible(false);
 		}
-		if (droit == "GOUVERNANTE") {
+		if (droit.equals("GOUVERNANTE")) {
 			hyperStatistique.setVisible(false);
 			hyperReservation.setVisible(false);
 			hyperEmployee.setVisible(false);
 			hyperReception.setVisible(false);
 			hyperSpa.setVisible(false);
 			hyperGouvernante.setVisible(true);
-			hyperMaintenance.setVisible(true);
-			hyperClient.setVisible(false);
-			hyperStatistique.setVisible(false);
-		}
-		if (droit == "SPA") {
-			hyperStatistique.setVisible(false);
-			hyperReservation.setVisible(false);
-			hyperEmployee.setVisible(false);
-			hyperReception.setVisible(false);
-			hyperSpa.setVisible(true);
-			hyperGouvernante.setVisible(true);
-			hyperMaintenance.setVisible(true);
+			hyperMaintenance.setVisible(false);
 			hyperClient.setVisible(false);
 			hyperStatistique.setVisible(false);
 		}

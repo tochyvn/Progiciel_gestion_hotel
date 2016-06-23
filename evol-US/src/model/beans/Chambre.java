@@ -227,11 +227,11 @@ public class Chambre {
 	
 	public static EtatChambre getEtatChambreEnum(String etat) {
 		EtatChambre etatEnum = null;
-		if(etat.equals("Occupée")) {
+		if(etat.equals("OCCUPEE")) {
 			etatEnum = EtatChambre.OCCUPEE;
-		}else if (etat.equals("Maintenance")) {
+		}else if (etat.equals("MAINTENANCE")) {
 			etatEnum = EtatChambre.MAINTENANCE;
-		}else if (etat.equals("Libre")){
+		}else if (etat.equals("LIBRE")){
 			etatEnum = EtatChambre.LIBRE;
 		}
 		
