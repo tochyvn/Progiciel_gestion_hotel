@@ -112,7 +112,18 @@ public class RootLayoutController implements Initializable {
 			e1.printStackTrace();
 		}
 	}
-
+	
+	@FXML
+	private void loadViewMentionsL() {
+		Parent mentionsOverview = LoaderOfScene.loadParent(ViewInterfaceConstante.MENTIONS_VIEW, 1);
+		root.setCenter(mentionsOverview);
+		Parent header = LoaderOfScene.loadParent(ViewInterfaceConstante.HEADER_MENTIONS, 3);
+		root.setTop(header);
+		DoubleProperty opacity = mentionsOverview.opacityProperty();
+		DoubleProperty opacityheader = mentionsOverview.opacityProperty();
+		//Animation.doAnimationProperty(opacity, 0, 1);
+	}
+	
 	@FXML
 	private void loadViewUser(ActionEvent event) {
 		System.out.println(getClass().getName());
