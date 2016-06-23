@@ -64,6 +64,21 @@ public class RootLayoutController implements Initializable {
 	@FXML
 	private Hyperlink hyperChambre;
 	
+	@FXML
+	private Hyperlink hyperMaintenance;
+	
+	@FXML
+	private Hyperlink hyperClient;
+	
+	@FXML
+	private Hyperlink hyperSpa;
+	
+	@FXML
+	private Hyperlink hyperReception;
+	
+	@FXML
+	private Hyperlink hyperGouvernante;
+	
 	
 	/* (non-Javadoc)
 	 * @see javafx.fxml.Initializable#initialize(java.net.URL, java.util.ResourceBundle)
@@ -146,19 +161,70 @@ public class RootLayoutController implements Initializable {
 	private void chechAuthentificationType() {
 		String droit = UtilisateurManager.typeCompte;
 		if (droit != "DIRECTION") {
-			hyperStatistique.setVisible(true);
+			hyperStatistique.setVisible(false);
+			hyperReservation.setVisible(false);
+			hyperEmployee.setVisible(false);
+			hyperReception.setVisible(false);
+			hyperSpa.setVisible(false);
+			hyperGouvernante.setVisible(false);
+			hyperMaintenance.setVisible(false);
+			hyperClient.setVisible(false);
+			hyperStatistique.setVisible(false);
 		}
-		if (droit != "DIRECTION" && droit != "MAINTENANCE") {
-			//hyperStatistique.setVisible(false);
+		if (droit == "MAINTENANCE") {
+			hyperStatistique.setVisible(false);
+			hyperReservation.setVisible(false);
+			hyperEmployee.setVisible(false);
+			hyperReception.setVisible(false);
+			hyperSpa.setVisible(false);
+			hyperGouvernante.setVisible(false);
+			hyperMaintenance.setVisible(true);
+			hyperClient.setVisible(false);
+			hyperStatistique.setVisible(false);
 		}
-		if (droit != "DIRECTION" && droit != "SPA") {
-			//hyperStatistique.setVisible(false);
+		if (droit == "SPA") {
+			hyperStatistique.setVisible(false);
+			hyperReservation.setVisible(false);
+			hyperEmployee.setVisible(false);
+			hyperReception.setVisible(false);
+			hyperSpa.setVisible(true);
+			hyperGouvernante.setVisible(false);
+			hyperMaintenance.setVisible(false);
+			hyperClient.setVisible(false);
+			hyperStatistique.setVisible(false);
 		}
-		if (droit != "DIRECTION" && droit != "RECEPTION") {
-			//hyperStatistique.setVisible(false);
+		if (droit == "RECEPTION") {
+			hyperStatistique.setVisible(false);
+			hyperReservation.setVisible(false);
+			hyperEmployee.setVisible(true);
+			hyperReception.setVisible(true);
+			hyperSpa.setVisible(false);
+			hyperGouvernante.setVisible(false);
+			hyperMaintenance.setVisible(false);
+			hyperClient.setVisible(false);
+			hyperStatistique.setVisible(false);
 		}
-		if (droit != "DIRECTION" && droit != "HEBERGEMENT") {
-			//hyperStatistique.setVisible(false);
+		if (droit == "GOUVERNANTE") {
+			hyperStatistique.setVisible(false);
+			hyperReservation.setVisible(false);
+			hyperEmployee.setVisible(false);
+			hyperReception.setVisible(false);
+			hyperSpa.setVisible(false);
+			hyperGouvernante.setVisible(true);
+			hyperMaintenance.setVisible(true);
+			hyperClient.setVisible(false);
+			hyperStatistique.setVisible(false);
+		}
+		if (droit == "SPA") {
+			hyperStatistique.setVisible(false);
+			hyperReservation.setVisible(false);
+			hyperEmployee.setVisible(false);
+			hyperReception.setVisible(false);
+			hyperSpa.setVisible(true);
+			hyperGouvernante.setVisible(true);
+			hyperMaintenance.setVisible(true);
+			hyperClient.setVisible(false);
+			hyperStatistique.setVisible(false);
 		}
 	}
 	

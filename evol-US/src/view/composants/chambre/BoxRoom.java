@@ -42,7 +42,7 @@ public class BoxRoom extends VBox {
 		
 		Image img = new Image(url);
 		ImageView imageView = new ImageView(img);		
-		Label roomLabel = new Label("Chambre ° : "+chambre.getIdChambre());
+		Label roomLabel = new Label("Chambre nÂ° : "+chambre.getIdChambre());
 		Label fumeur = new Label("Fumeur : Non");
 		Label baignoire = new Label("Baignoire : Oui");
 		

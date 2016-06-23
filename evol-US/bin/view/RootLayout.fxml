@@ -15,13 +15,12 @@
          <children>
             <Hyperlink fx:id="hyperStatistique" layoutX="14.0" layoutY="50.0" onMouseClicked="#loadViewStatistiques" prefHeight="23.0" prefWidth="128.0" text="Statistiques" />
             <Hyperlink fx:id="hyperReservation" layoutX="14.0" layoutY="73.0" onMouseClicked="#loadViewReservation" prefHeight="23.0" prefWidth="105.0" text="Restaurant" />
-            <Hyperlink fx:id="hyperChambre" layoutX="14.0" layoutY="96.0" onMouseClicked="#loadViewChambre" prefHeight="23.0" prefWidth="105.0" text="Hebergement" />
-            <Hyperlink layoutX="14.0" layoutY="119.0" onMouseClicked="#loadViewPlanning" prefHeight="23.0" prefWidth="105.0" text="Réception" />
-            <Hyperlink layoutX="14.0" layoutY="142.0" onMouseClicked="#loadViewSpa" prefHeight="23.0" prefWidth="128.0" text="SPA" />
-            <Hyperlink layoutX="14.0" layoutY="165.0" onMouseClicked="#loadViewNettoyage" prefHeight="23.0" prefWidth="105.0" text="Gouvernante" />
-            <Hyperlink layoutX="14.0" layoutY="188.0" onMouseClicked="#loadViewReparationHotel" prefHeight="23.0" prefWidth="105.0" text="Maintenance" />
-            <Hyperlink fx:id="hyperEmployee" layoutX="14.0" layoutY="211.0" onMouseClicked="#loadViewEmployee" prefHeight="23.0" prefWidth="128.0" text="Employés" />
-            <Hyperlink layoutX="14.0" layoutY="234.0" onAction="#loadViewClient" prefHeight="23.0" prefWidth="128.0" text="Clients" />
+            <Hyperlink fx:id="hyperReception" layoutX="14.0" layoutY="96.0" onMouseClicked="#loadViewPlanning" prefHeight="23.0" prefWidth="105.0" text="Réception" />
+            <Hyperlink fx:id="hyperSpa" layoutX="14.0" layoutY="119.0" onMouseClicked="#loadViewSpa" prefHeight="23.0" prefWidth="128.0" text="SPA" />
+            <Hyperlink fx:id="hyperGouvernante" layoutX="14.0" layoutY="142.0" onMouseClicked="#loadViewNettoyage" prefHeight="23.0" prefWidth="105.0" text="Gouvernante" />
+            <Hyperlink fx:id="hyperMaintenance" layoutX="14.0" layoutY="165.0" onMouseClicked="#loadViewReparationHotel" prefHeight="23.0" prefWidth="105.0" text="Maintenance" />
+            <Hyperlink fx:id="hyperEmployee" layoutX="14.0" layoutY="188.0" onMouseClicked="#loadViewEmployee" prefHeight="23.0" prefWidth="128.0" text="Employés" />
+            <Hyperlink fx:id="hyperClient" layoutX="14.0" layoutY="211.0" onAction="#loadViewClient" prefHeight="23.0" prefWidth="128.0" text="Clients" />
             <Label layoutX="14.0" layoutY="14.0" text="Evol-Us" />
             <Label layoutX="14.0" layoutY="533.0" text="Aurora © 2016" />
             <Hyperlink layoutX="10.0" layoutY="554.0" text="Mentions légales" onMouseClicked="#loadViewMentionsL" />  

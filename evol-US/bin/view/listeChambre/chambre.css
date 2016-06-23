@@ -3,7 +3,7 @@
 -fx-border-radius: 7px;
 -fx-effect:  dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0.1, 2, 3);
 -fx-padding: 10, 5, 10, 5;
-	-fx-font: "Roboto Regular";
+	
 
 }
 
@@ -11,13 +11,13 @@
 	/*-fx-effect:  dropshadow(three-pass-box, rgba(0,0.8,0,0), 0, 0, 0, 0);*/
 	
 	-fx-border-color: white;
-		-fx-font: "Roboto Regular";
+		
 	
 }
 
 .box-bottom-room {
 	-fx-border-color: grey;
-		-fx-font: "Roboto Regular";
+		
 	
 }
 
@@ -26,13 +26,13 @@
 	-fx-text-alignment: center;
 	-fx-font-weight: bold;
 	-fx-font-size: 20;
-		-fx-font: "Roboto Regular";
+		
 	
 }
 
 .scroll-pane {
 	-fx-pannable: true; 
 	-fx-background-color: #D5F0D5;
-		-fx-font: "Roboto Regular";
+		
 	
 }

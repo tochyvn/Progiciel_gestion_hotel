@@ -227,11 +227,11 @@ public class Chambre {
 	
 	public static EtatChambre getEtatChambreEnum(String etat) {
 		EtatChambre etatEnum = null;
-		if(etat.equals("OCCUPEE")) {
+		if(etat.equals("Occupée")) {
 			etatEnum = EtatChambre.OCCUPEE;
-		}else if (etat.equals("MAINTENANCE")) {
+		}else if (etat.equals("Maintenance")) {
 			etatEnum = EtatChambre.MAINTENANCE;
-		}else if (etat.equals("LIBRE")){
+		}else if (etat.equals("Libre")){
 			etatEnum = EtatChambre.LIBRE;
 		}
 		
@@ -246,9 +246,9 @@ public class Chambre {
 	public String getFumeurAffiche() {
 		String fumeur = null;
 		if (isFumeur() == 0) {
-			fumeur = "NON";
+			fumeur = "Non";
 		}else if(isFumeur() == 1) {
-			fumeur = "OUI";
+			fumeur = "Oui";
 		}
 		
 		return fumeur;
@@ -257,9 +257,9 @@ public class Chambre {
 	public String getBaignoireAffiche() {
 		String baignoire = null;
 		if (isBaignoire() == 0) {
-			baignoire = "NON";
+			baignoire = "Non";
 		}else if(isBaignoire() == 1) {
-			baignoire = "OUI";
+			baignoire = "Oui";
 		}
 		
 		return baignoire;
@@ -268,9 +268,9 @@ public class Chambre {
 	public String getDoucheAffiche() {
 		String baignoire = null;
 		if (isDouche() == 0) {
-			baignoire = "NON";
+			baignoire = "Non";
 		}else if(isDouche() == 1) {
-			baignoire = "OUI";
+			baignoire = "Oui";
 		}
 		
 		return baignoire;
